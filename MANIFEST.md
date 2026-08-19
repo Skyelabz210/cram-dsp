@@ -75,6 +75,7 @@ imaged 2007-08-20 at the Walters Art Museum.
 | `skills/dsp-analyst/references/forensic-standards.md` | SWGDE document registry + exam methodology, PRNU caveats and transfer attacks, AI-generation screening layers, C2PA/provenance limits, admissibility posture |
 | `skills/dsp-analyst/references/archaeo-imaging.md` | Modality catalog (MSI/HSI/XRF/RTI/DStretch/SfM/uCT/OCT), incumbent stack concessions, FADGI / ISO 19264-1 / Metamorfoze, per-corpus notes for all program targets |
 | `skills/dsp-analyst/references/evaluation-protocols.md` | Measurement contract, fixture and ground-truth design, corroboration ladder for documented-failure targets, head-to-head procedure, report templates |
+| `skills/dsp-analyst.skill` | Packaged artifact of the above (zip), ready to install via Save Skill — built with skill-creator's `package_skill.py` |
 
 ## Tools — `tools/`
 
