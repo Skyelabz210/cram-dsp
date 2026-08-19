@@ -40,6 +40,8 @@ Reproduce: `python3 run_all.py` (requires numpy, Pillow). Deterministic and seed
 | `BENCHMARKS.md` | The benchmark suite definition and current standings |
 | `BOUNTIES.md` | Live prize targets (Vesuvius Grand Prize, First Letters, Title, Progress) with per-gate CLEARED / PARTIAL / NOT CLEARED audit, plus non-cash first-mover claims |
 | `MANIFEST.md` | This file |
+| `EXECUTION_DAG.md` | Campaign plan: 52 gated nodes across 9 phases covering every target board to 100% (executioner format) |
+| `CLAUDE.md` | Agent instructions: axioms, gates, commands, record-keeping, HUMAN-gated node list |
 | `docs/ARCHITECTURE.md` | Design document structured by the five verbs (ideate / innovate / design / test / build) |
 | `docs/BASELINE_DOSSIER.md` | Archimedes acquisition record, prior-attempt failure record, incumbent stack table, comparator table |
 | `docs/executioner_dag.md` | Build DAG: nodes, gates, statuses, checkpoint — the session record |

@@ -64,6 +64,12 @@ led    = forensics.Ledger(); led.roundtrip_receipt("wav53", img, rec)
 
 Requires Python 3, numpy, Pillow. Deterministic and seeded.
 
+## Execution
+
+The live campaign plan is **`EXECUTION_DAG.md`** (52 gated nodes, all target
+boards); agent rules are in **`CLAUDE.md`**; the append-only session record is
+`docs/executioner_dag.md`.
+
 ## Read in this order
 
 1. **`MANIFEST.md`** — full inventory, every file and its gate

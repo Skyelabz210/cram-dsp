@@ -66,3 +66,29 @@ Archimedes Palimpsest real-data run, full Hao–Shi integer RKLT node.
 CRAM axiom quick-check: A1 lint PASS; no Garner anywhere (A2 by construction);
 no Sqr on lane 7 (refused programmatically); DKAM d=2 < ρ=3 documented;
 inverses via extended Euclid only (pow(a,-1,m)), never Fermat.
+
+---
+# CAMPAIGN 2 — TARGET-ARTIFACT COMPLETION (opened 2026-08-19)
+
+Plan: /EXECUTION_DAG.md (52 nodes, phases INF/ARC/VES/GPZ/GAL/DRE/SEL/SIN/REP).
+Executor: Claude Code against this repo. Definition of 100%: every board closes
+as measured-result-at-evidence-size (zero included) or BLOCKED with a Requires:
+line naming the researcher-only action. This file remains the append-only
+record: node completions and checkpoints land here.
+
+## CHECKPOINT — 2026-08-19 (campaign opened, no nodes executed)
+
+### Completed This Session
+| NODE-ID | Status | Output |
+|---------|--------|--------|
+| (plan authored) | — | /EXECUTION_DAG.md, /CLAUDE.md |
+
+### In Progress
+None.
+
+### Pending (dependency order)
+INF01 → Track 1 (VES deadline 2026-08-31) ∥ Tracks 2–7 per EXECUTION_DAG.md.
+
+### Files to Deliver
+EXECUTION_DAG.md, CLAUDE.md (this commit).
+---
