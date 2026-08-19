@@ -1,12 +1,11 @@
 # CRAM-DSP
 
-**Residue-native digital signal and image processing for forensic work.**
-Exact integer arithmetic end to end, reversible transforms, and a hash-chained
-chain of custody for computation.
+**Digital signal and image processing with no floating point, anywhere.**
+Every number is an exact integer. Every transform is reversible. Every run
+proves, by hash, that it did exactly what it says — twice, bit for bit.
 
-Anthony Diaz (Acid) — HackFate Research / Skyelabz210.
-Framework: Configurable Residue Arithmetic Machine (CRAM) / Quantum-Modular
-Number Framework (QMNF).
+Built by Anthony Diaz (Acid), HackFate Research / Skyelabz210, on the CRAM /
+QMNF residue-arithmetic framework.
 
 ```
 2,585,391 exact checks   ·   0 failures   ·   A1 lint PASS
@@ -14,23 +13,65 @@ Number Framework (QMNF).
 
 ---
 
-## What this is
+## The problem this exists to fix
 
-Forensic image analysis asks what an artifact *contains*. Floating-point
-pipelines answer a different question — what an artifact *approximately* looks
-like after processing — and they answer it irreversibly. Measured here: one
-standard float blur destroys 26 of 114 unit-amplitude ink edges, injects 682
-false detections into that class, and erases every requantization fingerprint on
-the page. Nothing recovers them.
+Every standard image-processing pipeline — blur, enhancement, layer
+separation, convolution — runs on floating point, and floating point is not
+exact. It rounds. It drifts. It depends on which chip and which library
+version happened to run it. When the input is *evidence* — a forged
+manuscript, a spliced photograph, an undertext buried under paint — that
+rounding isn't a footnote, it's a loss with no receipt: nothing tells you
+afterward what got destroyed. Measured on a page of test evidence in this
+repo: one ordinary float blur destroyed 26 of 114 marked ink edges,
+manufactured 682 detections that were never there, and erased all 28 of the
+page's processing-history fingerprints. Permanently. Silently. That isn't a
+bug in one blur filter — it's what floating point does to exact structure,
+by construction, every time it's used.
 
-CRAM-DSP runs the whole pipeline in exact integers on the CRT torus. Magnitude is
-recovered by K-Elimination — one modular subtraction — instead of by
-reconstruction, so residue lanes stay independent. Every transform is a bijection
-on integers. Every operation appends a SHA-256 receipt, and because the pipeline
-is deterministic, two independent runs commit to the same chain hash: the hash
-*is* the reproducibility certificate.
+CRAM-DSP is what the same class of operations looks like with the float
+removed entirely — not approximated better, removed.
 
-## Claims at a glance
+## How it actually works
+
+Residue arithmetic — splitting a number into its remainders under several
+small moduli and computing on each remainder independently — has existed for
+decades, and it's fast: addition and multiplication run in parallel across
+the "lanes" with zero rounding, ever. Its one long-standing weak point was
+*getting the size back out*. To answer "how big is this number," the
+classical approach has to glue every lane back into one positional number
+(Garner's algorithm and its relatives) — slow, and worse, it makes every
+lane's value depend on all the others, destroying the very independence that
+made the fast parallel arithmetic worth having.
+
+**K-Elimination removes that step.** The magnitude — the exact overflow
+count, the exact band a value falls in, the exact winding number — comes out
+of a single modular subtraction between two lanes. No gluing. No dependence
+between lanes. It's a five-line proof (`PROOFS.md`, P1), not a heuristic, and
+almost everything downstream of it — exact banding, the residue-native edge
+probe, exact layer separation, the reversible transforms — is just that one
+theorem applied to a different problem.
+
+## Where this is being tested right now
+
+Four folios of the Archimedes Palimpsest carry 20th-century forgeries — gold
+leaf and pigment painted directly over the original Archimedes text. The
+multispectral imaging system built for this exact manuscript — later adopted
+by the Library of Congress, the Dead Sea Scrolls project, and Sinai — was
+pointed at those folios and **recovered nothing**. The team had to fly the
+leaves to the SLAC synchrotron and read the iron in the ink with X-rays
+instead.
+
+CRAM-DSP hasn't touched the undertext yet — that run is open, and it will
+report whatever it finds, including zero. But on first contact with the raw
+sensor files, before any of that work even started, its own integer
+fingerprint check found something the standard optical pipeline has no way
+to see: across 70,350,000 sample values, the published "16-bit" release is
+secretly 14-bit sensor data padded into a wider container, with zero
+exceptions. Every tool that's ever touched this public dataset has been
+reporting two bits of padding as real precision. That's the target this
+framework is now running against — tracked live in `BENCHMARKS.md`.
+
+## What's been measured so far
 
 | Claim | Evidence |
 |---|---|
@@ -44,7 +85,8 @@ is deterministic, two independent runs commit to the same chain hash: the hash
 
 Every one is scoped in `METRICS.md` and proved in `PROOFS.md`. Where a result
 overlaps existing methods, the axis, conditions, and location of the
-differentiation are stated — see `COMPARISONS.md`.
+differentiation are stated — see `COMPARISONS.md`. Nothing above is a bare
+"beats the incumbent" claim; every row names what's actually being compared.
 
 ## Quick start
 
@@ -81,20 +123,27 @@ boards); agent rules are in **`CLAUDE.md`**; the append-only session record is
 7. **`COMPARISONS.md`** — head-to-head, including where comparators lead
 8. **`docs/ARCHITECTURE.md`** — design, ideate → innovate → design → test → build
 
-## Axioms
+## The rules that hold it together
 
-**A1** zero float (statically linted) · **A2** reconstruction-free — no Garner,
-no mixed-radix, magnitude by K-Elimination · **A3** distortion certified, trivial
-here (Γ = 1) · **A8** no Sqr on lane 7, enforced by refusal · **DKAM** ρ = 3 > d = 2 ·
-modular inverses by extended Euclid only, never Fermat.
-
-## Current target
-
-The Archimedes Palimpsest folios bearing 20th-century forged Evangelist
-portraits, where the incumbent optical stack recovers nothing and the project
-escalated to synchrotron XRF. Data is acquired and checksummed; the run is open.
-Result will be reported at whatever size the evidence supports, including zero —
-see `BENCHMARKS.md` §2.
+- **A1 — zero float.** Every production number is an exact integer or exact
+  fraction. Statically checked on every run: the linter fails the build if a
+  float slips into a real code path. (Comparison foils are quarantined by
+  name specifically so they can be float — that's the point of having them.)
+- **A2 — no reconstruction.** Magnitude is never recovered by gluing all the
+  residue lanes together (Garner / mixed-radix). K-Elimination reads it off
+  two lanes, as above.
+- **A3 — distortion is certified, not assumed.** The rare non-standard lane
+  operator has to carry an exact certificate of what it distorts; on every
+  production path here that certificate is trivial (Γ = 1) because the
+  operators are plain arithmetic homomorphisms.
+- **A8 — the one operator that isn't gets refused, not warned about.** `Sqr`
+  is disallowed outright on lane 7; the call raises rather than logging a
+  warning.
+- **DKAM.** The nonlinear operator's degree (2) stays under the basis's
+  resonance order (3) — the condition that keeps repeated operations from
+  blowing up instead of staying bounded.
+- **Inverses.** Always extended Euclid, never Fermat's little theorem — Fermat
+  is silently wrong on the composite moduli this framework uses on purpose.
 
 ---
 
