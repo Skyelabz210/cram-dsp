@@ -70,9 +70,10 @@ Requires Python 3, numpy, Pillow. Deterministic and seeded.
 2. **`PROOFS.md`** — P1–P13, each with proof and its witnessing test
 3. **`METRICS.md`** — measurement contract, six scoring axes, every number
 4. **`BENCHMARKS.md`** — internal suite plus the external scoreboard
-5. **`PRIOR_ART.md`** — incumbent stacks and their documented limits
-6. **`COMPARISONS.md`** — head-to-head, including where comparators lead
-7. **`docs/ARCHITECTURE.md`** — design, ideate → innovate → design → test → build
+5. **`BOUNTIES.md`** — live prize targets with gate-by-gate clearance audit
+6. **`PRIOR_ART.md`** — incumbent stacks and their documented limits
+7. **`COMPARISONS.md`** — head-to-head, including where comparators lead
+8. **`docs/ARCHITECTURE.md`** — design, ideate → innovate → design → test → build
 
 ## Axioms
 

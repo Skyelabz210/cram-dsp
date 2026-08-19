@@ -38,6 +38,7 @@ Reproduce: `python3 run_all.py` (requires numpy, Pillow). Deterministic and seed
 | `PRIOR_ART.md` | Incumbent stack specs, documented failures on the target artifact, comparator programs, residue-arithmetic and forensic-imaging prior art |
 | `COMPARISONS.md` | Head-to-head per axis, including where comparators are ahead |
 | `BENCHMARKS.md` | The benchmark suite definition and current standings |
+| `BOUNTIES.md` | Live prize targets (Vesuvius Grand Prize, First Letters, Title, Progress) with per-gate CLEARED / PARTIAL / NOT CLEARED audit, plus non-cash first-mover claims |
 | `MANIFEST.md` | This file |
 | `docs/ARCHITECTURE.md` | Design document structured by the five verbs (ideate / innovate / design / test / build) |
 | `docs/BASELINE_DOSSIER.md` | Archimedes acquisition record, prior-attempt failure record, incumbent stack table, comparator table |
