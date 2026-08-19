@@ -1,0 +1,32 @@
+{
+ "chain": "b4f88f95d97ff21124578e47129457d3f7823f1fb194eeb29fa2383017d24023",
+ "entries": [
+  {
+   "chain": "63c5653994f8f7506fce78ce1bf3f95d7d2c435d07b309115b8a0fcaa5c015f5",
+   "in": "67fdda9ddbcaf78661d78a461d8c5554f9dccf79829dbec765f838c4f8ea8cef",
+   "op": "wav53_fwd",
+   "out": "e49676796c12614932bbddc05d1bae078be11f855ea7fb0a4355808134127e34",
+   "params": {
+    "levels": 2
+   }
+  },
+  {
+   "chain": "77ab1875705090c2466a6eae2744f77839074cc78c793b5b933f96c08d82fbf7",
+   "in": "e49676796c12614932bbddc05d1bae078be11f855ea7fb0a4355808134127e34",
+   "op": "wav53_inv",
+   "out": "67fdda9ddbcaf78661d78a461d8c5554f9dccf79829dbec765f838c4f8ea8cef",
+   "params": {
+    "levels": 2
+   }
+  },
+  {
+   "chain": "b4f88f95d97ff21124578e47129457d3f7823f1fb194eeb29fa2383017d24023",
+   "in": "67fdda9ddbcaf78661d78a461d8c5554f9dccf79829dbec765f838c4f8ea8cef",
+   "op": "roundtrip:wav53",
+   "out": "67fdda9ddbcaf78661d78a461d8c5554f9dccf79829dbec765f838c4f8ea8cef",
+   "params": {
+    "exact": true
+   }
+  }
+ ]
+}
