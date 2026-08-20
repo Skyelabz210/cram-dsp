@@ -92,3 +92,43 @@ INF01 → Track 1 (VES deadline 2026-08-31) ∥ Tracks 2–7 per EXECUTION_DAG.m
 ### Files to Deliver
 EXECUTION_DAG.md, CLAUDE.md (this commit).
 ---
+
+## CHECKPOINT — 2026-08-19 (campaign 2, execution session)
+
+### Completed This Session
+| NODE-ID | Status | Output |
+|---------|--------|--------|
+| INF01 | PASS | env verified (py3.12.3/numpy2.4.4/pillow12.1.1); baseline 2,585,391/0 holds |
+| INF02 | PASS | cram_dsp/core.py — LANES_8BIT/14BIT/EXT, lane_bound, lanes_for_bitdepth |
+| INF04 | PASS | cram_dsp/ingest.py — detect_lattice/seal/unseal, receipted, exactly reversible |
+| INF05 | PASS | forensics.Ledger.record_acquisition |
+| ARC01 | PASS | 3 windows verified against pinned SHA-256 |
+| ARC02 | PASS | docs/ARCHIMEDES_RESULTS.md §2 — 10/15 bands at zero shift; raking-IR margins declared indeterminate |
+| ARC04 | PASS | cram_dsp/metrics.py |
+| ARC05 | PASS | baseline_float.py — knox_pseudocolor, sharpie_subtract, pca_render (quarantined) |
+| ARC06 | PASS | cram_dsp/render.py |
+| ARC07 | PASS | docs/ARCHIMEDES_RESULTS.md §5 — head-to-head; Sharpie WINS the lattice axis, recorded |
+| ARC09 | PASS (negative) | docs/ARCHIMEDES_RESULTS.md §6 — shipped negative, no undertext claim |
+| VES06 | PASS | LICENSE (MIT), NOTICE.md, skills/dsp-analyst/LICENSE |
+
+Run total this session: **75,564,310 exact checks, 0 failures** (analysis/arc_run.py).
+Harness baseline unchanged and still green.
+
+### Corrections folded in during the session
+- Registration metric v1 compared raw cross-band intensities; DC offset
+  dominated and every margin read ~0. Replaced with median-centred integer
+  SSD. 10/15 bands then resolved to zero shift.
+- Survivability percentages were printing milli-ratios as percents
+  (1.000 where 100.000% was meant). Fixed before publication.
+- Fingerprint-block statistic does not discriminate on continuous-tone
+  sensor data (2048/2048 every path). Null recorded rather than dropped.
+
+### BLOCKED (unchanged)
+ARC08 (no XRF assets located on the mirror — Requires: alternative source),
+INF09/INF10 (Rust not installed in this container), VES07/GPZ04/SEL02/SIN01
+(researcher account or decision actions), DRE01 (scan set provision),
+ARC03 (HUMAN-VERIFY gate on annotation fixtures — blocks axis D / NODE-ARC10).
+
+### Next step to resume
+NODE-VES01: acquire the Vesuvius ink-label set and run the same
+first-contact characterization; Progress Prize deadline 2026-08-31.

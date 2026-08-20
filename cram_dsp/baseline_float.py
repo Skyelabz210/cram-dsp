@@ -84,3 +84,44 @@ def gaussian_blur_float(img, sigma_px: float = 1.0):
     for i, w in enumerate(k):
         out += w * pad[i:i + a.shape[0], :]
     return out
+
+
+# ---------------------------------------------------------------------------
+# NODE-ARC05 — the incumbent manuscript renderers, implemented faithfully from
+# their published recipes (Easton / Knox / Christens-Barry). FLOAT BY DESIGN.
+# These are the comparison foils; they are quarantined from the A1 lint and
+# are run at their best plausible settings, never strawmanned.
+# ---------------------------------------------------------------------------
+
+def knox_pseudocolor(red_band, uv_band):
+    """Knox pseudocolor: tungsten/red image -> R; UV-blue -> G and B."""
+    r = _stretch8(red_band)
+    u = _stretch8(uv_band)
+    return np.dstack([r, u, u])
+
+
+def sharpie_subtract(band_a, band_b, gain: float = 1.0):
+    """The 'Sharpie' path: band subtraction. Sharper undertext -- and, as the
+    authors concede, it also amplifies whatever noise is present."""
+    a = np.asarray(band_a).astype(np.float64)
+    b = np.asarray(band_b).astype(np.float64)
+    return np.rint(np.clip(gain * (a - b), -32768, 32767)).astype(np.int64)
+
+
+def pca_render(bands):
+    """PCA on the band cube; first component returned as an 8-bit render."""
+    X = np.stack([np.asarray(b).astype(np.float64).ravel() for b in bands])
+    X = X - X.mean(axis=1, keepdims=True)
+    cov = np.cov(X)
+    w, v = np.linalg.eigh(cov)
+    pc = v[:, np.argmax(w)]
+    proj = pc @ X
+    return _stretch8(proj.reshape(np.asarray(bands[0]).shape))
+
+
+def _stretch8(a):
+    a = np.asarray(a).astype(np.float64)
+    lo, hi = np.percentile(a, 1), np.percentile(a, 99)
+    if hi - lo < 1e-9:
+        hi = lo + 1.0
+    return np.clip((a - lo) * 255.0 / (hi - lo), 0, 255).astype(np.uint8)

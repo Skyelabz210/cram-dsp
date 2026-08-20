@@ -175,3 +175,18 @@ def iou(mask_a, mask_b) -> "tuple[int, int]":
     inter = int((mask_a & mask_b).sum())
     union = int((mask_a | mask_b).sum())
     return inter, union
+
+
+def _acq_receipt(ledger, url: str, byte_range: str, sha256: str, nbytes: int,
+                 out_digest: str):
+    """NODE-INF05 — acquisition receipt: external data enters the chain with
+    its source, exact byte range, and checksum, so every downstream result is
+    auditable back to the publisher's bytes."""
+    return ledger.record("acquire",
+                         {"url": url, "range": byte_range,
+                          "sha256": sha256, "bytes": nbytes},
+                         sha256, out_digest)
+
+
+Ledger.record_acquisition = lambda self, url, byte_range, sha256, nbytes, out_digest: \
+    _acq_receipt(self, url, byte_range, sha256, nbytes, out_digest)

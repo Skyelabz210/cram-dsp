@@ -253,3 +253,34 @@ def any_delta(img, lanes=TRANSPORT_CORE[1:], axis: int = 1):
         t = _lane_diffs(img, p, axis) != 0
         hit = t if hit is None else (hit | t)
     return hit
+
+
+# ---------------------------------------------------------------------------
+# NODE-INF02 — bit-depth-driven lane sets (P6 sizing rule)
+# A lane set L with product P is value-exact for steps |d| <= (P-1)//2.
+# Source bit depth therefore SELECTS the lane set; it is not a free choice.
+#   8-bit  evidence, |d| <= 255    -> (7,11,13)      P=1,001    B=500
+#   14-bit evidence, |d| <= 16383  -> (11,13,17,19)  P=46,189   B=23,094
+#   headroom                       -> (7,11,13,17,19) P=323,323 B=161,661
+# ---------------------------------------------------------------------------
+
+LANES_8BIT = (7, 11, 13)
+LANES_14BIT = (11, 13, 17, 19)
+LANES_EXT = (7, 11, 13, 17, 19)
+
+
+def lane_bound(lanes):
+    """Largest |d| for which this lane set is value-exact (P6)."""
+    P = 1
+    for p in lanes:
+        P *= p
+    return (P - 1) // 2
+
+
+def lanes_for_bitdepth(bits: int):
+    """Smallest shipped lane set that is value-exact for `bits`-bit evidence."""
+    need = (1 << bits) - 1
+    for lanes in (LANES_8BIT, LANES_14BIT, LANES_EXT):
+        if lane_bound(lanes) >= need:
+            return lanes
+    raise ValueError(f"no shipped lane set covers {bits}-bit evidence")

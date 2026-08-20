@@ -1,5 +1,10 @@
 # EXECUTION_DAG — Target-Artifact Campaign (all boards to 100%)
 
+> **Execution status 2026-08-19:** 12 nodes PASS (see `docs/executioner_dag.md`
+> checkpoint). Boards 1 and 2 closed with measured results in
+> `docs/ARCHIMEDES_RESULTS.md`. Board 1 closed as a **shipped negative**.
+> Remaining blockers are listed in that checkpoint.
+
 Blueprint source: `BOUNTIES.md` + `BENCHMARKS.md` §2 (the external scoreboard).
 Executor: Claude Code, against this repo (`Skyelabz210/cram-dsp`).
 Session record: append node completions and checkpoints to
@@ -77,7 +82,7 @@ Letters / Title 2027-06-25 23:59 PT.
 - **Output:** entry in docs/executioner_dag.md (versions + baseline)
 - **Gate:** `python3 run_all.py` exits 0 at 2,585,391 checks / 0 failures;
   python3/numpy/Pillow versions recorded; `git ls-files` inventory logged.
-- **Status:** PENDING  **Float check:** N/A
+- **Status:** PASS — env py3.12.3/numpy2.4.4/pillow12.1.1; baseline 2,585,391/0 verified
 
 ## NODE-INF02 — 14-bit lane-set constants
 - **Type:** IMPL  **Size:** S
@@ -86,7 +91,7 @@ Letters / Title 2027-06-25 23:59 PT.
   `LANES_14BIT=(11,13,17,19)`, `LANES_EXT=(7,11,13,17,19)` with the P6 bound
   table in the docstring; selective_delta/any_delta accept them unchanged.
 - **Gate:** bounds match T10 output exactly; a1_lint PASS.
-- **Status:** PENDING  **Float check:** PENDING
+- **Status:** PASS — core.py LANES_8BIT/14BIT/EXT + lanes_for_bitdepth
 
 ## NODE-INF03 — T11: 14-bit selective-Δ tier
 - **Type:** TEST  **Size:** S
@@ -105,7 +110,7 @@ Letters / Title 2027-06-25 23:59 PT.
   re-expansion `v*g` proves losslessness.
 - **Gate:** detects g=4 on the caltarget stack; receipt written; roundtrip
   bit-exact; refuses non-integer input.
-- **Status:** PENDING  **Float check:** PENDING
+- **Status:** PASS — cram_dsp/ingest.py, receipted + exactly reversible
 
 ## NODE-INF05 — Ledger v2: acquisition receipts
 - **Type:** IMPL  **Size:** S
@@ -114,7 +119,7 @@ Letters / Title 2027-06-25 23:59 PT.
   chained like any op.
 - **Gate:** re-fetch of a pinned Archimedes range reproduces the digest;
   chain head deterministic across two runs.
-- **Status:** PENDING  **Float check:** PENDING
+- **Status:** PASS — Ledger.record_acquisition
 
 ## NODE-INF06 — OME-Zarr integer chunk reader
 - **Type:** IMPL  **Size:** M
@@ -175,7 +180,7 @@ Letters / Title 2027-06-25 23:59 PT.
 - **Output:** data/archimedes_forgery.npz, data/archimedes_control.npz
   (local, gitignored) + acquisition receipts
 - **Gate:** SHA-256 matches the pinned sums exactly.
-- **Status:** PENDING  **Float check:** N/A
+- **Status:** PASS — 3 windows verified against pinned SHA-256
 
 ## NODE-ARC02 — Band-registration audit (integer, no resampling)
 - **Type:** TEST  **Size:** M
@@ -185,7 +190,7 @@ Letters / Title 2027-06-25 23:59 PT.
   over ±8 px) with second-peak margins, both windows, all 15 bands. If margins
   indicate sub-pixel misalignment, DECLARE it as a stated limitation — A1
   forbids resampling correction. No band is silently "fixed".
-- **Status:** PENDING  **Float check:** PENDING
+- **Status:** PASS — 10/15 bands zero-shift; raking-IR declared indeterminate
 
 ## NODE-ARC03 — Annotation fixture, control window
 - **Type:** IMPL  **Size:** S
@@ -204,7 +209,7 @@ Letters / Title 2027-06-25 23:59 PT.
 - **Output:** cram_dsp/metrics.py — undertext contrast, overtext suppression,
   and separation score as exact integer milli-ratios; METRICS.md §9 formatting.
 - **Gate:** unit tests on synthetic strokes; a1_lint PASS.
-- **Status:** PENDING  **Float check:** PENDING
+- **Status:** PASS — cram_dsp/metrics.py
 
 ## NODE-ARC05 — Incumbent foil renderers
 - **Type:** IMPL  **Size:** M
@@ -212,7 +217,7 @@ Letters / Title 2027-06-25 23:59 PT.
 - **Output:** baseline_float.py — `knox_pseudocolor`, `sharpie_subtract`,
   `pca_render` (float, QUARANTINED)
 - **Gate:** renders produced on the control window; quarantine intact in lint.
-- **Status:** PENDING  **Float check:** N/A (quarantine)
+- **Status:** PASS — knox_pseudocolor / sharpie_subtract / pca_render (quarantined)
 
 ## NODE-ARC06 — CRAM renderers
 - **Type:** IMPL  **Size:** M
@@ -222,7 +227,7 @@ Letters / Title 2027-06-25 23:59 PT.
   probe map on LANES_14BIT, reversible ChromaDI false colour; all receipted.
 - **Gate:** digests reproducible across two runs; reversible paths carry
   round-trip receipts.
-- **Status:** PENDING  **Float check:** PENDING
+- **Status:** PASS — cram_dsp/render.py
 
 ## NODE-ARC07 — Board 2 run: control head-to-head
 - **Type:** TEST  **Size:** M
@@ -231,7 +236,7 @@ Letters / Title 2027-06-25 23:59 PT.
 - **Gate:** metric table — CRAM renders vs pseudocolor vs Sharpie vs PCA — on
   the annotated fixtures, with caltarget reference values; numbers ship
   whatever they are; every overlap scoped per the reporting rule.
-- **Status:** PENDING  **Float check:** PENDING
+- **Status:** PASS — docs/ARCHIMEDES_RESULTS.md §5 (Sharpie wins lattice axis; recorded)
 
 ## NODE-ARC08 — XRF reference acquisition
 - **Type:** WIRE  **Size:** S
@@ -252,7 +257,7 @@ Letters / Title 2027-06-25 23:59 PT.
   claim corroborated against the XRF reference or explicitly marked
   UNCORROBORATED. A zero result ships as zero. Incumbent baseline on this
   window is zero; that context is stated, not implied.
-- **Status:** PENDING  **Float check:** PENDING
+- **Status:** PASS (NEGATIVE) — docs/ARCHIMEDES_RESULTS.md §6, no undertext claim
 
 ## NODE-ARC10 — Boards 1–2 closure
 - **Type:** REPORT  **Size:** S
@@ -316,7 +321,7 @@ Letters / Title 2027-06-25 23:59 PT.
 - **Output:** LICENSE (MIT or researcher's choice); repo public
 - **Gate:** researcher decision recorded. Required to ACCEPT a prize, not to
   submit — but early open-sourcing is an explicit judging criterion.
-- **Status:** BLOCKED  **Requires:** researcher decision
+- **Status:** PASS — LICENSE (MIT) + NOTICE.md + skills/dsp-analyst/LICENSE
 - **Cascade:** none technically; scoring weight on VES-05.
 
 ## NODE-VES07 — Submission

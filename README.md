@@ -82,6 +82,9 @@ framework is now running against — tracked live in `BENCHMARKS.md`.
 | Evidence survives processing | 114/114 edges and 28/28 fingerprint blocks after round trip; float path loses all |
 | Reproducibility | identical chain hash across independent runs |
 | Real-artifact finding, first contact | the Archimedes release is 14-bit data in a 16-bit container — 70,350,000 values, 0 exceptions |
+| Real-artifact survivability | float blur keeps 25.136% of the lattice and 1,182/2,513 unit steps; exact path keeps 100% and 2,513/2,513 |
+| Real-artifact reproducibility | identical chain hash across independent runs on Archimedes data |
+| Board 1 (forged folios) | **shipped negative** — no undertext claim; incumbent needed a synchrotron and this run does not beat one |
 
 Every one is scoped in `METRICS.md` and proved in `PROOFS.md`. Where a result
 overlaps existing methods, the axis, conditions, and location of the
@@ -145,7 +148,9 @@ boards); agent rules are in **`CLAUDE.md`**; the append-only session record is
 - **Inverses.** Always extended Euclid, never Fermat's little theorem — Fermat
   is silently wrong on the composite moduli this framework uses on purpose.
 
----
+## Licence
 
-Data under `data/` derives from the Archimedes Palimpsest release (CC BY 3.0).
-Framework code © Anthony Diaz; private repository.
+Framework code, tooling, and the `dsp-analyst` skill: **MIT** (`LICENSE`).
+Documentation and research records: **CC BY 4.0**. Data under `data/` derives
+from the Archimedes Palimpsest release (**CC BY 3.0**), redistributed with
+values unmodified. Full attribution and rationale in `NOTICE.md`.

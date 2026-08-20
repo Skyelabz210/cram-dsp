@@ -46,6 +46,12 @@ Reproduce: `python3 run_all.py` (requires numpy, Pillow). Deterministic and seed
 | `docs/BASELINE_DOSSIER.md` | Archimedes acquisition record, prior-attempt failure record, incumbent stack table, comparator table |
 | `docs/executioner_dag.md` | Build DAG: nodes, gates, statuses, checkpoint — the session record |
 | `docs/CRAM_OPPORTUNITY_REPORT.md` | CRAM opportunity index over the classical forensic DIP surface (6 entries, FORCED/CANDIDATE, routing keys) |
+| `docs/ARCHIMEDES_RESULTS.md` | Measured results, Boards 1 and 2: 14-bit lattice confirmed, registration audit, lane sizing on real deltas, survivability head-to-head (incl. the axis the incumbent wins), forgery-window shipped negative |
+| `analysis/arc_run.py` | The Archimedes run: 75,564,310 exact checks, 0 failures |
+| `LICENSE` / `NOTICE.md` | MIT for code and skill; CC BY 4.0 for docs; CC BY 3.0 attribution for Archimedes data |
+| `cram_dsp/ingest.py` | Lattice detection + sealed, receipted, exactly reversible entry seam |
+| `cram_dsp/metrics.py` | Integer separation and survivability metrics (exact milli-units) |
+| `cram_dsp/render.py` | Exact renderers: band difference, KELD composite, lane class maps, unit-step probe |
 | `docs/survey_03r.png` | Whole-leaf survey of folio 081r-088v showing the forged Evangelist portrait and the palimpsest leaf |
 
 ## Data — `data/`
