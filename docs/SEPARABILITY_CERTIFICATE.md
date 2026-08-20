@@ -116,3 +116,21 @@ cannot work is worth real money and real beam-time.
    applies directly to the Vesuvius volumes and the Galen corpus.
 3. **Point the framework where contrast exists** — fluorescence and XRF
    channels, where the ink/ink Gram determinant is actually far from zero.
+
+## Addendum — projection tested (history-search directed)
+
+Directive: leverage the program's spectral capabilities. History search
+recovered the spectral-hidden-art channel-arithmetic family (T-00/T-03/T-05/
+T-09, eclipse session 2026-06-25) and the canonical-spectral law (executioner
+session 2026-04-29). Applied as an exact quench axis and an ink-difference
+matched filter d·y — projection, which the ill-posedness certificate does not
+forbid.
+
+Decisive population check: along d, parchment sits at −706,190 and the two
+inks at −462,194 / −468,557. Over/under separation **6,363** against an
+in-population IQR of **122,068** — 5.2%. The crisp strokes on that axis are
+ink-vs-parchment re-detected through the correlated component; the 6‰ ink
+signature is real in the medians and buried ~20:1 per pixel. Projection does
+not crack it either — per pixel. What remains open is stroke-coherent
+pooling: ~400 px per stroke buys ~√400 = 20× noise reduction, exactly the
+gap. Spectral × structural is the staged next move.
