@@ -248,3 +248,23 @@ ink count — floor-divided centroids break mirror symmetry). Dihedral
 invariance now exact on asymmetric fixtures (mirror/rot90/rot180 = 0).
 dresden_run 636/0; discover 9/0 (21 ring-code clusters at threshold 205);
 pigment 6/6.
+
+## NODE (white-trail machinery + form vocabulary final) — 2026-08-27
+
+Researcher clarified the idea: continuous WHITE TRAILS (gradient-to-white
+filaments), not brightness-ranked blobs; and the machine should NAME the
+best pages for each experiment. Built:
+- dresden.local_bright_field (luma minus block SUBSTRATE median — plain
+  medians read ink-dense blocks wrong; caught and fixed),
+  filament_components (elongated locally-bright components with white
+  cores), trail_polyline, trail_glyph_sequence.
+- analysis/dresden_trails.py 10/10: trail overlays for all 78 pages
+  (derived/trails/); machine ranking of best trail pages = p70, p51, p37,
+  p52, **p73** (the page the researcher pointed at — independent
+  convergence), p36; per-page glyph sequences along the glyph-richest
+  ascending trail with numbered overlays + sequence strips (demo/);
+  dressing-experiment page ranking. Blank pages rank trail-rich —
+  shipped as measurement (trails are substrate phenomena).
+- Form vocabulary final (dresden_vocab 7/7): rule-chosen threshold 1410
+  (largest with max family <= 500); 15 families, dot family 496, full
+  contact sheets derived/clusters/.

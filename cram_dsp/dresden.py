@@ -698,6 +698,120 @@ def dihedral_min_distance(a, b, n_rings: int = 6) -> int:
                    for v in dihedral_variants(b, n_rings)))
 
 
+def local_bright_field(luma, ink=None, block: int = 16):
+    """Exact local brightness excess: luma minus the block-median SUBSTRATE
+    (median of the block's non-ink pixels — in text-dense blocks a plain
+    median is the ink level and would make all substrate read 'bright';
+    a block with no substrate pixels borrows the page substrate median).
+    Positive values = brighter than the local substrate — the field where
+    white TRAILS live, independent of page lighting and text density."""
+    y = np.asarray(luma, dtype=np.int64)
+    if ink is None:
+        ink = ink_mask(y, otsu_threshold(y))
+    sub = ~np.asarray(ink)
+    page_sub = exact_median(y[sub]) if bool(sub.any()) else exact_median(y)
+    H, W = y.shape
+    gh, gw = max(H // block, 1), max(W // block, 1)
+    med = np.zeros((gh, gw), dtype=np.int64)
+    for bi in range(gh):
+        ys = bi * block
+        ye = H if bi == gh - 1 else ys + block
+        for bj in range(gw):
+            xs = bj * block
+            xe = W if bj == gw - 1 else xs + block
+            vals = y[ys:ye, xs:xe][sub[ys:ye, xs:xe]]
+            med[bi, bj] = exact_median(vals) if vals.size else page_sub
+    bg = np.repeat(np.repeat(med, block, axis=0), block, axis=1)[:H, :W]
+    if bg.shape[0] < H:
+        bg = np.vstack([bg, np.repeat(bg[-1:, :], H - bg.shape[0], axis=0)])
+    if bg.shape[1] < W:
+        bg = np.hstack([bg, np.repeat(bg[:, -1:], W - bg.shape[1], axis=1)])
+    return y - bg
+
+
+def filament_components(luma, ink=None, base_diff: int = 14,
+                        core_diff: int = 28, min_len: int = 60,
+                        max_thickness: int = 24, merge_steps: int = 2):
+    """White TRAILS — continuous locally-bright filaments, not blobs and
+    not global-quantile slivers.
+
+    The trail field is the local brightness excess (`local_bright_field`):
+    a pixel is trail-band if it sits >= base_diff luma steps above its own
+    block's median substrate (ink pixels excluded when an ink mask is
+    given). Band pixels are bridged across `merge_steps` px gaps
+    (shift-OR dilation) and labeled; a component is a TRAIL if it is long
+    (>= min_len), thin relative to its length (mean thickness <=
+    max_thickness AND length >= 3x thickness). It ASCENDS ('gradient to
+    white') if any of its pixels reach core_diff above local substrate.
+
+    Returns (labels, trails, band_mask) with each trail as
+    (box, component_id, core_px, length, thickness)."""
+    y = np.asarray(luma)
+    diff = local_bright_field(y, ink=ink)
+    band = diff >= base_diff
+    if ink is not None:
+        band &= ~np.asarray(ink)
+    merged = dilate(band, merge_steps)
+    labels, n = label_components(merged)
+    trails = []
+    for i, b in enumerate(component_boxes(labels, n), start=1):
+        y0, y1, x0, x1, a = b
+        length = max(y1 - y0, x1 - x0)
+        if length < min_len:
+            continue
+        thickness = a // max(length, 1)
+        if thickness > max_thickness or length < 3 * thickness:
+            continue
+        comp = labels[y0:y1, x0:x1] == i
+        core = int((diff[y0:y1, x0:x1][comp] >= core_diff).sum())
+        trails.append((b, i, core, length, thickness))
+    return labels, trails, band
+
+
+def trail_polyline(labels, comp_id: int, box, step: int = 6):
+    """Ordered centreline of a filament: bin the component's pixels along
+    its long axis in `step`-pixel slabs and take the exact integer centroid
+    of each slab. Returns the polyline as (y, x) points in page coordinates,
+    ordered along the axis — the trail's arc."""
+    y0, y1, x0, x1, _ = box
+    comp = np.asarray(labels)[y0:y1, x0:x1] == comp_id
+    ys, xs = np.nonzero(comp)
+    pts = []
+    if (y1 - y0) >= (x1 - x0):
+        for s in range(0, y1 - y0, step):
+            sel = (ys >= s) & (ys < s + step)
+            m = int(sel.sum())
+            if m == 0:
+                continue
+            pts.append((y0 + int(ys[sel].sum()) // m,
+                        x0 + int(xs[sel].sum()) // m))
+    else:
+        for s in range(0, x1 - x0, step):
+            sel = (xs >= s) & (xs < s + step)
+            m = int(sel.sum())
+            if m == 0:
+                continue
+            pts.append((y0 + int(ys[sel].sum()) // m,
+                        x0 + int(xs[sel].sum()) // m))
+    return pts
+
+
+def trail_glyph_sequence(polyline, boxes, reach: int = 40):
+    """The glyphs a trail passes through, in trail order: for each glyph
+    box, the earliest polyline point within L1 `reach` of the box centre;
+    glyphs are returned ordered by that arc index (the illustrated 'key
+    glyphs sequenced by the path'). Exact integers only."""
+    seq = []
+    for bi, b in enumerate(boxes):
+        cy, cx = box_center(b)
+        for ai, (py, px) in enumerate(polyline):
+            if abs(py - cy) + abs(px - cx) <= reach:
+                seq.append((ai, bi))
+                break
+    seq.sort()
+    return [bi for _, bi in seq]
+
+
 def white_path(nodes, limit: int = 12, min_sep: int = 0):
     """Brightest-first sequence over white nodes (the illustrated '1 =
     brightest' path). min_sep (L1 pixels) spatially de-duplicates: a node
