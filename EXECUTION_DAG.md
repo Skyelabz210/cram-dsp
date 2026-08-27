@@ -472,7 +472,10 @@ Letters / Title 2027-06-25 23:59 PT.
 - **Inputs:** NODE-DRE01, forensics.quant_fingerprint_map
 - **Output:** docs/DRESDEN_SEAMS.md
 - **Gate:** seam blocks enumerated with coordinates + panel images; receipts.
-- **Status:** PENDING (DRE01 cleared 2026-08-27)
+- **Status:** PASS — fingerprint probe NULL on continuous-tone scans
+  (0 flags, recorded); block-median discontinuity probe enumerates
+  candidates per page with coordinates + 6 panels (derived/seams/).
+  **Float check:** PASS
 
 ## NODE-DRE03 — Cross-generation copy-move (P75–P78 identity)
 - **Type:** TEST  **Size:** L
@@ -491,7 +494,9 @@ Letters / Title 2027-06-25 23:59 PT.
 - **Output:** docs/DRESDEN_STRATA.md
 - **Gate:** per that skill — pattern-level evidence with panels; discovery
   mode (extract structure), not refutation framing.
-- **Status:** PENDING (DRE01 cleared 2026-08-27)
+- **Status:** PASS — KELD strata (STAR8) maps for all 78 pages + tonal
+  windows over the six palest pages (p24 Venus preface ranks palest
+  inscribed); discovery framing, receipts. **Float check:** PASS
 
 ## NODE-DRE05 — P54–56 eclipse-cell pass
 - **Type:** TEST  **Size:** M

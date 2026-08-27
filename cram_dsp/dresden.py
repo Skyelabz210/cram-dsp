@@ -585,6 +585,68 @@ def white_nodes(luma, top_milli: int = 965, min_area: int = 12,
     return thr, nodes
 
 
+def octant_index(dy, dx):
+    """Sequential angular octant (0..7 around the circle, 45° bins) from
+    integer offsets — sign tests and dominance comparisons only. Sequential
+    ordering makes rotations exact sector shifts: rot90 ⇒ +2 (mod 8);
+    mirror (x→−x) ⇒ o → (3−o) mod 8."""
+    dy = np.asarray(dy)
+    dx = np.asarray(dx)
+    ax, ay = np.abs(dx), np.abs(dy)
+    lower = dy >= 0
+    o = np.where(lower,
+                 np.where(dx >= 0, np.where(ax >= ay, 0, 1),
+                          np.where(ay > ax, 2, 3)),
+                 np.where(dx < 0, np.where(ax >= ay, 4, 5),
+                          np.where(ay > ax, 6, 7)))
+    return o.astype(np.int64)
+
+
+def sector_signature(cell_mask, n_rings: int = 6, n_sectors: int = 8):
+    """Ring × angular-sector ink fractions (milli) about the ink centroid —
+    the finer glyph code (the ring code is angularly blind and chains
+    generic marks; this one separates forms). n_sectors must be 8 (octant
+    geometry). Returns an (n_rings*8,) int64 vector; empty bins -1."""
+    cm = np.asarray(cell_mask)
+    h, w = cm.shape
+    cy, cx = ink_centroid(cm)
+    yy = np.arange(h, dtype=np.int64)[:, None] - cy
+    xx = np.arange(w, dtype=np.int64)[None, :] - cx
+    r = _isqrt_grid(yy * yy + xx * xx)
+    rmax = int(r.max())
+    ring = (np.minimum(r * n_rings // (rmax + 1), n_rings - 1)
+            if rmax else np.zeros((h, w), dtype=np.int64))
+    sect = octant_index(np.broadcast_to(yy, (h, w)),
+                        np.broadcast_to(xx, (h, w)))
+    sig = np.zeros(n_rings * 8, dtype=np.int64)
+    flat = ring * 8 + sect
+    npx = np.bincount(flat.ravel(), minlength=n_rings * 8)
+    ink = np.bincount(flat.ravel()[cm.ravel()], minlength=n_rings * 8)
+    for k in range(n_rings * 8):
+        sig[k] = -1 if npx[k] == 0 else (1000 * int(ink[k])) // int(npx[k])
+    return sig
+
+
+def dihedral_variants(sig, n_rings: int = 6):
+    """The 8 dihedral re-indexings of a sector signature (4 rotations × 2
+    reflections), each an exact sector permutation. Returns (8, len) array."""
+    s = np.asarray(sig).reshape(n_rings, 8)
+    out = []
+    for refl in (False, True):
+        base = s[:, [(3 - k) % 8 for k in range(8)]] if refl else s
+        for rot in range(4):
+            out.append(np.roll(base, 2 * rot, axis=1).reshape(-1))
+    return np.stack(out)
+
+
+def dihedral_min_distance(a, b, n_rings: int = 6) -> int:
+    """Exact min-L1 between sector signatures over the 8 dihedral poses of
+    b — form matching invariant to 90° rotation and mirroring."""
+    va = np.asarray(a, dtype=np.int64)
+    return int(min(int(np.abs(va - v).sum())
+                   for v in dihedral_variants(b, n_rings)))
+
+
 def white_path(nodes, limit: int = 12, min_sep: int = 0):
     """Brightest-first sequence over white nodes (the illustrated '1 =
     brightest' path). min_sep (L1 pixels) spatially de-duplicates: a node

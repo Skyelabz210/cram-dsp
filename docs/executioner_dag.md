@@ -211,3 +211,19 @@ catalog docs/DRESDEN_WHITE.md; receipts data/dresden/white_receipts.json.
 DRESDEN_MACHINE.md C3 reframed: white-node sequences are the exploration
 surface; glyph-median path test demoted to appendix; blank-substrate control
 retained as constraint on design claims.
+
+## NODE-DRE02 + NODE-DRE04 — 2026-08-27
+
+DRE02 PASS: analysis/dresden_seams.py (4/4 checks). P1 requantization
+fingerprint: NULL on all 78 continuous-tone scans (0 flagged blocks) —
+same null as the Archimedes sensor data, recorded. P2 block-median
+discontinuity: per-page candidates enumerated (990-milli threshold, floor
+24), panels for the six highest-candidate pages in derived/seams/.
+docs/DRESDEN_SEAMS.md.
+
+DRE04 PASS: analysis/dresden_strata.py (3/3 checks). KELD strata (STAR8,
+band = floor(L/36) from the residue pair) rendered for all 78 pages
+(derived/strata/); pale-field ranking puts scan24/p24 (Venus preface) as
+the palest INSCRIBED page, above two actual blanks; tonal windows over the
+six palest pages rendered — coherent bright-plaster zones are the
+latent-content candidates for multispectral follow-up. docs/DRESDEN_STRATA.md.

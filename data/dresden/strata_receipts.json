@@ -1,0 +1,1721 @@
+{
+ "chain": "27f219ab5b1c922dafa402d045c19ff1f5cdbaf00cb11a5f8ff66b63e757283e",
+ "entries": [
+  {
+   "chain": "c0abe91e1978a8bf2393f1cdcb8b2b7c0e1ae5e5a695ecf42747982a295c4dee",
+   "in": "cb4034ca3a8b093d9f982b7d5aa916e97832a44df288cefa518d2a178b64e504",
+   "op": "keld_strata",
+   "out": "f7cd8940bdc1bce611ae48c06ea60131f41c99477b8711b89395a29b704b7de8",
+   "params": {
+    "occupancy": [
+     116714,
+     19173,
+     45120,
+     71090,
+     239838,
+     390523,
+     40921,
+     21
+    ],
+    "page": "1",
+    "pale_milli": 123,
+    "scan": 1,
+    "track": "STAR8 M=36"
+   }
+  },
+  {
+   "chain": "c1463085548a29222157071af68f293159e0cfb2a54858815b3048969e501d8e",
+   "in": "6b6931ce21a24c68924f788b19b2885c12e8210ba6f4c467c0ea57f0e552b1e4",
+   "op": "keld_strata",
+   "out": "459941cb33bdbb41b10574b7d9ea50493a9ed947f125d55c093c00b9594be8d1",
+   "params": {
+    "occupancy": [
+     18601,
+     20576,
+     54252,
+     103861,
+     238079,
+     416145,
+     71754,
+     132
+    ],
+    "page": "2",
+    "pale_milli": 133,
+    "scan": 2,
+    "track": "STAR8 M=36"
+   }
+  },
+  {
+   "chain": "f0a814ef561cb1054f5de811f16e6645efd7212da9d3aa8214394b46b688ff57",
+   "in": "d15d61b17efb78fa6ddd3741480d5a8fd4590fee6384126a2895c4659c630cd1",
+   "op": "keld_strata",
+   "out": "a363780c2a55f535789b6fc9ab0904ac710a09cca1ebc7200a707a5ca86cf9d1",
+   "params": {
+    "occupancy": [
+     16811,
+     17525,
+     37001,
+     65688,
+     264638,
+     451533,
+     70098,
+     106
+    ],
+    "page": "3",
+    "pale_milli": 147,
+    "scan": 3,
+    "track": "STAR8 M=36"
+   }
+  },
+  {
+   "chain": "1ec4783adcd2bec2f75a38a54b941f199f2220ff24b5762a9b266d99ecb0c0a2",
+   "in": "82dddc7f2e172099b4714deff4adcf4df252e7409e3c344a815070f5d1de78e9",
+   "op": "keld_strata",
+   "out": "5f04a6b4ee7aaeaa0050a04c17c9ab7d3dcbfaac2a7e1deb4959ea2145498436",
+   "params": {
+    "occupancy": [
+     13947,
+     26623,
+     75213,
+     112059,
+     200605,
+     250030,
+     242309,
+     2614
+    ],
+    "page": "4",
+    "pale_milli": 175,
+    "scan": 4,
+    "track": "STAR8 M=36"
+   }
+  },
+  {
+   "chain": "f6ddc4404de4352773bbbf00f9317cc973b9c5b22fc2c09df3363624df1e51f3",
+   "in": "04d763fbc72d454812a01741951b0246d3014f6f5b1456e2cadbe89f0cbb7412",
+   "op": "keld_strata",
+   "out": "272ff6255dd9f3538df262759e2fbd36800e5751cd9a38cdd0f9737e814e35c2",
+   "params": {
+    "occupancy": [
+     27924,
+     35199,
+     88132,
+     115822,
+     198083,
+     370578,
+     87606,
+     56
+    ],
+    "page": "5",
+    "pale_milli": 138,
+    "scan": 5,
+    "track": "STAR8 M=36"
+   }
+  },
+  {
+   "chain": "25ba176120e0bbe8bb9ec33259e2d1e7c1c642a0515b88d178fda3b5e7d5c7d9",
+   "in": "abec96cc98958d1c31c57cf8af8b2cff6ad2fccba13cf72009b07481b00d6cc1",
+   "op": "keld_strata",
+   "out": "75403d55bbdb485a5df4baaef4a69a51003d4fa95e45058e722a25cb4c0baf26",
+   "params": {
+    "occupancy": [
+     28769,
+     34708,
+     109176,
+     132342,
+     238179,
+     327179,
+     53043,
+     4
+    ],
+    "page": "6",
+    "pale_milli": 113,
+    "scan": 6,
+    "track": "STAR8 M=36"
+   }
+  },
+  {
+   "chain": "726fa0e7b4f17f6af3669d789b4820ad1b08a241153b70f09f7d569163a5a290",
+   "in": "92f0908419435527f67990701d4dcc9d5aa358328ba5f2059e6cf4d688c12e9e",
+   "op": "keld_strata",
+   "out": "83cf3c8de450d778a969e7364ea718dd0f72e3346d4188a35c692315c3a21ba8",
+   "params": {
+    "occupancy": [
+     23550,
+     37435,
+     101008,
+     109656,
+     212333,
+     371640,
+     67741,
+     37
+    ],
+    "page": "7",
+    "pale_milli": 137,
+    "scan": 7,
+    "track": "STAR8 M=36"
+   }
+  },
+  {
+   "chain": "e9f36a4221246b1b2e7bcaa4914d5b5eb48837c71af787e858015fc28dbe7b3d",
+   "in": "e26574f3c683347e79939f3f91dbcc3ee4eb0db6cbc4bb02d2363b22d7864811",
+   "op": "keld_strata",
+   "out": "3b27a70d0806704c1088a300460e6d9e88c90dbdadc25f1163ef42d18ed74176",
+   "params": {
+    "occupancy": [
+     25166,
+     42103,
+     88401,
+     108516,
+     214842,
+     366569,
+     77118,
+     685
+    ],
+    "page": "8",
+    "pale_milli": 139,
+    "scan": 8,
+    "track": "STAR8 M=36"
+   }
+  },
+  {
+   "chain": "ebaf81e5ef06ba2f2c92ea6d58b4d0c56f91c1ac83538f75704bd0d36e6fa35a",
+   "in": "4473131f3a2c08eb17a1af76b081086f8b06c7d7ae3bb9f568de1ffe58ff72bc",
+   "op": "keld_strata",
+   "out": "66a979ae53b4b8cf18443f8345d5869d4564d5d1e0b5f36fd30f43248f8ecadc",
+   "params": {
+    "occupancy": [
+     17521,
+     45977,
+     90750,
+     131477,
+     253864,
+     359674,
+     24137,
+     0
+    ],
+    "page": "9",
+    "pale_milli": 147,
+    "scan": 9,
+    "track": "STAR8 M=36"
+   }
+  },
+  {
+   "chain": "6bdda071b919cd8da816cb02250d7bf921bb52bfb75536e7d8ff4c724fa4409f",
+   "in": "694c58acc050c6c6f82cd9c7fa0d4f95896ff630109b94997da218ae9f389a51",
+   "op": "keld_strata",
+   "out": "c6c1c9c0ebba5b5a36c790d4f63796b453017b89f3140429c4634e201b58eaf0",
+   "params": {
+    "occupancy": [
+     10943,
+     34367,
+     86232,
+     112722,
+     227376,
+     406415,
+     45345,
+     0
+    ],
+    "page": "10",
+    "pale_milli": 127,
+    "scan": 10,
+    "track": "STAR8 M=36"
+   }
+  },
+  {
+   "chain": "3971a0a43b02edad4eab3e9b10ca867a37ec3c9995f2cc5429f20878c814bbae",
+   "in": "dbdedb1bd25199af031c19763a46e489d511aaeac0413c53229bc83997345542",
+   "op": "keld_strata",
+   "out": "2ba10c9f27d1d7d7a6eba66409cb15b488cd02bf0aeb27215193d051e2375f42",
+   "params": {
+    "occupancy": [
+     14406,
+     41032,
+     95269,
+     146228,
+     271436,
+     342004,
+     13025,
+     0
+    ],
+    "page": "11",
+    "pale_milli": 119,
+    "scan": 11,
+    "track": "STAR8 M=36"
+   }
+  },
+  {
+   "chain": "999f89e5db6378c76674b0265c2684a9e36a30ec17b2ed68725a3d25dc6b6cf4",
+   "in": "8d77d678e5584b9b9b5fe23805aa70feccf0f74d00df1172d792768aa3a11670",
+   "op": "keld_strata",
+   "out": "74107f1f94389774eff379acb1db98bab6dd65e296f5545ffe6d08516c06c08d",
+   "params": {
+    "occupancy": [
+     9389,
+     38938,
+     96439,
+     118008,
+     218445,
+     389450,
+     52729,
+     2
+    ],
+    "page": "12",
+    "pale_milli": 133,
+    "scan": 12,
+    "track": "STAR8 M=36"
+   }
+  },
+  {
+   "chain": "9baa6a0dbb6530ea48c6d6a4cea96fd49f11e085035519408070d793b705149c",
+   "in": "d746afb7d4c8469aa8e2523b62243104f827f7de71ead289d6904a80e8bb1588",
+   "op": "keld_strata",
+   "out": "3add46ab99cf8553a1771047271e908689bb9511fb9758ee459827f15191c01e",
+   "params": {
+    "occupancy": [
+     15449,
+     48481,
+     103487,
+     135741,
+     255252,
+     334212,
+     30778,
+     0
+    ],
+    "page": "13",
+    "pale_milli": 143,
+    "scan": 13,
+    "track": "STAR8 M=36"
+   }
+  },
+  {
+   "chain": "86397c1df065e7d16b0ee325fbe7f4ac3e42dc854c21936d739b93a0e132d187",
+   "in": "5695f6072467a5b87851d8af7ba9be8df864fc2c09de23fb61b3b60d5480ae83",
+   "op": "keld_strata",
+   "out": "bed6c709c15b8e5a9c720f540880303f8b617b4ca10ba81d1255d04d79c05088",
+   "params": {
+    "occupancy": [
+     17035,
+     39746,
+     110115,
+     133512,
+     229637,
+     339864,
+     53490,
+     1
+    ],
+    "page": "14",
+    "pale_milli": 149,
+    "scan": 14,
+    "track": "STAR8 M=36"
+   }
+  },
+  {
+   "chain": "e331c626a44bfe78a43a6f2bda436606300891c522ff519c97fb7a9cd6342a00",
+   "in": "368bdf10953daa820be5140bd414a73e2884012f8ffa44bad4c23e0958e803dc",
+   "op": "keld_strata",
+   "out": "648f8d8d03d8c94e92c98e3b103da981e2e547cde6147baeb40951a0ffa188bb",
+   "params": {
+    "occupancy": [
+     21679,
+     32035,
+     102945,
+     128080,
+     264880,
+     353599,
+     20182,
+     0
+    ],
+    "page": "15",
+    "pale_milli": 132,
+    "scan": 15,
+    "track": "STAR8 M=36"
+   }
+  },
+  {
+   "chain": "08eac75d08f1473a249db600d6ac5887592490b2c5c8b1cbec8199760960c30d",
+   "in": "709bf1b3f6e1d263e6c3d6484b741d97930f39df307626c89e49695693788eaf",
+   "op": "keld_strata",
+   "out": "1486a858aabad2daa8ac0aae3f4750449523e6def210e6e6bd17781b01363853",
+   "params": {
+    "occupancy": [
+     22818,
+     31408,
+     92799,
+     115833,
+     224052,
+     365603,
+     70869,
+     18
+    ],
+    "page": "16",
+    "pale_milli": 150,
+    "scan": 16,
+    "track": "STAR8 M=36"
+   }
+  },
+  {
+   "chain": "716f0aad33f93e3442979cd483dca23d44ce40b57fa077d9502abf732a78c0e2",
+   "in": "031c1fe0cfa51954d043abf70a7812d711578e478ad61c8d47a49b13d028194e",
+   "op": "keld_strata",
+   "out": "81d6905931c74a8b77c771429c409318cff65f8950175fe676c85c63ee3625bb",
+   "params": {
+    "occupancy": [
+     35537,
+     34481,
+     87629,
+     108472,
+     227438,
+     395543,
+     34289,
+     11
+    ],
+    "page": "17",
+    "pale_milli": 117,
+    "scan": 17,
+    "track": "STAR8 M=36"
+   }
+  },
+  {
+   "chain": "56fdeb4cb69a05b9fb6b27c51aee7eec49f1f3afdb4cb265cc3e99905e242d10",
+   "in": "f4115fb1b62e611ba1ddd0f47d95a1402a15575669ecbc4e3d33f61a4022e62b",
+   "op": "keld_strata",
+   "out": "d5a34d9fd4d72e35a47d8e703555262ee0943e15a49228e3553a664646009bc9",
+   "params": {
+    "occupancy": [
+     32530,
+     46034,
+     65400,
+     94544,
+     176995,
+     341562,
+     166259,
+     76
+    ],
+    "page": "18",
+    "pale_milli": 155,
+    "scan": 18,
+    "track": "STAR8 M=36"
+   }
+  },
+  {
+   "chain": "65868d3b15d0a3d73ea4c713759e0ae3b5ba9ca2348bd7b87fa2aa6dbfeb47a5",
+   "in": "d55c1224c1b395578c21fe3c79a816af85ab735693459a12aceab50dd2264532",
+   "op": "keld_strata",
+   "out": "f8852c044796702b3a3205b0a12b8a7b52a2330c8795c0a41325832184050de5",
+   "params": {
+    "occupancy": [
+     1795,
+     20794,
+     81674,
+     120031,
+     189841,
+     353109,
+     155966,
+     190
+    ],
+    "page": "19",
+    "pale_milli": 141,
+    "scan": 19,
+    "track": "STAR8 M=36"
+   }
+  },
+  {
+   "chain": "ce64adca738ec34b83ca3a4efc5025673c93cf8742e1214a9074aa18a5c6f236",
+   "in": "650edddc5d6a0e266f9ffa5fad9043027e9ea5359488da4ecc5c50a17fe13b11",
+   "op": "keld_strata",
+   "out": "dd2a0020124cdc0bcea436fd0ae33a251b2509c364c243f2424bd24722bae9e8",
+   "params": {
+    "occupancy": [
+     2548,
+     21649,
+     81146,
+     116260,
+     186551,
+     349986,
+     165133,
+     127
+    ],
+    "page": "20",
+    "pale_milli": 132,
+    "scan": 20,
+    "track": "STAR8 M=36"
+   }
+  },
+  {
+   "chain": "f29e82056f120bf84645eed665c11be42366e57034ecc91c0ad5990acd0b3e6e",
+   "in": "87810718b4e3a407dbe8a8e8a77ef7ac5e72e6564f1a2c536b3f8a234c0241d0",
+   "op": "keld_strata",
+   "out": "aec87e0420055cbe22279a620d000452c7e6f1a037fc7cb3322ef6acce9745d7",
+   "params": {
+    "occupancy": [
+     26457,
+     36604,
+     75668,
+     108352,
+     185857,
+     402961,
+     87486,
+     15
+    ],
+    "page": "21",
+    "pale_milli": 126,
+    "scan": 21,
+    "track": "STAR8 M=36"
+   }
+  },
+  {
+   "chain": "71a778a0017be2c0a9f432550554cca527a3ad414dd12a32eeee472e606340a4",
+   "in": "dfd5bfd622de63a382916700a46bb77b0f4658de09aa2b2716c99ecda788a4d5",
+   "op": "keld_strata",
+   "out": "083f3f0677d4956d2ab2a63f8bfbf069eb3f66413a752d08ac9a0db10190ab07",
+   "params": {
+    "occupancy": [
+     39132,
+     27720,
+     76400,
+     99691,
+     172234,
+     331794,
+     176319,
+     110
+    ],
+    "page": "22",
+    "pale_milli": 145,
+    "scan": 22,
+    "track": "STAR8 M=36"
+   }
+  },
+  {
+   "chain": "aa5134b792f11a66232a3e1587c6ec3df0acf226e91d3ac3db00c02fef02d7f5",
+   "in": "baa4f2d933fbea9c17bb0599220fd6ca67eeaae4d7974a5c6b3af35566bc11d4",
+   "op": "keld_strata",
+   "out": "b19b83cf5efda019facb66879a8f98e8ff8c40cfc605af9b013fd18fd52eea61",
+   "params": {
+    "occupancy": [
+     23587,
+     21875,
+     64034,
+     99742,
+     170752,
+     314047,
+     228995,
+     368
+    ],
+    "page": "23",
+    "pale_milli": 145,
+    "scan": 23,
+    "track": "STAR8 M=36"
+   }
+  },
+  {
+   "chain": "4de9b2ac20649072db4c2a1f7432b510fa8ab7a07e00747fe9316b3f54fec2cd",
+   "in": "e91d6061d5fc8a0b51f97eabe9c18c11f2c630ce082491786645f76f890de479",
+   "op": "keld_strata",
+   "out": "1fd7ed716e3cbe43b3a40716e83f72410423d087a1ed2cd6a55abc175a927817",
+   "params": {
+    "occupancy": [
+     35669,
+     28231,
+     71271,
+     101033,
+     178435,
+     299395,
+     205954,
+     3412
+    ],
+    "page": "24",
+    "pale_milli": 194,
+    "scan": 24,
+    "track": "STAR8 M=36"
+   }
+  },
+  {
+   "chain": "0d649430b28a17f9db82131d0bf0a76d8d39e57831448c170596b4499b1eed4a",
+   "in": "1a6e983359da1d5de12dfc2f82b4a905f3b5e078ba83235fc36f9fe53bc565a2",
+   "op": "keld_strata",
+   "out": "3d9fae1e1b18e36ec210f36f82bee285b3aa7d899570b9d3464a89fa277cb85a",
+   "params": {
+    "occupancy": [
+     45044,
+     36936,
+     64928,
+     119138,
+     251464,
+     351819,
+     54069,
+     2
+    ],
+    "page": "25",
+    "pale_milli": 121,
+    "scan": 25,
+    "track": "STAR8 M=36"
+   }
+  },
+  {
+   "chain": "b6ac74b2edc9c3d457c1b0798aad178683d5eb77d3b3c44d8e9c29ceda08772e",
+   "in": "f429084a6b90f2dc5b7740ea650a66b3cb8cf89aa08854bcf1a1265144f93bd9",
+   "op": "keld_strata",
+   "out": "7939b38a23e87aa1f6f678e54bf7bd1da3eef10aa2b5f62eeb14d4107a05b58d",
+   "params": {
+    "occupancy": [
+     24011,
+     36993,
+     69645,
+     116521,
+     240730,
+     364321,
+     71171,
+     8
+    ],
+    "page": "26",
+    "pale_milli": 121,
+    "scan": 26,
+    "track": "STAR8 M=36"
+   }
+  },
+  {
+   "chain": "4472a2f0ccce249a85ab8fcee4cf3486ea3a84d59f21ef34e56ac5ccb31f2683",
+   "in": "e39745c0a668418fba76dcb6b86231f3d89fd882406678f1ab8a39fc9ec3e305",
+   "op": "keld_strata",
+   "out": "dfe51ec30bc85cb7572ce8ddc0881d756e0dbbefeae46299c9f166f427213294",
+   "params": {
+    "occupancy": [
+     37908,
+     40282,
+     73026,
+     111399,
+     231464,
+     355222,
+     74081,
+     18
+    ],
+    "page": "27",
+    "pale_milli": 127,
+    "scan": 27,
+    "track": "STAR8 M=36"
+   }
+  },
+  {
+   "chain": "a699802444a80f29b3a35f8cbb9c73a3b8f53de25923368c507fa8a1a4932cd6",
+   "in": "ea580a41b5e152c4d0e1515ff8cb7c598720998cd4ff3edf5d8feb6f32a524f7",
+   "op": "keld_strata",
+   "out": "b09561d214f639f4f446a4a05234084c93e3f7a4336e741ac3e88da41101fe21",
+   "params": {
+    "occupancy": [
+     20500,
+     37326,
+     62655,
+     111252,
+     301275,
+     359899,
+     30477,
+     16
+    ],
+    "page": "28",
+    "pale_milli": 153,
+    "scan": 28,
+    "track": "STAR8 M=36"
+   }
+  },
+  {
+   "chain": "330f2db40a9eb4ada464dd7530875bbba9a448c5e2062949775356c4477ef22f",
+   "in": "3b2592202cf1280b950e64c31e879646702b44d93494aa21207fc5a9138d5cb1",
+   "op": "keld_strata",
+   "out": "73c8bfdfd38a631569bbe5c23b4556f272fc2b0c5378108a9b23ae121ac7b6c1",
+   "params": {
+    "occupancy": [
+     2069,
+     6039,
+     18227,
+     36836,
+     111856,
+     497244,
+     251116,
+     13
+    ],
+    "page": "28*",
+    "pale_milli": 182,
+    "scan": 29,
+    "track": "STAR8 M=36"
+   }
+  },
+  {
+   "chain": "b45dfa3b280303689ad14354e3562bec14c212e08b33a3eec60496a204296523",
+   "in": "2eb715ef620bc6f218b51cbc7609be0545592efc6416ee94201e3d09a4dcbc48",
+   "op": "keld_strata",
+   "out": "4481d3efa77317c2a3ec5711814320d961c8121e99c5495d84ca8c283352604e",
+   "params": {
+    "occupancy": [
+     1457,
+     9551,
+     20051,
+     51549,
+     138889,
+     539046,
+     162841,
+     16
+    ],
+    "page": "28**",
+    "pale_milli": 166,
+    "scan": 30,
+    "track": "STAR8 M=36"
+   }
+  },
+  {
+   "chain": "afc323a01d3d2a2eb46983db05b84bc4604174054f2163735817d43a7d653ef2",
+   "in": "1b3c462bf95887143f278a9fbcbaa413d374ebded1f6fd70dbe4e2c05ec2da12",
+   "op": "keld_strata",
+   "out": "6b0779c24389a6ff06017b172741e4e02f03d2d34815d15f36471dc41ddb356d",
+   "params": {
+    "occupancy": [
+     20667,
+     42231,
+     54955,
+     51639,
+     126073,
+     504454,
+     123380,
+     1
+    ],
+    "page": "28***",
+    "pale_milli": 191,
+    "scan": 31,
+    "track": "STAR8 M=36"
+   }
+  },
+  {
+   "chain": "1144d9e06131f7d941eee96c81e42fb0c6bd0371678aca646c548b328bbc0b74",
+   "in": "8618be918189d49449b0b19bdaa670296fcef916d9ea5bd5cd6b866c3b4148ed",
+   "op": "keld_strata",
+   "out": "376a664651a343b432774cc955babed337c8688dc2703267b06ebb972bd89cb5",
+   "params": {
+    "occupancy": [
+     33490,
+     21982,
+     71072,
+     96905,
+     167946,
+     309421,
+     221734,
+     850
+    ],
+    "page": "29",
+    "pale_milli": 150,
+    "scan": 32,
+    "track": "STAR8 M=36"
+   }
+  },
+  {
+   "chain": "63bc446c31a7b615c789f3c619a2f8f725845d05bb61bc60f6911a5abbdceb50",
+   "in": "7533e03667bd2111b727fa8f4104d91daeff6bba6ff25f8392c1c4fd4faa5857",
+   "op": "keld_strata",
+   "out": "354d1712faa1cc6f4292a4dbbe473633b199971cbec7e04e9b1d728fbce9f2c5",
+   "params": {
+    "occupancy": [
+     21877,
+     24514,
+     91943,
+     111257,
+     168214,
+     357836,
+     147705,
+     54
+    ],
+    "page": "30",
+    "pale_milli": 138,
+    "scan": 33,
+    "track": "STAR8 M=36"
+   }
+  },
+  {
+   "chain": "e3d5843e08f6b9aa35d950dd6db0ee7bdd98a39f9b3fe023c860438799230d04",
+   "in": "7cf8c54c123020cbadf95b6e49608f264c1d27adc77b32c2c751fdd169f5e6a2",
+   "op": "keld_strata",
+   "out": "d87858d90a3059e600d5e23b71b213a409ec2ef11b1e92b595d3ba49b3ed2ed5",
+   "params": {
+    "occupancy": [
+     20218,
+     23870,
+     94369,
+     121734,
+     182610,
+     349483,
+     130985,
+     131
+    ],
+    "page": "31",
+    "pale_milli": 135,
+    "scan": 34,
+    "track": "STAR8 M=36"
+   }
+  },
+  {
+   "chain": "8e141879b3925ea2400433af115ad3af627236d0f448fbbddd5a77b814bc0436",
+   "in": "b3cad69e40b195e6984a6df340cef22c57cdf6714052d48fc3484e8f77be0c17",
+   "op": "keld_strata",
+   "out": "48f86f85476189d1a4d25f4247f751b33df5f2f410cb1880328f5f69287a0996",
+   "params": {
+    "occupancy": [
+     17011,
+     41034,
+     105136,
+     119433,
+     197152,
+     356589,
+     86962,
+     83
+    ],
+    "page": "32",
+    "pale_milli": 132,
+    "scan": 35,
+    "track": "STAR8 M=36"
+   }
+  },
+  {
+   "chain": "fa2a13d8aefe2092bd7f363a2a69c84fb84a3b0ce412bddccd2b02ba0f85729d",
+   "in": "f84b7d662b73a0efb62c99e632d5878bcd1fa06d266b1510956a2bf16ab5a720",
+   "op": "keld_strata",
+   "out": "44de915e3908dd6fd87fffe9bc7c92db24771e1994c6627e41e1e0044666e317",
+   "params": {
+    "occupancy": [
+     13349,
+     27607,
+     101369,
+     117855,
+     166546,
+     298074,
+     198333,
+     267
+    ],
+    "page": "33",
+    "pale_milli": 127,
+    "scan": 36,
+    "track": "STAR8 M=36"
+   }
+  },
+  {
+   "chain": "ceac6387f99c49273239c1ae31a3fb069e1e17d1b1a2b1ee6b63778cbd37d5dc",
+   "in": "9f55e5c0ae092cb07ebb850043c4e9aa68373e310b1ca64810c688257c60b521",
+   "op": "keld_strata",
+   "out": "b5a74688621a88582315282e26c1db7450b94ebb06c45b1f0b58cd1c3ed8dbf8",
+   "params": {
+    "occupancy": [
+     7625,
+     19842,
+     86260,
+     139447,
+     265918,
+     307011,
+     97174,
+     123
+    ],
+    "page": "34",
+    "pale_milli": 149,
+    "scan": 37,
+    "track": "STAR8 M=36"
+   }
+  },
+  {
+   "chain": "a932dc48b5d7d564a8a59d4408d741ebb83cd62a4d588856909555bc3b7ebc07",
+   "in": "b70129115e8b3c37e82c487a8e8455805280e666861af488f1ef7deb2acf8b33",
+   "op": "keld_strata",
+   "out": "5de905698dbc0061579332c2d38313efca53f77475952c9e1ea920363fb70488",
+   "params": {
+    "occupancy": [
+     11189,
+     23912,
+     93903,
+     120714,
+     206196,
+     305455,
+     161942,
+     89
+    ],
+    "page": "35",
+    "pale_milli": 150,
+    "scan": 38,
+    "track": "STAR8 M=36"
+   }
+  },
+  {
+   "chain": "4d1dda7911039088231dc3eebf0a9dadca60feded673c8b7f6a5b537b358675f",
+   "in": "fe233839687c19b615bdeac8cc225b70f6a63e73f937b1c1ba56ca76c6e924ff",
+   "op": "keld_strata",
+   "out": "9ebd7a3adeb1519662d5fbf92e13fc1c8b23ecb8054d5a07069737110f850426",
+   "params": {
+    "occupancy": [
+     7893,
+     15658,
+     77501,
+     128337,
+     297675,
+     316718,
+     79296,
+     322
+    ],
+    "page": "36",
+    "pale_milli": 159,
+    "scan": 39,
+    "track": "STAR8 M=36"
+   }
+  },
+  {
+   "chain": "48d8ec0cf8c068e1bd4e742ab86c02db7ba0d07ed0cdfe13706377efaee11f0e",
+   "in": "e765cdf284a8af96c5371aae10e5c154a872d985c2efae5698214ab15199e5cb",
+   "op": "keld_strata",
+   "out": "092e823301d75ee551b55c4e739fa97fc51df0c7d346fa0c350ed8803dcebcd0",
+   "params": {
+    "occupancy": [
+     13116,
+     13169,
+     60046,
+     110288,
+     255510,
+     354587,
+     116031,
+     653
+    ],
+    "page": "37",
+    "pale_milli": 157,
+    "scan": 40,
+    "track": "STAR8 M=36"
+   }
+  },
+  {
+   "chain": "8995b87480eb9eba58c75c7480dc2a6abb3c1d777d9ca64249c251737d458093",
+   "in": "5fefdfe1bd8b25eb6660e88c3e82f85e944c43280912bea43956cc8bf6a474f4",
+   "op": "keld_strata",
+   "out": "a895d8acd85394f6de7c5a71975011ac2334906173c235c85ca5cdfe68d06d98",
+   "params": {
+    "occupancy": [
+     24777,
+     24248,
+     105820,
+     141762,
+     250268,
+     333231,
+     43294,
+     0
+    ],
+    "page": "38",
+    "pale_milli": 142,
+    "scan": 41,
+    "track": "STAR8 M=36"
+   }
+  },
+  {
+   "chain": "214fd863f5c83d2e63c01b9cbd558dd6f18a14b44509004b6008fb22a77a544c",
+   "in": "14c658a684515a30678858b1113323eb854083783b20c53780cfd5eacf674531",
+   "op": "keld_strata",
+   "out": "62d7f17ab713b60300a196bb17787ef6a3ad4380bf6e33855d890b7d0100258f",
+   "params": {
+    "occupancy": [
+     24563,
+     20681,
+     105571,
+     124306,
+     219932,
+     380318,
+     48029,
+     0
+    ],
+    "page": "39",
+    "pale_milli": 135,
+    "scan": 42,
+    "track": "STAR8 M=36"
+   }
+  },
+  {
+   "chain": "22f1b19443c873ed80401ecc79291faf9812f3e12e50a85840358569e43df35e",
+   "in": "d1573fbd760a2f5babf1b8f40273fe3a6d8a0f267c3fe154b2cfb15a47988777",
+   "op": "keld_strata",
+   "out": "4f73aa275758a172fe5a19db9051f4153ebeb2ff2a2dde5eb9d247f014be894d",
+   "params": {
+    "occupancy": [
+     28679,
+     22672,
+     94813,
+     128499,
+     245247,
+     380283,
+     23205,
+     2
+    ],
+    "page": "40",
+    "pale_milli": 123,
+    "scan": 43,
+    "track": "STAR8 M=36"
+   }
+  },
+  {
+   "chain": "b7b423cfffda4da8549e4440e41f2ef3728e777e7e7a2e0180b5e18844050802",
+   "in": "9329a1b66b2934d8db416a99221303d3f4f55f6f65ee1ed3390456ee26cc7f83",
+   "op": "keld_strata",
+   "out": "af9fea377c225fe32a602be89645478df1116d48adad93eb720b2b4a7bb8b3c7",
+   "params": {
+    "occupancy": [
+     27077,
+     23879,
+     81642,
+     126883,
+     200801,
+     352977,
+     110127,
+     14
+    ],
+    "page": "41",
+    "pale_milli": 116,
+    "scan": 44,
+    "track": "STAR8 M=36"
+   }
+  },
+  {
+   "chain": "54c0d02396d01fc3ffc996d096923e60f251addc336ff4abfaae360b669b925e",
+   "in": "9e0a1c488ce24affdbe60c775c93a6baf39e62ba56175afd6151ebe980c4f54a",
+   "op": "keld_strata",
+   "out": "73de86fe2a2c8703a68a0aabec2183785a42c3568fd252f5eb0ad6b572227580",
+   "params": {
+    "occupancy": [
+     21310,
+     33800,
+     80390,
+     133504,
+     216642,
+     344012,
+     93736,
+     6
+    ],
+    "page": "42",
+    "pale_milli": 122,
+    "scan": 45,
+    "track": "STAR8 M=36"
+   }
+  },
+  {
+   "chain": "3fe91ed4af55b89c545cce2f0e25f41b9379f0d674b69ee200bad1f90b3798c3",
+   "in": "7253ff9c4d7182ed87083f9cbd9058b440a80ddef28b359ac19060b9e0dc1ec1",
+   "op": "keld_strata",
+   "out": "4440ddf84e3a81bbc0a7749bb8ac7a40e01b061b68618ef3bb693f37b1c89ca8",
+   "params": {
+    "occupancy": [
+     22684,
+     47705,
+     80336,
+     115633,
+     173053,
+     358376,
+     125604,
+     9
+    ],
+    "page": "43",
+    "pale_milli": 125,
+    "scan": 46,
+    "track": "STAR8 M=36"
+   }
+  },
+  {
+   "chain": "dea328b0e1ba0b03e75d8272f7d0d50049451e1f8fab190383fc6dbdbb6de26f",
+   "in": "af65bae258b0242a4b0a1910fe0e36092549e76e9741de71c9d789f9e5f72731",
+   "op": "keld_strata",
+   "out": "f9d14e2b51cb3f01f61524fe47b838d0ac30a24d1a91796c03fd1765ff3d33f2",
+   "params": {
+    "occupancy": [
+     26896,
+     51022,
+     86675,
+     123181,
+     189739,
+     370961,
+     74922,
+     4
+    ],
+    "page": "44",
+    "pale_milli": 129,
+    "scan": 47,
+    "track": "STAR8 M=36"
+   }
+  },
+  {
+   "chain": "47cdfad39b973c72fba55ca97037a230571156bf0c33326a81ef3ca8d522b464",
+   "in": "de5f8a2df99a67694afa2a9ebea6279662557cb54dc2603760acd65d32d460c9",
+   "op": "keld_strata",
+   "out": "9af4f08a86a79f3cbf9be8b718bd91c435c8604720e8362dcdb391d58fba18fd",
+   "params": {
+    "occupancy": [
+     119312,
+     51581,
+     86267,
+     85826,
+     143770,
+     347720,
+     88922,
+     2
+    ],
+    "page": "45",
+    "pale_milli": 141,
+    "scan": 48,
+    "track": "STAR8 M=36"
+   }
+  },
+  {
+   "chain": "d8362645f73dee86ce647fb1e4dc6a08088b19b08ccff0d9029453a36720e88f",
+   "in": "228823fbba1908cd707de44709d828335483214d3069af11333ee65b25dcd33d",
+   "op": "keld_strata",
+   "out": "5f7130609310a66d7ca084b0f65b604898284aeb84d21dc2d940c8a840c842c1",
+   "params": {
+    "occupancy": [
+     51116,
+     35853,
+     72217,
+     117163,
+     167383,
+     283485,
+     195755,
+     428
+    ],
+    "page": "46",
+    "pale_milli": 154,
+    "scan": 49,
+    "track": "STAR8 M=36"
+   }
+  },
+  {
+   "chain": "939f712de32e5502cd597130fa47963dfb836c3f6a7197cf42688b5ed3893e80",
+   "in": "c00a0ca0676dccb6e70c8cc369e5cfa2a1a7b8f2d8667ea66beb54caf15e5f7b",
+   "op": "keld_strata",
+   "out": "b99bcad7b82f0d60b466198eb708f87623113a695115f5b4accf6442087e3cd3",
+   "params": {
+    "occupancy": [
+     29619,
+     25302,
+     113573,
+     173168,
+     213654,
+     284471,
+     83559,
+     54
+    ],
+    "page": "47",
+    "pale_milli": 121,
+    "scan": 50,
+    "track": "STAR8 M=36"
+   }
+  },
+  {
+   "chain": "d66ef9a79e016b16180ccc23729effc68866812237d5792d68ebba186763c1f9",
+   "in": "3193ab2d1f15260e600876ba83fbd16e38554c8dfdfb6f02cfdba245b6a0ffe6",
+   "op": "keld_strata",
+   "out": "3f83d1e98ef527e83966aef093951cc0726ac04e9c00aa1679a5dfc56648de9e",
+   "params": {
+    "occupancy": [
+     18178,
+     22988,
+     140305,
+     165099,
+     205824,
+     280641,
+     90317,
+     48
+    ],
+    "page": "48",
+    "pale_milli": 130,
+    "scan": 51,
+    "track": "STAR8 M=36"
+   }
+  },
+  {
+   "chain": "0030908897e696eeb10560ad9d356fdb7e8ac98c0ee87797b3d79870afcb71a2",
+   "in": "6fbed8d49d31d0f15b1a3654de5f2f37fd89f2c55132f99150e0c95a997bfbea",
+   "op": "keld_strata",
+   "out": "824e7a9aa627ee6b280ef081303bea62ce848a8ca112656033e9b6739572a1b7",
+   "params": {
+    "occupancy": [
+     12067,
+     44467,
+     169580,
+     161029,
+     222721,
+     237720,
+     75726,
+     90
+    ],
+    "page": "49",
+    "pale_milli": 138,
+    "scan": 52,
+    "track": "STAR8 M=36"
+   }
+  },
+  {
+   "chain": "f83830a1a99cfbb68da07e583b473ccbfd8af7332bded9f92454cd18cc41b2cf",
+   "in": "63d055521937ac91da3f5848812ab0f9de89ad8005e12f99bd469d6c87638fa9",
+   "op": "keld_strata",
+   "out": "f6e0a23000ada67f671a7a72db3f3e5fec60c076c38c5f5d8ae194bfff8298d2",
+   "params": {
+    "occupancy": [
+     14353,
+     35353,
+     155076,
+     173275,
+     216396,
+     262676,
+     66167,
+     104
+    ],
+    "page": "50",
+    "pale_milli": 136,
+    "scan": 53,
+    "track": "STAR8 M=36"
+   }
+  },
+  {
+   "chain": "4a721184f7e14adf0e663f6d7dc378a74d854f83bda3455236a2abeda513bdf2",
+   "in": "04fc0ee4566ca22ae3c46a2ddc5e408ab33cbffd8a31cb2ed0a63affd2acefc2",
+   "op": "keld_strata",
+   "out": "443c8fe13bd86b9165a81f4c08b42fcd558e80309e50295a2f37725052640778",
+   "params": {
+    "occupancy": [
+     21919,
+     44666,
+     163559,
+     123600,
+     194129,
+     295532,
+     79987,
+     8
+    ],
+    "page": "51",
+    "pale_milli": 158,
+    "scan": 54,
+    "track": "STAR8 M=36"
+   }
+  },
+  {
+   "chain": "4c9a87cfb1d4412c0bcc506149c6bef860e9fdd75205812f2ccbb494201f2253",
+   "in": "f2309e306b9c83f3e247b6829f246286974fc26b64835eb00719e6acbbcafbd1",
+   "op": "keld_strata",
+   "out": "88ee7c8183fa09e9bac5070d41c8e9ff5ae883e18f6eb4b191c5479716a02e90",
+   "params": {
+    "occupancy": [
+     19347,
+     39411,
+     159395,
+     110589,
+     154728,
+     321933,
+     117980,
+     17
+    ],
+    "page": "52",
+    "pale_milli": 145,
+    "scan": 55,
+    "track": "STAR8 M=36"
+   }
+  },
+  {
+   "chain": "b8f7ddc4112eccc7aa5acc83b9c5548aeacac64ff14acf26982f66aa842480c5",
+   "in": "35e5163bf116ec5b06158c19a139aeb97c7235eff9c0bcce46d60494a6a3c433",
+   "op": "keld_strata",
+   "out": "d0c84d5d849e159c894f27f02628de6778c5c8c9f2f5bb8b66856ccc0d43cc1c",
+   "params": {
+    "occupancy": [
+     19483,
+     36462,
+     133376,
+     115261,
+     193209,
+     322484,
+     103119,
+     6
+    ],
+    "page": "53",
+    "pale_milli": 142,
+    "scan": 56,
+    "track": "STAR8 M=36"
+   }
+  },
+  {
+   "chain": "5f8f465c3dbe4ba5fc466fb3f4ae4e483deafa47a49c704bbd0ebd4e76077882",
+   "in": "8f2235e87a147abf55020ad73ab0c166d3dadac57debb668d4f9da5cb9fa857e",
+   "op": "keld_strata",
+   "out": "fc76d6ef9f6f4cba3a6f11a3375d4cefc6781d25e0622dad529b7e0c11b72ff3",
+   "params": {
+    "occupancy": [
+     26165,
+     36565,
+     126629,
+     109658,
+     160780,
+     306003,
+     157590,
+     10
+    ],
+    "page": "54",
+    "pale_milli": 147,
+    "scan": 57,
+    "track": "STAR8 M=36"
+   }
+  },
+  {
+   "chain": "ebf870291c3670bca148efc050fb894b8fbe660155b6230f9fafaef3e73d2ad1",
+   "in": "0bd11878a3be85151ee9fe89ee135f380d4a2e94733d66e40e57fb15af0acc19",
+   "op": "keld_strata",
+   "out": "ec955919efe23962a3f66cf21fbf3a4d7e096e19bed9305a1c59ecd65be9bbcc",
+   "params": {
+    "occupancy": [
+     27863,
+     41122,
+     127247,
+     112585,
+     176350,
+     316162,
+     122042,
+     29
+    ],
+    "page": "55",
+    "pale_milli": 140,
+    "scan": 58,
+    "track": "STAR8 M=36"
+   }
+  },
+  {
+   "chain": "863c5e5d2c19ece9d646c69b2740f6737cf2e4f926de78d721dd5395d4f3ea08",
+   "in": "326e5a7fd028013925bcdd9796542880759f636606c6317e45938a17c0067b08",
+   "op": "keld_strata",
+   "out": "c857fa9518de1ef5a0696e8b0c07ba7a9dff76fd5bb1cb40bb1d3fa20a717635",
+   "params": {
+    "occupancy": [
+     27744,
+     33496,
+     122358,
+     119271,
+     141742,
+     275185,
+     203543,
+     61
+    ],
+    "page": "56",
+    "pale_milli": 152,
+    "scan": 59,
+    "track": "STAR8 M=36"
+   }
+  },
+  {
+   "chain": "c81e65c775379cb26a547e53e87a959b471d25ee8fd6b381611ada6871ec4f46",
+   "in": "b1a40959be9eaa70d292897faee617279dfd0a6c21da86e3181d65d70edfa94b",
+   "op": "keld_strata",
+   "out": "b6951597c30da87e0ac184266fb5d678aa0cd5d591ecf4b41dec451f5b19f0d4",
+   "params": {
+    "occupancy": [
+     28486,
+     44495,
+     119477,
+     131130,
+     183946,
+     308776,
+     107084,
+     6
+    ],
+    "page": "57",
+    "pale_milli": 139,
+    "scan": 60,
+    "track": "STAR8 M=36"
+   }
+  },
+  {
+   "chain": "fcaebc0160a76226fac629055abab400bb664fe8e81c8585bf3d761d8e26541c",
+   "in": "94a0bc5a4f1b88b512a82fd5f6510384d8de888db672a95710a6c38cd3518f0d",
+   "op": "keld_strata",
+   "out": "232c96fe5994608b27c205da1988dcb2d5416a4f5b24fd73c485f61543d2c040",
+   "params": {
+    "occupancy": [
+     31053,
+     47166,
+     139571,
+     137936,
+     175470,
+     271882,
+     120282,
+     40
+    ],
+    "page": "58",
+    "pale_milli": 135,
+    "scan": 61,
+    "track": "STAR8 M=36"
+   }
+  },
+  {
+   "chain": "1faabae365ca6b14c2b5ceae762ba3ce39c48d6e3b95936fce32032a8e877ad8",
+   "in": "f0c7ed39a83ea6ad1e3f758053372692d0768622c45d3d5d63c5f1d5d15a85f0",
+   "op": "keld_strata",
+   "out": "4e42893b40fe465784a8d24132e051ceeea4b2997b1e95e2c24489e9391c5ee3",
+   "params": {
+    "occupancy": [
+     37996,
+     53797,
+     122569,
+     115539,
+     170092,
+     299036,
+     124322,
+     49
+    ],
+    "page": "59",
+    "pale_milli": 166,
+    "scan": 62,
+    "track": "STAR8 M=36"
+   }
+  },
+  {
+   "chain": "5d5eb4c09a69732b675a741c6dc2d6b847268ed65a86af3ea28639526da1233b",
+   "in": "91c0069abc806aac886df19abfc288856afd8631fe24f297b7fbdff59fdca374",
+   "op": "keld_strata",
+   "out": "5655b92d59ba01dbe55ccf5c862ad892e68667014f55e645b37f31a81a88f539",
+   "params": {
+    "occupancy": [
+     47897,
+     40992,
+     166932,
+     137534,
+     225137,
+     255295,
+     49533,
+     80
+    ],
+    "page": "60",
+    "pale_milli": 108,
+    "scan": 63,
+    "track": "STAR8 M=36"
+   }
+  },
+  {
+   "chain": "2fac482998518e5bf04594429fc942513098039f0d4060c25d9f2ccc37b78de2",
+   "in": "b485562fb87a3ac2ddb95f6a53f392ee25a650a1c6b3b69b0fede6b53d65e4f4",
+   "op": "keld_strata",
+   "out": "df92720ca75da737bf8f39d22fab77e7804859e221469699c5a759965841990a",
+   "params": {
+    "occupancy": [
+     42970,
+     25013,
+     51545,
+     68325,
+     231748,
+     433452,
+     70341,
+     6
+    ],
+    "page": "60*",
+    "pale_milli": 110,
+    "scan": 64,
+    "track": "STAR8 M=36"
+   }
+  },
+  {
+   "chain": "006574d978bebcdcfce5f23a133747dc87ab6f2c03e9efcb977e0fedfb065216",
+   "in": "dbae153526c0d89dedcf7b75954b99e683fad29cf025de503aca675fd57fc35e",
+   "op": "keld_strata",
+   "out": "5ebf6f69ae2671cdb8230d79cc3f6ff3364bf1eba6edd5c63bcf130f9710d09f",
+   "params": {
+    "occupancy": [
+     45226,
+     31505,
+     67675,
+     102283,
+     187967,
+     299261,
+     189392,
+     91
+    ],
+    "page": "61",
+    "pale_milli": 136,
+    "scan": 65,
+    "track": "STAR8 M=36"
+   }
+  },
+  {
+   "chain": "6136c8c4c7e6e55046b8941faf096d9461ff9980c02a697113055a85bdacdee8",
+   "in": "01a566c6a60d3bb5586f318ab2eb8d6d9bf8cd8fe132d8cc5d957c068e8f0d66",
+   "op": "keld_strata",
+   "out": "714684d3dcee614f9dbadbfe6bfaefd085df05a2738526393cfa6a6638ed8fbd",
+   "params": {
+    "occupancy": [
+     34087,
+     27594,
+     68294,
+     97933,
+     151923,
+     268686,
+     269705,
+     5178
+    ],
+    "page": "62",
+    "pale_milli": 153,
+    "scan": 66,
+    "track": "STAR8 M=36"
+   }
+  },
+  {
+   "chain": "16b88b855e2fd4932ab9bac062414282e9257ca32fc2283814a225ed5d269980",
+   "in": "1f2c54486ac45d049b02419e2f8abc2c1b4c572624783c735cbfb794f8dd31e1",
+   "op": "keld_strata",
+   "out": "30d326581d2e797204e868aa1579a2802c9ac1911ec66ec32199729b21d06fb3",
+   "params": {
+    "occupancy": [
+     26961,
+     37594,
+     75540,
+     86803,
+     126921,
+     224553,
+     340682,
+     4346
+    ],
+    "page": "63",
+    "pale_milli": 149,
+    "scan": 67,
+    "track": "STAR8 M=36"
+   }
+  },
+  {
+   "chain": "6f041ad5582b7e1b5f5ebf1e30ce2365f84054b2d965e8de7f34654b6b636b4e",
+   "in": "f99a84aaadfb9d68de172c85c3fc478db965c28dcbb32b0bde3c7b3e9716c03a",
+   "op": "keld_strata",
+   "out": "88d403ae3fdf0efff831fa766fee80d9ac1834b9d23f42a866183aa94f7b76c6",
+   "params": {
+    "occupancy": [
+     26893,
+     29885,
+     82506,
+     93790,
+     143237,
+     276881,
+     267949,
+     2259
+    ],
+    "page": "64",
+    "pale_milli": 163,
+    "scan": 68,
+    "track": "STAR8 M=36"
+   }
+  },
+  {
+   "chain": "e7b9db2c358f7e24d5fc02bf27c63578c9511a0a06990aa46057d82c3b36bca6",
+   "in": "c9ae6d5580d89820d8a147554de877ccd6852764d0013dac1ff102755dee553b",
+   "op": "keld_strata",
+   "out": "fdb3dc718450ee39a3f05b8f5945b2752189a681845d3431ff00fb62c2987d52",
+   "params": {
+    "occupancy": [
+     33399,
+     35952,
+     83818,
+     108713,
+     169379,
+     286619,
+     205410,
+     110
+    ],
+    "page": "65",
+    "pale_milli": 141,
+    "scan": 69,
+    "track": "STAR8 M=36"
+   }
+  },
+  {
+   "chain": "44530e0da926777d900e22ad4843e55818054f6975f3dbb8a8012df8d987af4e",
+   "in": "2737bb88772a9e5776334096e353dd61b6c3987efbfa544525ec940644192721",
+   "op": "keld_strata",
+   "out": "0dd8fc2dbf4fdc32a158875505f33b96a8f6cd16aae856f0b51f2f64ae8800c9",
+   "params": {
+    "occupancy": [
+     33443,
+     26310,
+     82385,
+     105543,
+     167788,
+     339572,
+     168243,
+     116
+    ],
+    "page": "66",
+    "pale_milli": 135,
+    "scan": 70,
+    "track": "STAR8 M=36"
+   }
+  },
+  {
+   "chain": "f24972f165f00c7465f0c184ba65f010b6a0d52a3b4bd413c006150dda892fb6",
+   "in": "42285a7b3988fa4b308607f8a7f85acb80373d2ebc3d797fec9f4d62f1e56b33",
+   "op": "keld_strata",
+   "out": "c955547c0e5310c350d879e0c32126c3dd9ec50550c4edcd9f61ebdb0ea4af99",
+   "params": {
+    "occupancy": [
+     24680,
+     31004,
+     91198,
+     104285,
+     140343,
+     254087,
+     277533,
+     270
+    ],
+    "page": "67",
+    "pale_milli": 145,
+    "scan": 71,
+    "track": "STAR8 M=36"
+   }
+  },
+  {
+   "chain": "bb039963581793f3e3cb6289fc2996e2843bf3734c4a0360341f42cd18705843",
+   "in": "e3e818b96c85c45905f7ffcd06e66562f0c7784c4c9cea42c7bec02ce779371d",
+   "op": "keld_strata",
+   "out": "7d93699e2ae0948554bc5c1709a49c06e42c245ffa03fa1de7577df3b4fce176",
+   "params": {
+    "occupancy": [
+     24619,
+     35105,
+     97209,
+     123338,
+     163708,
+     308978,
+     170228,
+     215
+    ],
+    "page": "68",
+    "pale_milli": 130,
+    "scan": 72,
+    "track": "STAR8 M=36"
+   }
+  },
+  {
+   "chain": "fe4f0dfd813d256a2c2e7f3cff0a2558ae9e6dc187f5f0ddd8ec528bb60485b3",
+   "in": "3c47865a8e312a042be29552c9a6445a4e6ce21cf77032ac227cdb7d370af220",
+   "op": "keld_strata",
+   "out": "6e0400a4bc72cc42ff2c098528db88fc5dcdc2d2fe1d5171af6afa50daeef84c",
+   "params": {
+    "occupancy": [
+     25431,
+     60312,
+     150633,
+     135742,
+     152228,
+     299907,
+     99112,
+     35
+    ],
+    "page": "69",
+    "pale_milli": 107,
+    "scan": 73,
+    "track": "STAR8 M=36"
+   }
+  },
+  {
+   "chain": "99ec88b9a67e3cab9ea48813b4e0952fad9a1f642dfdbf93945aaf19a9b8ac2c",
+   "in": "9d0624d5c4798edd2f2c1b06e87bb76e878fa426b394bf9360f6b7b42d2b2227",
+   "op": "keld_strata",
+   "out": "d0d21a68dd0728ef19118217b3a10c2060314ed6dca0ccc0ff088cf387230401",
+   "params": {
+    "occupancy": [
+     17351,
+     63596,
+     133579,
+     107543,
+     137469,
+     297091,
+     166743,
+     28
+    ],
+    "page": "70",
+    "pale_milli": 118,
+    "scan": 74,
+    "track": "STAR8 M=36"
+   }
+  },
+  {
+   "chain": "8d3892d29d3162ecca55f5d5f5581345fdf2d8ab4233d8f9dcbf06a6a21bad52",
+   "in": "be5ece9360ccf7c1faa1509563f070ce29e214086a257c307ff12a0727dd37aa",
+   "op": "keld_strata",
+   "out": "b9fb60ffb69f6b133e999adb7a77298c806a0eba3c6231d4225efaf76c027245",
+   "params": {
+    "occupancy": [
+     14188,
+     39594,
+     103499,
+     130316,
+     205124,
+     351991,
+     78665,
+     23
+    ],
+    "page": "71",
+    "pale_milli": 125,
+    "scan": 75,
+    "track": "STAR8 M=36"
+   }
+  },
+  {
+   "chain": "f5323c81c8c40ed9e792954d45e670f8a18cd4585a1fd71dcf30bece0bb7c482",
+   "in": "b5566fb84825ab2ab06d85cc96f8b8e55c6251f854a8a99be98226b32ba8ebf0",
+   "op": "keld_strata",
+   "out": "525b63fe2fd8c48de9fba67920b52cbf211ac5c6e24312ba7ab4fa1922889470",
+   "params": {
+    "occupancy": [
+     19981,
+     26605,
+     93330,
+     139333,
+     230484,
+     346303,
+     67329,
+     35
+    ],
+    "page": "72",
+    "pale_milli": 115,
+    "scan": 76,
+    "track": "STAR8 M=36"
+   }
+  },
+  {
+   "chain": "25af1fe934e7a8192359743ebdc8e71d64f0f3c8ff185c4813c47022f9472813",
+   "in": "8ceaf9134dbc55efc9913b9e2c196c54a2622b3b178c996ce0f480f1f93c5f35",
+   "op": "keld_strata",
+   "out": "d908a754d090dd603285f03eeecfb0e5d69dfa3f460b37cc4e6646d181c7c022",
+   "params": {
+    "occupancy": [
+     31403,
+     50360,
+     121819,
+     114497,
+     139743,
+     370000,
+     95571,
+     7
+    ],
+    "page": "73",
+    "pale_milli": 125,
+    "scan": 77,
+    "track": "STAR8 M=36"
+   }
+  },
+  {
+   "chain": "27f219ab5b1c922dafa402d045c19ff1f5cdbaf00cb11a5f8ff66b63e757283e",
+   "in": "21d85f4695587bcf3e64f7e38bf0536c0857c81ebe287d848903b333bf5912c6",
+   "op": "keld_strata",
+   "out": "efbb91461b94f1a569b49bf4d15637aa0ba12cd4cea0703ce8b99a5758be62c4",
+   "params": {
+    "occupancy": [
+     44903,
+     122854,
+     221748,
+     136083,
+     144755,
+     185589,
+     67109,
+     359
+    ],
+    "page": "74",
+    "pale_milli": 153,
+    "scan": 78,
+    "track": "STAR8 M=36"
+   }
+  }
+ ]
+}
