@@ -198,3 +198,16 @@ rewritten; Madrid hypothesis withdrawn. Machine-surfaced: p65 column is the
 structural twin of the p69 column (second-best placement, same in-page
 coordinates). Lesson folded into the module docstring: match structure, not
 brightness, across scan generations.
+
+## NODE (white machinery) — 2026-08-27
+
+White-gradient machinery built per researcher direction (the illustrated
+pipeline, previously absent): dresden.order_stat / highlight_freeze /
+white_nodes / white_path(min_sep) — all exact. analysis/dresden_white.py:
+7/7 checks; worked example on the located p69 column
+(demo/dresden_white_p69.png: original | frozen | numbered white path);
+freeze + white-path overlays for all 78 pages in data/dresden/derived/white/;
+catalog docs/DRESDEN_WHITE.md; receipts data/dresden/white_receipts.json.
+DRESDEN_MACHINE.md C3 reframed: white-node sequences are the exploration
+surface; glyph-median path test demoted to appendix; blank-substrate control
+retained as constraint on design claims.

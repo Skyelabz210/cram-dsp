@@ -80,7 +80,18 @@ retrievals are genuine same-form pairs (numeral dots retrieve numeral dots,
 L1 = 104, 138; see `demo/dresden_match_panel.png`). Complex glyph retrieval
 is not demonstrated at this resolution — reported as a limit, not claimed.
 
-### C3 — the "luminous path": the ordering exists, the *meaning* does not survive the control
+### C3 — the "luminous path": now built as illustrated — see `docs/DRESDEN_WHITE.md`
+**Reframe.** The test below ran on glyph-cell median luma, which is not what
+the illustrations depict; the illustrated pipeline — highlight-freeze render,
+white-structure nodes, brightest-first numbered path — is now built exactly
+(`highlight_freeze`, `white_nodes`, `white_path`) and swept over every page
+(`analysis/dresden_white.py`; overlays in `data/dresden/derived/white/`;
+worked example on the researcher's own p69 column in
+`demo/dresden_white_p69.png`). The white-node sequences are the exploration
+surface. The blank-substrate control below still constrains any claim that a
+particular tour is *designed*; it does not constrain exploring the sequences.
+
+#### Appendix: the original glyph-median path test and its control
 On 60 of 78 pages the brightest-first tour is shorter than ≥95% of random
 tours — naively a strong "path" signal. The control kills the reading: the
 same test on the four **blank** pages (no glyphs; pseudo-cell grid on bare

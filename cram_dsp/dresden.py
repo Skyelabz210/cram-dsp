@@ -585,9 +585,18 @@ def white_nodes(luma, top_milli: int = 965, min_area: int = 12,
     return thr, nodes
 
 
-def white_path(nodes, limit: int = 12):
+def white_path(nodes, limit: int = 12, min_sep: int = 0):
     """Brightest-first sequence over white nodes (the illustrated '1 =
-    brightest' path): returns the first `limit` node centers in brightness
-    order plus the exact L1 tour length of that sequence."""
-    seq = [(cy, cx) for cy, cx, _, _, _ in nodes[:limit]]
+    brightest' path). min_sep (L1 pixels) spatially de-duplicates: a node
+    within min_sep of an already-chosen station is skipped, so the sequence
+    walks distinct bright structures instead of crowding one bright patch.
+    Greedy and exact — a stated rule, not a tuning knob. Returns the chosen
+    centers in brightness order plus the exact L1 tour length."""
+    seq = []
+    for cy, cx, _, _, _ in nodes:
+        if len(seq) >= limit:
+            break
+        if any(abs(cy - py) + abs(cx - px) < min_sep for py, px in seq):
+            continue
+        seq.append((cy, cx))
     return seq, path_length_l1(seq)
