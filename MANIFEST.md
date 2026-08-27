@@ -18,6 +18,7 @@ checksummed), **RECORD** (session/administrative document).
 | `synth.py` | Deterministic seeded integer evidence generators: faint palimpsest page (Δ=1 ink, Δ=11/Δ=12 decoys, plateau steps), codex strata page, recto-verso bleed pair, off-grid splice, copy-move | VERIFIED | used by T3, T6, T8, T9 |
 | `baseline_float.py` | Classical foils: float PCA separation, best-fit MAE, Sobel, float Gaussian, `blur_round_int` | **QUARANTINED** | excluded from A1 lint by name |
 | `a1_lint.py` | AST compliance scanner — float literals, true division, float names/attributes; quarantine and self-exemption discipline | VERIFIED | run inside every harness pass |
+| `dresden.py` | The glyph machine: integer luma, integer Otsu (cross-multiplied), run-based 4/8-conn components, shift-OR dilation, glyph cells, circular-outward ring signatures (exact isqrt), L1 signature matching + all-pairs matrix, luminance ordering, seeded permutation path test, exact hole counting (hollow/solid dot topology), exact quantile tonal bands | VERIFIED | analysis/dresden_run.py 636/0 + analysis/dresden_discover.py 9/0 |
 | `__init__.py` | Package surface | — | — |
 
 ## Harness
@@ -60,6 +61,14 @@ Reproduce: `python3 run_all.py` (requires numpy, Pillow). Deterministic and seed
 |---|---|---|
 | `archimedes_caltarget.npz` | 15 bands × 700 × 700, uint16 — the in-frame reflectance/greyscale calibration target | ACQUIRED (8.6 MB, included as fixture) |
 | `SHA256SUMS.txt` | Checksums for all three acquired windows, including the two not committed | — |
+| `dresden/source/wdl11621_codex_dresdensis.pdf` | The Dresden Codex, WDL item 11621 (SLUB Mscr.Dresd.R.310) — researcher-provided, committed whole per request for in-repo access | ACQUIRED (20.6 MB, SHA-256 pinned) |
+| `dresden/pages/` (78 files) | Per-page JPEGs, byte-exact DCTDecode streams from the PDF — numbered scan01–scan78 | ACQUIRED (21 MB total, each pinned in `dresden/SHA256SUMS.txt`) |
+| `dresden/INDEX.md` | Page index: scan ↔ Förstemann numbering + assumed section categories, blank-corroboration gated | RECORD |
+| `dresden/characterization.json` | Exact integer per-page characterization (dims, luma stats, Otsu, ink coverage) | VERIFIED |
+| `dresden/receipts.json`, `dresden/machine_receipts.json`, `dresden/queries/receipts.json` | Hash-chained acquisition/decode/analysis receipts | RECORD |
+| `dresden/queries/` | Researcher's concept illustrations + photographed column, exact decimations, originals SHA-256-pinned | ACQUIRED |
+| `dresden/derived/` | Discovery galleries for every page: luminance-path overlays (`paths/`), hollow-vs-solid dot overlays (`dots/`), exact quantile tonal-band maps (`bands/`) — display-seam renders of receipted measurements | RECORD |
+| `dresden/discovery_receipts.json` | Hash-chained per-page discovery-sweep receipts | RECORD |
 
 **Not committed (regenerate with `tools/fetch_tiff.py`):**
 `archimedes_forgery.npz` (46 MB — inside the forged St. Mark painting, where the
@@ -88,6 +97,9 @@ imaged 2007-08-20 at the Walters Art Museum.
 | File | Contents |
 |---|---|
 | `fetch_tiff.py` | Remote TIFF IFD parser + HTTP range-request row-band fetcher. Pulls exact crops from the 532 MB rasters without downloading whole files, with no resampling or transcoding — the integers on disk are the integers the camera wrote |
+| `extract_dresden.py` | DRE-01 ingestion: byte-exact extraction of the 78 embedded JPEG scans from the WDL 11621 PDF (raw DCTDecode streams, no re-encode), acquisition + decode receipts, integer per-page characterization |
+| `build_dresden_index.py` | `data/dresden/INDEX.md` generator — Förstemann numbering + assumed section categories, gated on the measured blank-page corroboration |
+| `pin_queries.py` | Pins the researcher-supplied illustration/query images as exact nearest-neighbour decimations with the originals' SHA-256 in receipts |
 
 Usage: `python3 tools/fetch_tiff.py <folio> <band> <row0> <nrows> <col0>:<col1>`
 

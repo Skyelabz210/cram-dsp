@@ -54,7 +54,8 @@ def _exact_pseudoinverse_raw(M):
             raise ValueError("endmember matrix is rank-deficient")
         A[col], A[piv] = A[piv], A[col]
         pv = A[col][col]
-        A[col] = [v / pv for v in A[col]]
+        pv_inv = Fraction(pv.denominator, pv.numerator)  # exact reciprocal
+        A[col] = [v * pv_inv for v in A[col]]
         for r in range(k):
             if r != col and A[r][col] != 0:
                 f = A[r][col]

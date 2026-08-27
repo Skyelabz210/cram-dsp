@@ -50,10 +50,12 @@ operators standard CRT homomorphisms, so the A3 distortion certificate is trivia
   a1_lint.py: 1 self-references (the detector names its target) — exempt
   baseline_float.py: 31 float sites — QUARANTINED (classical foil, float by design)
   core.py: A1 CLEAN
+  dresden.py: A1 CLEAN
   forensics.py: A1 CLEAN
   ingest.py: A1 CLEAN
   metrics.py: A1 CLEAN
   render.py: A1 CLEAN
+  spectral.py: A1 CLEAN
   synth.py: A1 CLEAN
   transforms.py: A1 CLEAN
   unmix.py: A1 CLEAN

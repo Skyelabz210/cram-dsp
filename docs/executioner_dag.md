@@ -132,3 +132,52 @@ ARC03 (HUMAN-VERIFY gate on annotation fixtures — blocks axis D / NODE-ARC10).
 ### Next step to resume
 NODE-VES01: acquire the Vesuvius ink-label set and run the same
 first-contact characterization; Progress Prize deadline 2026-08-31.
+
+## CHECKPOINT — 2026-08-27 (campaign 3: Dresden scan set provided, DRE-01 + glyph machine)
+
+### Completed This Session
+| NODE-ID | Status | Output |
+|---------|--------|--------|
+| DRE01 | PASS | data/dresden/ — WDL 11621 PDF committed + 78 byte-exact page JPEGs, SHA-256 pinned, hash-chained receipts, exact integer per-page characterization; INDEX.md (Förstemann numbering + assumed categories, blank-page positions {29,30,31,64} corroborate the mapping by measurement) |
+| (machine) | PASS | cram_dsp/dresden.py — A1-clean glyph machine (integer Otsu, run-based 8-conn components, circular-outward ring signatures, L1 matching, luminance ordering, seeded permutation path test); analysis/dresden_run.py — **636 exact checks, 0 failures**; docs/DRESDEN_MACHINE.md + DRESDEN_MACHINE_RUN.md |
+
+### Measured results (scoped, negatives shipped)
+- C2 recurrence: real-cell nearest-code distance median 404 vs 543 random-placement null (Venus pages); dot-form retrieval works; complex-glyph retrieval under-resolved at 684×1350 — limit stated.
+- C3 "luminous path": 60/78 inscribed pages give p≤0.05 tours, BUT the blank pages give rank 0/999 with zero glyphs — substrate-luminance autocorrelation explains the effect; no designed-path evidence. Negative shipped.
+- C4 photographed column: NOT in this scan set (top-4 template hits are blank pages = null). Madrid Codex origin recorded as HYPOTHESIS_ACTIVE, researcher to check.
+- C5 light activation: untestable on fixed-illumination scans; falsification gate defined (RTI/MSI + blank-substrate control).
+
+### Corrections folded in during the session
+- otsu_threshold off-by-one: returned last dark bin while ink_mask uses strict <; now returns first bright value; extractor + index regenerated, all cross-checks pass.
+- Pre-existing A1 violation in spectral.py:57 (Fraction true-division from campaign-2 commit 40a3344) replaced with exact-reciprocal multiply; pseudoinverse exactness re-witnessed (P@M == D*I); a1_lint back to PASS.
+
+### Gates
+G1 outputs at stated paths ✓ · G2 a1_lint PASS ✓ · G3 py_compile clean ✓ · G4 run_all baseline 2,585,391/0 unchanged + dresden_run 636/0 ✓ · G5 DRE01 gate (every page characterized) ✓ · G6 A2/A8/inverse untouched ✓.
+
+### BLOCKED (changes)
+DRE01 cleared by researcher file provision. DRE02–DRE05 now PENDING (were BLOCKED on DRE01). All other blockers unchanged from 2026-08-19 checkpoint.
+
+### Next step to resume
+NODE-DRE02 (repair-seam map via quant_fingerprint_map) or NODE-DRE04 (KELD strata / tonal windows) on the ingested pages; note scan resolution limit — full-res SLUB captures would lift the C2 complex-glyph bound. Track 1 deadline 2026-08-31 (VES) still governs priorities.
+
+## CHECKPOINT — 2026-08-27 (campaign 3b: discovery sweep — exploratory mode per researcher direction)
+
+### Completed This Session
+| NODE-ID | Status | Output |
+|---------|--------|--------|
+| (discovery machinery) | PASS | cram_dsp/dresden.py extended (4/8-conn labeling, exact hole counting, dot topology census, exact quantile tonal bands, all-pairs L1 matrix); analysis/dresden_discover.py — whole-codex sweep, 9/9 fixture checks; docs/DRESDEN_DISCOVERIES.md catalog; data/dresden/derived/ galleries (paths/dots/bands for all 78 pages) |
+
+### What the sweep surfaced (MEASURED, exploratory ranking)
+- D1: 7,834 cells all-pairs matched; 35 recurrence clusters (size>=4) at data-derived threshold L1<=177; 12 exact cross-page code identities (L1=0); numeral-dot form clusters span black AND red instances (code reads form, not pigment); serpent-body segment cluster spans p39/p44/p61/p65/p70.
+- D3: 119 large-figure regions auto-detected; 2,124 interior-element->glyph code matches catalogued (the "dressing" claim now has a machine-generated candidate list, best L1 287).
+- D4: 10,685 hollow vs 23,725 solid dots codex-wide by exact topology; densest hollow-dot pages p72, p71, p47, p48, p41 (candidate preparation/stitching loci for the researcher's shell claim).
+- D2/D5: per-page path overlays + tonal-band structure maps for every page (no page passed silently); D6 opportunity index has one row per page.
+
+### Direction note
+Researcher redirected from refutation framing to discovery framing: the machinery must surface instances itself rather than test single examples. DRESDEN_MACHINE.md verdicts stand (substrate caveat restated once in the catalog); the catalogs are the exploration surface.
+
+### Gates
+run_all 2,585,391/0 unchanged · dresden_run 636/0 · discover 9/0 · a1_lint PASS · py_compile clean.
+
+### Next step to resume
+Deep-dive the top D1 clusters and D3 pairs at their coordinates; DRE-02 (seams) / DRE-04 (KELD strata) remain PENDING; full-res SLUB captures would lift the code resolution bound.

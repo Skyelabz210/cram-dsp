@@ -460,15 +460,19 @@ Letters / Title 2027-06-25 23:59 PT.
   Mscr.Dresd.R.310 as fallback source), NODE-INF04/05
 - **Output:** data/dresden/ + receipts + per-page lattice/fingerprint maps
 - **Gate:** every page characterized before any analysis touches it.
-- **Status:** BLOCKED  **Requires:** researcher provides the scan set (or
-  approves the SLUB fetch)
+- **Status:** PASS — researcher provided the WDL 11621 scan set (78 scans,
+  byte-exact extraction, receipted, all pages characterized; blank-page
+  positions corroborate the Förstemann mapping). data/dresden/ +
+  docs/DRESDEN_MACHINE.md. Bonus build: cram_dsp/dresden.py glyph machine
+  (A1-clean) + analysis/dresden_run.py — 636 exact checks, 0 failures.
+  **Float check:** PASS (a1_lint clean)
 
 ## NODE-DRE02 — Repair-seam map, codex-wide
 - **Type:** TEST  **Size:** M
 - **Inputs:** NODE-DRE01, forensics.quant_fingerprint_map
 - **Output:** docs/DRESDEN_SEAMS.md
 - **Gate:** seam blocks enumerated with coordinates + panel images; receipts.
-- **Status:** BLOCKED (on DRE01)
+- **Status:** PENDING (DRE01 cleared 2026-08-27)
 
 ## NODE-DRE03 — Cross-generation copy-move (P75–P78 identity)
 - **Type:** TEST  **Size:** L
@@ -478,7 +482,7 @@ Letters / Title 2027-06-25 23:59 PT.
 - **Gate:** exact block matches across scan generations enumerated; the
   page-identity evidence reported at size against the standing P75–P78
   blocker.
-- **Status:** BLOCKED (on DRE01)
+- **Status:** PENDING (DRE01 cleared 2026-08-27)
 
 ## NODE-DRE04 — KELD strata + tonal-window hidden-layer scan
 - **Type:** TEST  **Size:** M
@@ -487,7 +491,7 @@ Letters / Title 2027-06-25 23:59 PT.
 - **Output:** docs/DRESDEN_STRATA.md
 - **Gate:** per that skill — pattern-level evidence with panels; discovery
   mode (extract structure), not refutation framing.
-- **Status:** BLOCKED (on DRE01)
+- **Status:** PENDING (DRE01 cleared 2026-08-27)
 
 ## NODE-DRE05 — P54–56 eclipse-cell pass
 - **Type:** TEST  **Size:** M
@@ -495,7 +499,7 @@ Letters / Title 2027-06-25 23:59 PT.
 - **Output:** docs/DRESDEN_P54_56.md
 - **Gate:** cell readings + receipts, cross-referenced to the eclipse-table
   canon.
-- **Status:** BLOCKED (on DRE01)
+- **Status:** PENDING (DRE01 cleared 2026-08-27)
 
 ---
 

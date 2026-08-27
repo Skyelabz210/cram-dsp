@@ -87,12 +87,19 @@ failed**, so the bar is a published position rather than a self-set target.
   **visually**, no numeric score; illegible regions forced synchrotron XRF.
 - **Scoring opportunity:** supply the first quantitative score on that corpus.
 
-### Board 5 — Dresden Codex · **QUEUED**
+### Board 5 — Dresden Codex · **OPEN — scan set acquired (DRE-01 PASS)**
 
-- Program-internal open items (page identity P75–P78, P54–56 eclipse cells,
-  repair seams). The KELD pigment ladder was written for this artifact; the new
-  additions are fingerprint-discontinuity seam detection and exact copy-move
-  across scan generations.
+- Scan set in hand: WDL 11621 (SLUB Mscr.Dresd.R.310), 78 scans, byte-exact,
+  receipted, characterized (`data/dresden/`); Förstemann mapping corroborated
+  by measured blank-page positions. First measured results shipped in
+  `docs/DRESDEN_MACHINE.md`: glyph segmentation + ring-code recurrence
+  (positive at dot-form scale, resolution-bounded), luminance-path claim
+  killed by the blank-substrate control, photographed-column localization
+  NEGATIVE. Remaining program-internal open items (page identity P75–P78,
+  P54–56 eclipse cells, repair seams) proceed as DRE-02..05. The KELD pigment
+  ladder was written for this artifact; the new additions are
+  fingerprint-discontinuity seam detection and exact copy-move across scan
+  generations.
 
 ---
 
