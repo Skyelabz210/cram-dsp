@@ -268,3 +268,19 @@ best pages for each experiment. Built:
 - Form vocabulary final (dresden_vocab 7/7): rule-chosen threshold 1410
   (largest with max family <= 500); 15 families, dot family 496, full
   contact sheets derived/clusters/.
+
+## RULES CHANGE — 2026-08-27 (researcher directive: exploration rules)
+
+docs/RULES_OF_EXPLORATION.md installed and made binding via CLAUDE.md:
+(1) no hypothesis closure while machinery is under construction — results
+are MEASURED / METHOD-LIMITED / OPEN only; no "closed avenues" anywhere;
+(2) controls must not presuppose the hypothesis false — the blank-page
+control's null model (blanks = no signal) is rejected by the researcher's
+hypothesis (continuous strip; flat white = base state), so its prior
+"no designed path" reading is WITHDRAWN as a verdict (measurements stand);
+(3) failed methods preserved as receipts (C4 chain is the template);
+(4) evidence vs visualization split — matchers run on evidence transforms
+only; (5) localization control battery required; (6) sequences require
+multi-path agreement; (7) morphology before semantics. Existing docs
+reframed accordingly (this record, per its append-only rule, is not
+rewritten — this entry IS the record of the change).

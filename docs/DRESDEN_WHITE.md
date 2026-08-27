@@ -100,10 +100,10 @@ The researcher's p69 column is the worked example:
 | 77 | 73 | 180..224 | 223 | 361 | 7238 | (933,9) (1254,248) (877,4) (1116,345) (1232,15) |
 | 78 | 74 | 127..229 | 227 | 342 | 3535 | (174,233) (253,191) (232,534) (186,568) (349,300) |
 
-Reading note (discovery framing): node sequences are exact measurements
-of where each page's brightest structures sit and how a brightest-first
-walk orders them. Cross-page comparison of station layouts, and overlap
-of stations with glyph cells vs substrate, are the open exploration
-surfaces; the blank-page autocorrelation caveat from DRESDEN_MACHINE.md
-applies to any claim that a tour is *designed*, and constrains, not
-forbids, the exploration.
+Reading note: node sequences are exact measurements of where each page's
+brightest structures sit and how a brightest-first walk orders them. This
+is the CURRENT operationalization of the researcher's hypothesis (per
+docs/RULES_OF_EXPLORATION.md): a single-algorithm ordering is a
+visualization, not a finding — the multi-path agreement machinery
+(brightness / spatial graph / gradient flow) is the validation route, and
+all questions about what the sequences encode are OPEN.

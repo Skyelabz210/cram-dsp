@@ -35,6 +35,11 @@ transforms, hash-chained provenance. Owner: Anthony Diaz (Skyelabz210).
    through `forensics.Ledger`. External data gets URL + byte range + SHA-256.
 7. **Negative results ship.** A zero is reported as zero
    (`BENCHMARKS.md` §3). Never inflate; never bury.
+   **Dresden exception (researcher-set):** on the Dresden exploration
+   track, `docs/RULES_OF_EXPLORATION.md` is binding — while the machinery
+   is under construction, NO researcher hypothesis may be marked closed,
+   refuted, or negative; results are MEASURED / METHOD-LIMITED / OPEN
+   only. Measurements still ship exactly; verdicts do not.
 8. **Scoped reporting.** Where a measurement overlaps an existing method:
    name the axis, the exact conditions, and where the differentiation lives —
    never a bare "on par" verdict.

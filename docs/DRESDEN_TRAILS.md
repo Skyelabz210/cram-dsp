@@ -18,10 +18,11 @@ the glyphs within L1 40 px of its centreline, in arc order. Every
 number is an exact integer function of the scan.
 
 Observation shipped as measured: the four BLANK pages rank among the
-most trail-rich — trails are substrate/fiber phenomena that exist
-without writing. The glyph-sequence catalog below therefore draws from
-the trail-richest INSCRIBED pages; what a trail's interaction with
-glyphs means stays an open exploration question.
+most trail-rich. Under the researcher's hypothesis this is expected —
+flat white is the base state and the strip is continuous — so this is
+recorded as a MEASUREMENT consistent with the hypothesis, not as a
+deflationary control. The glyph-sequence catalog draws from the
+trail-richest INSCRIBED pages because sequences need glyphs.
 
 ## The machine's ranking — best trail pages
 
@@ -75,5 +76,8 @@ Reading note: trail existence, arc order, and glyph sequences are
 MEASURED. Whether a trail is an intentional mark, a fiber of the bark
 paper, plaster loss, or sizing is a materials question — the maps give
 every candidate with coordinates so that question can be asked of the
-physical object. The blank-page control applies to design claims, not
-to the existence or geometry of the trails.
+physical object. Per the researcher's framing: the codex is a continuous
+strip and flat white is the base state of the hypothesized effect, so
+trail-rich blank pages are consistent with the hypothesis (trails may run
+THROUGH page boundaries — cross-page continuity is a test to build, not
+an objection). All interpretive questions: OPEN.

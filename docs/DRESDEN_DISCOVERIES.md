@@ -52,7 +52,7 @@ Strongest single cross-page code identities (top 12):
 
 ## D2 — Path gallery (all 78 pages)
 
-Overlays: `data/dresden/derived/paths/scanNN_path.jpg` (luminance-ordered tour, first 12 stations numbered). Pages ranked by tour coherence (permutation rank, lower = more ordered than chance). Caveat once: substrate brightness autocorrelation contributes to this signal on every page (DRESDEN_MACHINE.md §4); ranking is an exploratory pointer, not a design claim.
+Overlays: `data/dresden/derived/paths/scanNN_path.jpg` (luminance-ordered tour, first 12 stations numbered). Pages ranked by tour coherence (permutation rank, lower = more ordered than chance). Note: this ranking is an exploratory pointer from the first-generation path machinery; see DRESDEN_TRAILS.md for the current trail machinery and RULES_OF_EXPLORATION.md for status vocabulary (all interpretive questions OPEN).
 
 Most-coherent pages: scan 1 (p1, rank 0/999), scan 2 (p2, rank 0/999), scan 3 (p3, rank 0/999), scan 4 (p4, rank 0/999), scan 5 (p5, rank 0/999), scan 8 (p8, rank 0/999), scan 9 (p9, rank 0/999), scan 13 (p13, rank 0/999)
 
@@ -80,7 +80,7 @@ Most-coherent pages: scan 1 (p1, rank 0/999), scan 2 (p2, rank 0/999), scan 3 (p
 
 ## D4 — Dot topology census (hollow vs solid)
 
-Codex totals: **10685 hollow** (ring-topology) vs **23725 solid** dots. Overlays for every page: `data/dresden/derived/dots/` (hollow = cyan, solid = orange). Pages with the largest hollow-dot populations — the candidate 'stitching/preparation' loci of the turtle-shell claim:
+Codex totals: **10685 hollow** (ring-topology) vs **23725 solid** dots. Overlays for every page: `data/dresden/derived/dots/` (hollow = cyan, solid = orange). Pages with the largest hollow-dot populations — the pages richest in open (ring-topology) marks — morphology only; the researcher's stitching hypothesis is tested separately, never assumed:
 
 | Scan | Page | Hollow | Solid |
 |---|---|---|---|
