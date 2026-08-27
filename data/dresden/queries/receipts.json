@@ -1,0 +1,110 @@
+{
+ "chain": "bcab1a1b082f16c499588000088f653359f6ec9837b4391906567504c2a22193",
+ "entries": [
+  {
+   "chain": "6b1d7edb0c126cf4f043e3ccbb4479bef40bfe6855caa4fc71c4f1207581eb82",
+   "in": "88123fb7651e5fa8be7954ee510e790ab1bdfb6d7db8e71b97e39ccb34a26284",
+   "op": "acquire",
+   "out": "88123fb7651e5fa8be7954ee510e790ab1bdfb6d7db8e71b97e39ccb34a26284",
+   "params": {
+    "bytes": 16447312,
+    "range": "0-16447311",
+    "sha256": "88123fb7651e5fa8be7954ee510e790ab1bdfb6d7db8e71b97e39ccb34a26284",
+    "url": "researcher-upload:photographed codex column (localization query)"
+   }
+  },
+  {
+   "chain": "a3b2b2fa3acfbce398c430222f282f02d481724e9bacc47e273bb8819f2a49b6",
+   "in": "88123fb7651e5fa8be7954ee510e790ab1bdfb6d7db8e71b97e39ccb34a26284",
+   "op": "decimate_nn",
+   "out": "83e9dac805bea2269b0186a6d7b0f5b03afe4ead44384b980803c6d59fd05492",
+   "params": {
+    "k": 4,
+    "label": "photographed codex column (localization query)",
+    "offset": 0,
+    "out_file": "query_column_photo_q4.png",
+    "out_sha256": "6261c717f6dfb872e2f1b9f40dae91f6f62bb8026e79afffdb077282a29c9ba0",
+    "out_shape": [
+     558,
+     293,
+     3
+    ],
+    "src_shape": [
+     2229,
+     1170,
+     3
+    ]
+   }
+  },
+  {
+   "chain": "e188571fe52e77a4e8dfd551b83b46e6c2e54f6c4bbc12cb33ff5d071e43bb36",
+   "in": "31612013796e75315b511b7aab85db8a711381f9201fab4d5bba0c3384485e57",
+   "op": "acquire",
+   "out": "31612013796e75315b511b7aab85db8a711381f9201fab4d5bba0c3384485e57",
+   "params": {
+    "bytes": 2988416,
+    "range": "0-2988415",
+    "sha256": "31612013796e75315b511b7aab85db8a711381f9201fab4d5bba0c3384485e57",
+    "url": "researcher-upload:concept illustration 1 (luminous path / glyph code claims)"
+   }
+  },
+  {
+   "chain": "2a25ff2db33266961a725e666a403fd8798df0320ad495e3c9e7a17dab1904cf",
+   "in": "31612013796e75315b511b7aab85db8a711381f9201fab4d5bba0c3384485e57",
+   "op": "decimate_nn",
+   "out": "c14257cf1d59f13bf7cbd55dbceb9295421c2b0674a8d3a4af6c571745ab3faf",
+   "params": {
+    "k": 2,
+    "label": "concept illustration 1 (luminous path / glyph code claims)",
+    "offset": 0,
+    "out_file": "claim_illustration_1_q2.png",
+    "out_sha256": "1333a63d371628df0f338aba59f9aeed391e5e68a0d7f93a81a3aa0680bcb7d6",
+    "out_shape": [
+     512,
+     768,
+     3
+    ],
+    "src_shape": [
+     1024,
+     1536,
+     3
+    ]
+   }
+  },
+  {
+   "chain": "2a718f7480eb422faa60c48461fb65a7d3a4147183453aa74ce3617ff803113a",
+   "in": "765de4206ca8033fcbdc01fb21ecd8e1814d63d44c71920e994f54255f135695",
+   "op": "acquire",
+   "out": "765de4206ca8033fcbdc01fb21ecd8e1814d63d44c71920e994f54255f135695",
+   "params": {
+    "bytes": 2578456,
+    "range": "0-2578455",
+    "sha256": "765de4206ca8033fcbdc01fb21ecd8e1814d63d44c71920e994f54255f135695",
+    "url": "researcher-upload:concept illustration 2 (white-gradient sequence claims)"
+   }
+  },
+  {
+   "chain": "bcab1a1b082f16c499588000088f653359f6ec9837b4391906567504c2a22193",
+   "in": "765de4206ca8033fcbdc01fb21ecd8e1814d63d44c71920e994f54255f135695",
+   "op": "decimate_nn",
+   "out": "cd6da858fd12ac392fd44bb82d9eaf848b0f5dd3b62676c18da887968b8540b4",
+   "params": {
+    "k": 2,
+    "label": "concept illustration 2 (white-gradient sequence claims)",
+    "offset": 0,
+    "out_file": "claim_illustration_2_q2.png",
+    "out_sha256": "18e01b88d039d45dc68e92d97f0c0036dfe618813a6de4389b1e3fb90d7b138e",
+    "out_shape": [
+     685,
+     575,
+     3
+    ],
+    "src_shape": [
+     1369,
+     1149,
+     3
+    ]
+   }
+  }
+ ]
+}
