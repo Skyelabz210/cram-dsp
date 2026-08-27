@@ -159,3 +159,25 @@ DRE01 cleared by researcher file provision. DRE02–DRE05 now PENDING (were BLOC
 
 ### Next step to resume
 NODE-DRE02 (repair-seam map via quant_fingerprint_map) or NODE-DRE04 (KELD strata / tonal windows) on the ingested pages; note scan resolution limit — full-res SLUB captures would lift the C2 complex-glyph bound. Track 1 deadline 2026-08-31 (VES) still governs priorities.
+
+## CHECKPOINT — 2026-08-27 (campaign 3b: discovery sweep — exploratory mode per researcher direction)
+
+### Completed This Session
+| NODE-ID | Status | Output |
+|---------|--------|--------|
+| (discovery machinery) | PASS | cram_dsp/dresden.py extended (4/8-conn labeling, exact hole counting, dot topology census, exact quantile tonal bands, all-pairs L1 matrix); analysis/dresden_discover.py — whole-codex sweep, 9/9 fixture checks; docs/DRESDEN_DISCOVERIES.md catalog; data/dresden/derived/ galleries (paths/dots/bands for all 78 pages) |
+
+### What the sweep surfaced (MEASURED, exploratory ranking)
+- D1: 7,834 cells all-pairs matched; 35 recurrence clusters (size>=4) at data-derived threshold L1<=177; 12 exact cross-page code identities (L1=0); numeral-dot form clusters span black AND red instances (code reads form, not pigment); serpent-body segment cluster spans p39/p44/p61/p65/p70.
+- D3: 119 large-figure regions auto-detected; 2,124 interior-element->glyph code matches catalogued (the "dressing" claim now has a machine-generated candidate list, best L1 287).
+- D4: 10,685 hollow vs 23,725 solid dots codex-wide by exact topology; densest hollow-dot pages p72, p71, p47, p48, p41 (candidate preparation/stitching loci for the researcher's shell claim).
+- D2/D5: per-page path overlays + tonal-band structure maps for every page (no page passed silently); D6 opportunity index has one row per page.
+
+### Direction note
+Researcher redirected from refutation framing to discovery framing: the machinery must surface instances itself rather than test single examples. DRESDEN_MACHINE.md verdicts stand (substrate caveat restated once in the catalog); the catalogs are the exploration surface.
+
+### Gates
+run_all 2,585,391/0 unchanged · dresden_run 636/0 · discover 9/0 · a1_lint PASS · py_compile clean.
+
+### Next step to resume
+Deep-dive the top D1 clusters and D3 pairs at their coordinates; DRE-02 (seams) / DRE-04 (KELD strata) remain PENDING; full-res SLUB captures would lift the code resolution bound.

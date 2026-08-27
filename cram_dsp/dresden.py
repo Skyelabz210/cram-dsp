@@ -113,9 +113,11 @@ def _union(parent, a: int, b: int):
             parent[ra] = rb
 
 
-def label_components(mask):
+def label_components(mask, conn: int = 8):
     """Two-pass run-based labeling. Returns (labels int64 array, n_components).
-    Background label 0; components labeled 1..n in first-pixel order."""
+    Background label 0; components labeled 1..n in first-pixel order.
+    conn=8 (default) or conn=4; hole counting uses 4-conn background as the
+    topological dual of 8-conn foreground."""
     mask = np.asarray(mask)
     h, w = mask.shape
     labels = np.zeros((h, w), dtype=np.int64)
@@ -131,8 +133,8 @@ def label_components(mask):
         for s, e in zip(starts.tolist(), ends.tolist()):
             lab = 0
             for ps, pe, pl in prev_runs:
-                # 8-connectivity: touch if [s-1, e] intersects [ps, pe-1]
-                if s <= pe and ps <= e:
+                # 8-conn: [s-1, e] meets [ps, pe-1]; 4-conn: strict overlap
+                if (s <= pe and ps <= e) if conn == 8 else (s < pe and ps < e):
                     if lab == 0:
                         lab = _find(parent, pl)
                     else:
@@ -378,3 +380,75 @@ def analyze_page(rgb, min_area: int = 120, max_area: int = 12000,
         "centers": centers,
         "path_test": path,
     }
+
+
+# ---------------------------------------------------------------------------
+# Discovery primitives — topology, tonal bands, bulk code matching
+# ---------------------------------------------------------------------------
+
+def count_holes(comp_mask) -> int:
+    """Exact hole count of one component: 4-connected background components
+    that do not touch the crop border (topological dual of 8-conn ink).
+    A hollow dot (drawn ring / stitching hole) has >= 1; a solid dot has 0."""
+    cm = np.asarray(comp_mask)
+    inv = ~cm
+    labels, n = label_components(inv, conn=4)
+    if n == 0:
+        return 0
+    border = np.concatenate((labels[0, :], labels[-1, :],
+                             labels[:, 0], labels[:, -1]))
+    border_ids = set(int(v) for v in np.unique(border) if v != 0)
+    return n - len(border_ids)
+
+
+def dot_shape_milli(box):
+    """(aspect, fill) in milli for a component box: aspect = 1000*h//w,
+    fill = 1000*area//(h*w). Roundish solid dots fill high; rings lower."""
+    y0, y1, x0, x1, area = box
+    h, w = y1 - y0, x1 - x0
+    return (1000 * h) // w, (1000 * area) // (h * w)
+
+
+def classify_dots(mask, min_area: int = 20, max_area: int = 900,
+                  aspect_lo: int = 500, aspect_hi: int = 2000):
+    """Codex dot census on the RAW ink mask (no dilation): small, roughly
+    round components split by exact topology into hollow (>=1 hole) and
+    solid (0 holes). Returns (hollow_boxes, solid_boxes)."""
+    labels, n = label_components(np.asarray(mask))
+    hollow, solid = [], []
+    for i, b in enumerate(component_boxes(labels, n), start=1):
+        y0, y1, x0, x1, area = b
+        if not (min_area <= area <= max_area):
+            continue
+        aspect, _fill = dot_shape_milli(b)
+        if not (aspect_lo <= aspect <= aspect_hi):
+            continue
+        comp = labels[y0:y1, x0:x1] == i
+        # pad by 1 so the outside is a single border-touching background comp
+        comp = np.pad(comp, 1)
+        if count_holes(comp) >= 1:
+            hollow.append(b)
+        else:
+            solid.append(b)
+    return hollow, solid
+
+
+def luma_bands(luma, n_bands: int = 5):
+    """Exact quantile band label per pixel (0 = darkest ... n_bands-1 =
+    brightest): thresholds at exact order statistics of the page's own luma.
+    The honest version of the illustrations' 'underlying structure layers'."""
+    y = np.asarray(luma)
+    s = np.sort(y, axis=None)
+    cuts = [int(s[(i * s.size) // n_bands]) for i in range(1, n_bands)]
+    band = np.zeros(y.shape, dtype=np.int64)
+    for c in cuts:
+        band += (y >= c).astype(np.int64)
+    return band
+
+
+def l1_matrix(A, B):
+    """Exact all-pairs L1 distance between signature stacks A (n,k), B (m,k).
+    Small enough inputs only — callers chunk."""
+    A64 = np.asarray(A, dtype=np.int64)
+    B64 = np.asarray(B, dtype=np.int64)
+    return np.abs(A64[:, None, :] - B64[None, :, :]).sum(axis=2)

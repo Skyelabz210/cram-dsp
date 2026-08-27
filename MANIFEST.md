@@ -18,7 +18,7 @@ checksummed), **RECORD** (session/administrative document).
 | `synth.py` | Deterministic seeded integer evidence generators: faint palimpsest page (Δ=1 ink, Δ=11/Δ=12 decoys, plateau steps), codex strata page, recto-verso bleed pair, off-grid splice, copy-move | VERIFIED | used by T3, T6, T8, T9 |
 | `baseline_float.py` | Classical foils: float PCA separation, best-fit MAE, Sobel, float Gaussian, `blur_round_int` | **QUARANTINED** | excluded from A1 lint by name |
 | `a1_lint.py` | AST compliance scanner — float literals, true division, float names/attributes; quarantine and self-exemption discipline | VERIFIED | run inside every harness pass |
-| `dresden.py` | The glyph machine: integer luma, integer Otsu (cross-multiplied), run-based 8-conn components, shift-OR dilation, glyph cells, circular-outward ring signatures (exact isqrt), L1 signature matching, luminance ordering, seeded permutation path test | VERIFIED | analysis/dresden_run.py — 636 checks, 0 failures |
+| `dresden.py` | The glyph machine: integer luma, integer Otsu (cross-multiplied), run-based 4/8-conn components, shift-OR dilation, glyph cells, circular-outward ring signatures (exact isqrt), L1 signature matching + all-pairs matrix, luminance ordering, seeded permutation path test, exact hole counting (hollow/solid dot topology), exact quantile tonal bands | VERIFIED | analysis/dresden_run.py 636/0 + analysis/dresden_discover.py 9/0 |
 | `__init__.py` | Package surface | — | — |
 
 ## Harness
@@ -67,6 +67,8 @@ Reproduce: `python3 run_all.py` (requires numpy, Pillow). Deterministic and seed
 | `dresden/characterization.json` | Exact integer per-page characterization (dims, luma stats, Otsu, ink coverage) | VERIFIED |
 | `dresden/receipts.json`, `dresden/machine_receipts.json`, `dresden/queries/receipts.json` | Hash-chained acquisition/decode/analysis receipts | RECORD |
 | `dresden/queries/` | Researcher's concept illustrations + photographed column, exact decimations, originals SHA-256-pinned | ACQUIRED |
+| `dresden/derived/` | Discovery galleries for every page: luminance-path overlays (`paths/`), hollow-vs-solid dot overlays (`dots/`), exact quantile tonal-band maps (`bands/`) — display-seam renders of receipted measurements | RECORD |
+| `dresden/discovery_receipts.json` | Hash-chained per-page discovery-sweep receipts | RECORD |
 
 **Not committed (regenerate with `tools/fetch_tiff.py`):**
 `archimedes_forgery.npz` (46 MB — inside the forged St. Mark painting, where the
