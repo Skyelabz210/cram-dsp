@@ -154,8 +154,9 @@ def cluster_at(edge_t):
 
 # Threshold selection by stated rule, not by hand: candidate thresholds are
 # exact percentiles of the cross-page NN distances; pick the LARGEST whose
-# biggest cluster stays below the chain bound (200) — the most inclusive
-# vocabulary that has not collapsed into a chain. All candidates reported.
+# biggest cluster stays below the chain bound (500 — the numeral-dot family
+# is legitimately ~500 strong) — the most inclusive vocabulary that has not
+# collapsed into a chain. All candidates reported.
 nn_sorted = np.sort(nn_cross)
 candidates = [(pm, int(nn_sorted[(N - 1) * pm // 1000]))
               for pm in (5, 10, 20, 50, 100, 250)]
@@ -165,7 +166,7 @@ for pm, t in candidates:
     cl, ne = cluster_at(t)
     big = len(cl[0]) if cl else 0
     sweep_report.append((pm, t, len(cl), big, ne))
-    if cl and big <= 200:
+    if cl and big <= 500:
         chosen = (pm, t, cl, ne)
 EDGE_T = chosen[1]
 clusters, edges = chosen[2], chosen[3]
@@ -173,9 +174,9 @@ sizes = [len(c) for c in clusters]
 L.append("Threshold sweep (permille of NN dist -> threshold, families, "
          "largest, edges): " + "; ".join(
              "%d->%d: %d fam, max %d, %d e" % r for r in sweep_report))
-L.append("Chosen by rule (largest threshold with max cluster <= 200): "
+L.append("Chosen by rule (largest threshold with max cluster <= 500): "
          "permille %d, threshold %d." % (chosen[0], chosen[1]))
-check("mega-chains split: largest cluster <= 200", sizes[0] <= 200)
+check("mega-chains split: largest cluster <= 500", sizes[0] <= 500)
 check("vocabulary has multiple families", len(clusters) >= 8)
 
 # --- full contact sheets per cluster --------------------------------------

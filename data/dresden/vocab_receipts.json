@@ -1,17 +1,17 @@
 {
- "chain": "187170738ce99a25f7d285881e5c5bc4395e63d65b27dd3bc771207607d58713",
+ "chain": "4fff97c4eebb9066d0b4ae988bc5b1eccb206755fc61b2e9d831a3cf97e4452f",
  "entries": [
   {
-   "chain": "187170738ce99a25f7d285881e5c5bc4395e63d65b27dd3bc771207607d58713",
+   "chain": "4fff97c4eebb9066d0b4ae988bc5b1eccb206755fc61b2e9d831a3cf97e4452f",
    "in": "sweep",
    "op": "vocab_cluster",
    "out": "families",
    "params": {
     "cells": 7834,
     "code": "ring12 + sector6x8 dihedral-min",
-    "edge_threshold": 1036,
-    "edges": 732,
-    "families_ge4": 22,
+    "edge_threshold": 615,
+    "edges": 307,
+    "families_ge4": 4,
     "largest": 73
    }
   }
