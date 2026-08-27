@@ -1,0 +1,22 @@
+{
+ "chain": "ce54f9bb8b2417fec2768a9cf9c6f7a0952d3669838488d6a440406bdc79017d",
+ "entries": [
+  {
+   "chain": "ce54f9bb8b2417fec2768a9cf9c6f7a0952d3669838488d6a440406bdc79017d",
+   "in": "search",
+   "op": "locate_column",
+   "out": "3c47865a8e312a042be29552c9a6445a4e6ce21cf77032ac227cdb7d370af220",
+   "params": {
+    "margin_milli": 222,
+    "method": "orientation co-occurrence, block 8, mag_t 18",
+    "milli_score": 9434,
+    "query": "queries/query_column_photo_q4.png",
+    "template_width": 210,
+    "winner_page": "69",
+    "winner_scan": 73,
+    "x": 64,
+    "y": 768
+   }
+  }
+ ]
+}

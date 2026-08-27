@@ -93,13 +93,28 @@ carries no evidence of a designed glyph path.** A designed-path claim would
 need the inscribed-page effect to *exceed* the blank-substrate effect; here
 it does not (blanks saturate the statistic).
 
-### C4 — the photographed column: NEGATIVE (not in this scan set)
-Median-centred integer SAD over all 78 scans × 5 template scales: all top-4
-hits land on blank pages (mean-SAD 33–34), i.e. low-contrast fits, not
-structure. The column's layout (single full-height figure, no register rules)
-matches no Dresden section. NEGATIVE, shipped as such. A Madrid Codex origin
-is HYPOTHESIS_ACTIVE for the researcher to check against Tro-Cortesianus
-scans — it is not a finding of this run.
+### C4 — the photographed column: **FOUND — scan 73, Förstemann page 69, at (64, 768)**
+**Correction.** The first run shipped a NEGATIVE here. The researcher
+challenged it, and the researcher was right: the column is on **page 69**
+(rainy-season/serpent section), right-hand column, full-res coordinates
+(64, 768)–(≈274, 1350). Verified two ways: stroke-for-stroke visual match
+(`demo/dresden_located_p69.png`) and the fixed matcher below
+(milli-score 9434 vs 7720 for the best other-page placement — a 222-milli
+margin; `analysis/dresden_locate.py`, 6/6 checks).
+
+Why the first matcher failed, on the record: median-centred luma SAD does
+not survive a change of scan generation — the photograph's colour grade
+differs from the WDL scan, brightness statistics decorrelate, and blank
+pages win as low-contrast fits. Ink **structure** survives re-photography;
+brightness does not. The production localizer now matches quantized
+gradient orientations (`orientation_planes` — integer octant binning, no
+trig; `locate` — pooled exact co-occurrence, mirror-aware with the exact
+bin permutation). The Madrid hypothesis from the first run is withdrawn.
+
+Machine-surfaced bonus: the second-best placement overall is **page 65** at
+nearly the same in-page coordinates — the p65 and p69 columns share their
+composition (same section, same layout), which the matcher sees
+structurally. MEASURED; interpretation open.
 
 ### C5 — light activation: NOT TESTABLE HERE
 A fixed-illumination scan cannot confirm or refute an illumination-dependent

@@ -452,3 +452,142 @@ def l1_matrix(A, B):
     A64 = np.asarray(A, dtype=np.int64)
     B64 = np.asarray(B, dtype=np.int64)
     return np.abs(A64[:, None, :] - B64[None, :, :]).sum(axis=2)
+
+
+# ---------------------------------------------------------------------------
+# Cross-generation localization — edge-orientation matching (exact)
+#
+# Lesson learned the hard way: median-centred luma SAD is NOT discriminative
+# across scan generations (different colour grades make blank pages win as
+# low-contrast fits — it produced a false negative on the researcher's p69
+# column). Ink STRUCTURE survives re-photography; brightness does not. So
+# the production localizer matches quantized gradient orientations, not
+# intensities.
+# ---------------------------------------------------------------------------
+
+def orientation_planes(luma, mag_threshold: int = 18):
+    """8 binary orientation planes from integer central-difference gradients.
+    Octant binning uses only sign tests and |gx| vs |gy| comparisons — no
+    trigonometry, no float. A pixel votes in exactly one plane when its
+    L1 gradient magnitude reaches mag_threshold."""
+    y = np.asarray(luma, dtype=np.int64)
+    gx = np.zeros_like(y)
+    gy = np.zeros_like(y)
+    gx[:, 1:-1] = y[:, 2:] - y[:, :-2]
+    gy[1:-1, :] = y[2:, :] - y[:-2, :]
+    strong = (np.abs(gx) + np.abs(gy)) >= mag_threshold
+    ax, ay = np.abs(gx), np.abs(gy)
+    b = ((ay > ax).astype(np.int64) * 4
+         + ((gx < 0) ^ (gy < 0)).astype(np.int64) * 2
+         + (np.minimum(ax, ay) * 2 > np.maximum(ax, ay)).astype(np.int64))
+    return np.stack([(strong & (b == k)).astype(np.int64) for k in range(8)])
+
+
+def pool_planes(planes, block: int = 8):
+    """Exact block-sum pooling of orientation planes (counts per cell)."""
+    p = np.asarray(planes)
+    c, h, w = p.shape
+    hb, wb = (h // block) * block, (w // block) * block
+    return p[:, :hb, :wb].reshape(
+        c, hb // block, block, wb // block, block).sum(axis=(2, 4))
+
+
+def cooccurrence_map(page_planes, tpl_planes):
+    """Exact co-occurrence score at every offset: sum over planes of the
+    dot product between the template and the aligned page window. int64
+    einsum over a strided view — no float anywhere."""
+    from numpy.lib.stride_tricks import sliding_window_view
+    P = np.asarray(page_planes, dtype=np.int64)
+    T = np.asarray(tpl_planes, dtype=np.int64)
+    c, th, tw = T.shape
+    if P.shape[1] < th or P.shape[2] < tw:
+        return np.zeros((0, 0), dtype=np.int64)
+    wins = sliding_window_view(P, (th, tw), axis=(1, 2))
+    return np.einsum("cijhw,chw->ij", wins, T)
+
+
+MIRROR_PLANE_PERM = (2, 3, 0, 1, 6, 7, 4, 5)  # gx -> -gx toggles the XOR bit
+
+
+def mirror_planes(planes):
+    """Orientation planes of the horizontally mirrored image: spatial flip
+    plus the exact bin permutation induced by gx -> -gx."""
+    p = np.asarray(planes)
+    return p[list(MIRROR_PLANE_PERM)][:, :, ::-1]
+
+
+def locate(page_luma, tpl_luma, block: int = 8, mag_threshold: int = 18):
+    """Best placement of the template inside the page by pooled orientation
+    co-occurrence. Returns (score, x, y, mirrored) with x/y in full-res
+    pixels (top-left corner, quantized to the pooling block)."""
+    pp = pool_planes(orientation_planes(page_luma, mag_threshold), block)
+    tp = pool_planes(orientation_planes(tpl_luma, mag_threshold), block)
+    best = (-1, 0, 0, 0)
+    for mir in (0, 1):
+        tq = mirror_planes(tp) if mir else tp
+        sc = cooccurrence_map(pp, tq)
+        if sc.size == 0:
+            continue
+        j = np.unravel_index(np.argmax(sc), sc.shape)
+        cand = (int(sc[j]), int(j[1]) * block, int(j[0]) * block, mir)
+        if cand[0] > best[0]:
+            best = cand
+    return best
+
+
+# ---------------------------------------------------------------------------
+# White-gradient machinery — the illustrations' actual pipeline, exact
+# ---------------------------------------------------------------------------
+
+def order_stat(luma, milli: int) -> int:
+    """Exact order statistic: the luma value at rank milli/1000."""
+    s = np.sort(np.asarray(luma), axis=None)
+    idx = (milli * (s.size - 1)) // 1000
+    return int(s[idx])
+
+
+def highlight_freeze(luma, lo_milli: int = 500, hi_milli: int = 970):
+    """Exact integer contrast freeze ('highlights & contrast frozen'):
+    values at/below the lo order statistic -> 0, at/above the hi order
+    statistic -> 255, linear integer scaling between. Every output value
+    is floor((v-lo)*255/(hi-lo)) — a stated exact function of the input."""
+    y = np.asarray(luma, dtype=np.int64)
+    lo = order_stat(y, lo_milli)
+    hi = order_stat(y, hi_milli)
+    if hi <= lo:
+        hi = lo + 1
+    out = (y - lo) * 255 // (hi - lo)
+    return np.clip(out, 0, 255), lo, hi
+
+
+def white_nodes(luma, top_milli: int = 965, min_area: int = 12,
+                max_area: int = 4000):
+    """Bright-structure nodes: pixels at/above the top_milli order statistic,
+    connected components, area-filtered. Returns (threshold, node list),
+    each node (cy, cx, area, peak, median) — brightest-first by median,
+    ties by peak then reading order. The honest 'white fiber/pigment'
+    detector: an exact partition of the page's own brightest pixels."""
+    y = np.asarray(luma, dtype=np.int64)
+    thr = order_stat(y, top_milli)
+    mask = y >= thr
+    labels, n = label_components(mask)
+    nodes = []
+    boxes = component_boxes(labels, n)
+    for i, b in enumerate(boxes, start=1):
+        y0, y1, x0, x1, area = b
+        if not (min_area <= area <= max_area):
+            continue
+        sel = labels[y0:y1, x0:x1] == i
+        vals = y[y0:y1, x0:x1][sel]
+        nodes.append(((y0 + y1) // 2, (x0 + x1) // 2, area,
+                      int(vals.max()), exact_median(vals)))
+    nodes.sort(key=lambda t: (-t[4], -t[3], t[0], t[1]))
+    return thr, nodes
+
+
+def white_path(nodes, limit: int = 12):
+    """Brightest-first sequence over white nodes (the illustrated '1 =
+    brightest' path): returns the first `limit` node centers in brightness
+    order plus the exact L1 tour length of that sequence."""
+    seq = [(cy, cx) for cy, cx, _, _, _ in nodes[:limit]]
+    return seq, path_length_l1(seq)

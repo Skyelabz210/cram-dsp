@@ -181,3 +181,20 @@ run_all 2,585,391/0 unchanged · dresden_run 636/0 · discover 9/0 · a1_lint PA
 
 ### Next step to resume
 Deep-dive the top D1 clusters and D3 pairs at their coordinates; DRE-02 (seams) / DRE-04 (KELD strata) remain PENDING; full-res SLUB captures would lift the code resolution bound.
+
+## CORRECTION — 2026-08-27 (C4 false negative reversed; localizer rebuilt)
+
+Researcher challenged the C4 NEGATIVE (photographed column "not in this scan
+set") and was right: the column is **scan 73 = Förstemann page 69**, right
+column, (64, 768)–(≈274, 1350). Root cause of the false negative: median-
+centred luma SAD is not discriminative across scan generations (blank pages
+win as low-contrast fits). Fix shipped: integer edge-orientation matching —
+`dresden.orientation_planes` (octant binning, no trig), `pool_planes`,
+`cooccurrence_map` (exact int64 einsum), `locate` (mirror-aware via exact
+bin permutation gx→−gx ⇒ k↔k^2). `analysis/dresden_locate.py`: 6/6 checks;
+winner margin 222 milli over best other-page placement; panels
+`demo/dresden_located_p69.png` / `_page.png`. DRESDEN_MACHINE.md §C4
+rewritten; Madrid hypothesis withdrawn. Machine-surfaced: p65 column is the
+structural twin of the p69 column (second-best placement, same in-page
+coordinates). Lesson folded into the module docstring: match structure, not
+brightness, across scan generations.
