@@ -1,0 +1,19 @@
+{
+ "chain": "187170738ce99a25f7d285881e5c5bc4395e63d65b27dd3bc771207607d58713",
+ "entries": [
+  {
+   "chain": "187170738ce99a25f7d285881e5c5bc4395e63d65b27dd3bc771207607d58713",
+   "in": "sweep",
+   "op": "vocab_cluster",
+   "out": "families",
+   "params": {
+    "cells": 7834,
+    "code": "ring12 + sector6x8 dihedral-min",
+    "edge_threshold": 1036,
+    "edges": 732,
+    "families_ge4": 22,
+    "largest": 73
+   }
+  }
+ ]
+}

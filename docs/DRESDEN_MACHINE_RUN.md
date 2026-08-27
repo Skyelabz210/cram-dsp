@@ -109,24 +109,24 @@ Blank-page control ranks: [0, 0, 0, 0]. If these are also << 50, the short tours
 ## §3 C1/C2 — glyph internal codes and their recurrence (Venus pages)
 Query page scan 49 (Förstemann 46): 140 cells. Candidate pool: 373 cells on scans [50, 51, 52, 53] (pages 47-50).
 
-Median nearest-neighbour signature distance (milli-L1 over 12 rings): same page **419**, cross page **404**.
+Median nearest-neighbour signature distance (milli-L1 over 12 rings): same page **484**, cross page **431**.
 
 Top 10 cross-page code matches (exact distances):
 
 | Query box (y0,y1,x0,x1) | Match scan/page | Match box | L1 dist |
 |---|---|---|---|
-| (647,662,510,525) | 52 / 49 | (369,382,446,460) | 90 |
-| (932,947,260,273) | 52 / 49 | (87,100,561,576) | 99 |
-| (906,920,86,100) | 50 / 47 | (945,960,673,684) | 104 |
-| (106,124,429,444) | 52 / 49 | (82,104,467,484) | 131 |
-| (1035,1049,321,335) | 51 / 48 | (945,959,118,133) | 138 |
-| (147,175,462,483) | 52 / 49 | (113,141,158,209) | 180 |
-| (784,796,85,104) | 50 / 47 | (146,161,97,116) | 185 |
-| (1149,1170,286,307) | 53 / 50 | (159,174,561,576) | 192 |
-| (191,208,390,407) | 52 / 49 | (203,219,571,586) | 195 |
-| (709,722,436,461) | 53 / 50 | (171,184,161,178) | 195 |
+| (1035,1049,321,335) | 51 / 48 | (945,960,97,112) | 128 |
+| (906,920,86,100) | 50 / 47 | (945,960,673,684) | 190 |
+| (533,558,75,83) | 53 / 50 | (962,975,663,680) | 218 |
+| (810,826,133,166) | 50 / 47 | (146,161,97,116) | 233 |
+| (599,625,280,310) | 51 / 48 | (174,206,157,207) | 235 |
+| (337,359,263,298) | 52 / 49 | (125,141,225,248) | 237 |
+| (1056,1075,416,449) | 51 / 48 | (211,225,0,20) | 238 |
+| (1223,1236,102,121) | 50 / 47 | (160,173,327,341) | 252 |
+| (428,442,286,306) | 52 / 49 | (361,389,286,318) | 254 |
+| (1149,1170,286,307) | 52 / 49 | (116,129,113,130) | 255 |
 
-Null control: nearest-neighbour distance to 240 seeded random-placement signatures on the same candidate pages — median **543** (vs 404 for real cells). Interpretation in the doc, from the numbers.
+Null control: nearest-neighbour distance to 240 seeded random-placement signatures on the same candidate pages — median **566** (vs 431 for real cells). Interpretation in the doc, from the numbers.
 
 ## §4 C4 — locating the photographed column (exact template search)
 Query: researcher's photographed column (pinned decimation, receipts in data/dresden/queries/). Method: median-centred integer SAD over all 78 scans at 5 template scales, nearest-neighbour geometry casts only. Top 8 (mean-SAD per pixel, scan, template width, x, y):

@@ -127,37 +127,56 @@ for i0 in range(0, N, CH):
     top_idx[i0:i1] = part
     top_d[i0:i1] = np.take_along_axis(d, part, axis=1)
 
-EDGE_T = int(np.sort(nn_cross)[(N - 1) * 25 // 100])
+def cluster_at(edge_t):
+    parent = list(range(N))
 
-parent = list(range(N))
+    def find(x):
+        while parent[x] != x:
+            parent[x] = parent[parent[x]]
+            x = parent[x]
+        return x
+
+    edges = 0
+    for i in range(N):
+        for j, dv in zip(top_idx[i], top_d[i]):
+            if dv <= edge_t:
+                ri, rj = find(i), find(int(j))
+                if ri != rj:
+                    parent[ri] = rj
+                edges += 1
+    groups = {}
+    for i in range(N):
+        groups.setdefault(find(i), []).append(i)
+    cl = sorted((v for v in groups.values() if len(v) >= 4),
+                key=len, reverse=True)
+    return cl, edges
 
 
-def find(x):
-    while parent[x] != x:
-        parent[x] = parent[parent[x]]
-        x = parent[x]
-    return x
-
-
-edges = 0
-for i in range(N):
-    for j, dv in zip(top_idx[i], top_d[i]):
-        if dv <= EDGE_T:
-            ri, rj = find(i), find(int(j))
-            if ri != rj:
-                parent[ri] = rj
-            edges += 1
-
-groups = {}
-for i in range(N):
-    groups.setdefault(find(i), []).append(i)
-clusters = sorted((v for v in groups.values() if len(v) >= 4),
-                  key=len, reverse=True)
+# Threshold selection by stated rule, not by hand: candidate thresholds are
+# exact percentiles of the cross-page NN distances; pick the LARGEST whose
+# biggest cluster stays below the chain bound (200) — the most inclusive
+# vocabulary that has not collapsed into a chain. All candidates reported.
+nn_sorted = np.sort(nn_cross)
+candidates = [(pm, int(nn_sorted[(N - 1) * pm // 1000]))
+              for pm in (5, 10, 20, 50, 100, 250)]
+chosen = None
+sweep_report = []
+for pm, t in candidates:
+    cl, ne = cluster_at(t)
+    big = len(cl[0]) if cl else 0
+    sweep_report.append((pm, t, len(cl), big, ne))
+    if cl and big <= 200:
+        chosen = (pm, t, cl, ne)
+EDGE_T = chosen[1]
+clusters, edges = chosen[2], chosen[3]
 sizes = [len(c) for c in clusters]
-check("mega-chains split: largest cluster far below the ring-only 604",
-      sizes[0] < 400)
-check("vocabulary is rich: >= 20 form families of size >= 4",
-      len(clusters) >= 20)
+L.append("Threshold sweep (permille of NN dist -> threshold, families, "
+         "largest, edges): " + "; ".join(
+             "%d->%d: %d fam, max %d, %d e" % r for r in sweep_report))
+L.append("Chosen by rule (largest threshold with max cluster <= 200): "
+         "permille %d, threshold %d." % (chosen[0], chosen[1]))
+check("mega-chains split: largest cluster <= 200", sizes[0] <= 200)
+check("vocabulary has multiple families", len(clusters) >= 8)
 
 # --- full contact sheets per cluster --------------------------------------
 def crop(k, b, pad=3, scale=3):

@@ -225,14 +225,30 @@ def ink_centroid(cell_mask):
 
 
 def _isqrt_grid(d2):
-    """Exact integer sqrt of a squared-distance grid via table search."""
+    """Exact integer sqrt of a squared-distance grid via table search.
+    Table bound from math.isqrt — exact integer square root, not float."""
+    from math import isqrt
     m = int(d2.max())
-    # squares table 0..r where r*r >= m
-    r = 1
-    while r * r < m + 1:
-        r += 1
-    squares = np.arange(r + 1, dtype=np.int64) ** 2
+    squares = np.arange(isqrt(m) + 2, dtype=np.int64) ** 2
     return np.searchsorted(squares, d2, side="right").astype(np.int64) - 1
+
+
+def _scaled_offsets(cell_mask):
+    """Offsets from the EXACT rational ink centroid, scaled by the ink
+    count n so no division ever happens: dy_s = n·y − ΣY, dx_s = n·x − ΣX.
+    Mirroring negates dx_s exactly and rot90 permutes (dy_s, dx_s) exactly,
+    so codes built on these offsets are exactly invariant — a floor-divided
+    centroid is not (the rounding breaks the symmetry on asymmetric ink)."""
+    cm = np.asarray(cell_mask)
+    h, w = cm.shape
+    ys, xs = np.nonzero(cm)
+    if ys.size == 0:
+        n, sy, sx = 1, (h - 1) // 2, (w - 1) // 2
+    else:
+        n, sy, sx = ys.size, int(ys.sum()), int(xs.sum())
+    yy = n * np.arange(h, dtype=np.int64)[:, None] - sy
+    xx = n * np.arange(w, dtype=np.int64)[None, :] - sx
+    return yy, xx
 
 
 def ring_signature(cell_mask, n_rings: int = 12):
@@ -241,9 +257,7 @@ def ring_signature(cell_mask, n_rings: int = 12):
     absence is distinguishable from zero ink."""
     cm = np.asarray(cell_mask)
     h, w = cm.shape
-    cy, cx = ink_centroid(cm)
-    yy = np.arange(h, dtype=np.int64)[:, None] - cy
-    xx = np.arange(w, dtype=np.int64)[None, :] - cx
+    yy, xx = _scaled_offsets(cm)
     d2 = yy * yy + xx * xx
     r = _isqrt_grid(d2)
     rmax = int(r.max())
@@ -585,20 +599,59 @@ def white_nodes(luma, top_milli: int = 965, min_area: int = 12,
     return thr, nodes
 
 
+PIG_SUBSTRATE, PIG_BLACK, PIG_RED, PIG_BLUE = 0, 1, 2, 3
+
+
+def pigment_classes(rgb, red_margin: int = 24, blue_margin: int = 12):
+    """Exact pigment partition of an RGB scan — 4 classes by stated integer
+    rules, no color science, no enhancement:
+
+      RED   (frames, red numerals):  R - max(G,B) >= red_margin
+      BLUE  (Maya blue/green washes): min(G,B) - R >= blue_margin
+      BLACK (carbon ink): luma below the page's integer-Otsu threshold and
+            not already red/blue
+      SUBSTRATE: everything else
+
+    Chroma rules are checked before the ink rule so dark reds stay red.
+    Returns (class map int64, otsu threshold)."""
+    a = np.asarray(rgb).astype(np.int64)
+    r, g, b = a[:, :, 0], a[:, :, 1], a[:, :, 2]
+    y = int_luma(rgb)
+    thr = otsu_threshold(y)
+    red = (r - np.maximum(g, b)) >= red_margin
+    blue = (np.minimum(g, b) - r) >= blue_margin
+    black = (y < thr) & ~red & ~blue
+    out = np.zeros(y.shape, dtype=np.int64)
+    out[black] = PIG_BLACK
+    out[red] = PIG_RED
+    out[blue] = PIG_BLUE
+    return out, thr
+
+
+def pigment_fractions_milli(classes):
+    """Exact per-class milli fractions of a pigment class map."""
+    c = np.asarray(classes)
+    total = c.size
+    return [(1000 * int((c == k).sum())) // total for k in range(4)]
+
+
 def octant_index(dy, dx):
-    """Sequential angular octant (0..7 around the circle, 45° bins) from
-    integer offsets — sign tests and dominance comparisons only. Sequential
-    ordering makes rotations exact sector shifts: rot90 ⇒ +2 (mod 8);
-    mirror (x→−x) ⇒ o → (3−o) mod 8."""
+    """Axis-centred angular octant (0..7) from integer offsets — the bins
+    are centred on the axes and diagonals (boundaries near ±22.5°, rational
+    slope 5/12), decided purely by |dx|, |dy| comparisons plus sign bits.
+    Because the rule is symmetric in the absolute values, mirroring and
+    right-angle rotation act as exact bin permutations with no boundary
+    ambiguity: rot90 ⇒ o → (o+6) mod 8; mirror (x→−x) ⇒ o → (4−o) mod 8.
+    Order: 0 E, 1 SE, 2 S, 3 SW, 4 W, 5 NW, 6 N, 7 NE (y down)."""
     dy = np.asarray(dy)
     dx = np.asarray(dx)
     ax, ay = np.abs(dx), np.abs(dy)
-    lower = dy >= 0
-    o = np.where(lower,
-                 np.where(dx >= 0, np.where(ax >= ay, 0, 1),
-                          np.where(ay > ax, 2, 3)),
-                 np.where(dx < 0, np.where(ax >= ay, 4, 5),
-                          np.where(ay > ax, 6, 7)))
+    horiz = ay * 12 <= ax * 5
+    vert = ax * 12 <= ay * 5
+    o = np.where(horiz, np.where(dx >= 0, 0, 4),
+        np.where(vert, np.where(dy >= 0, 2, 6),
+        np.where(dy >= 0, np.where(dx >= 0, 1, 3),
+                 np.where(dx >= 0, 7, 5))))
     return o.astype(np.int64)
 
 
@@ -609,9 +662,7 @@ def sector_signature(cell_mask, n_rings: int = 6, n_sectors: int = 8):
     geometry). Returns an (n_rings*8,) int64 vector; empty bins -1."""
     cm = np.asarray(cell_mask)
     h, w = cm.shape
-    cy, cx = ink_centroid(cm)
-    yy = np.arange(h, dtype=np.int64)[:, None] - cy
-    xx = np.arange(w, dtype=np.int64)[None, :] - cx
+    yy, xx = _scaled_offsets(cm)
     r = _isqrt_grid(yy * yy + xx * xx)
     rmax = int(r.max())
     ring = (np.minimum(r * n_rings // (rmax + 1), n_rings - 1)
@@ -633,7 +684,7 @@ def dihedral_variants(sig, n_rings: int = 6):
     s = np.asarray(sig).reshape(n_rings, 8)
     out = []
     for refl in (False, True):
-        base = s[:, [(3 - k) % 8 for k in range(8)]] if refl else s
+        base = s[:, [(4 - k) % 8 for k in range(8)]] if refl else s
         for rot in range(4):
             out.append(np.roll(base, 2 * rot, axis=1).reshape(-1))
     return np.stack(out)

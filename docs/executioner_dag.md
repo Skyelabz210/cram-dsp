@@ -227,3 +227,24 @@ band = floor(L/36) from the residue pair) rendered for all 78 pages
 the palest INSCRIBED page, above two actual blanks; tonal windows over the
 six palest pages rendered — coherent bright-plaster zones are the
 latent-content candidates for multispectral follow-up. docs/DRESDEN_STRATA.md.
+
+## NODE (pigment lens + exhibit localization + exactness fix) — 2026-08-27
+
+Researcher exhibits (WDL screenshot with blue column/spear-bearer; manual
+SHADOWS adjustment) both localized mechanically to **scan 73 = p69** — the
+same page as their photographed column; margins +518/+587 milli. First
+attempt mis-localized exhibit A to p49 off a loose crop + short scale
+range; caught by the mandatory visual verification and corrected —
+verify-then-accept is now stated in the run. New machinery:
+dresden.pigment_classes (exact 4-way substrate/black/red/blue partition by
+stated integer margins) + shadow lens (freeze window 30..500 milli, the
+machine version of the researcher's shadows slider); renders for all 78
+pages (derived/pigment/), blue-region catalog (largest blue regions incl.
+the p69 blue column), docs/DRESDEN_PIGMENT.md, receipts.
+
+Exactness fix folded in: sector octants re-based to axis-centred bins and
+ring/sector codes moved to the EXACT rational centroid (offsets scaled by
+ink count — floor-divided centroids break mirror symmetry). Dihedral
+invariance now exact on asymmetric fixtures (mirror/rot90/rot180 = 0).
+dresden_run 636/0; discover 9/0 (21 ring-code clusters at threshold 205);
+pigment 6/6.

@@ -1,0 +1,1673 @@
+{
+ "chain": "b2920448d26fe68b951eefa8f208dc348532111f050b1e78dd38c98848ab97e8",
+ "entries": [
+  {
+   "chain": "b753c6d22bb8e61a7228d02ed0bde2b53377f42bc35909951b475e041225086e",
+   "in": "cb4034ca3a8b093d9f982b7d5aa916e97832a44df288cefa518d2a178b64e504",
+   "op": "pigment_shadow",
+   "out": "3e0809bb906307d05d4141ba1d314d5d84f51c09c6518d44dc63aea6326ac68a",
+   "params": {
+    "fractions": [
+     791,
+     196,
+     12,
+     0
+    ],
+    "page": "1",
+    "rules": "red R-max(G,B)>=24; blue min(G,B)-R>=12",
+    "scan": 1,
+    "shadow_window": [
+     5,
+     177
+    ]
+   }
+  },
+  {
+   "chain": "05af0e3e96b6b600612ad1a71e87f35bed769e101ace029f5c20a8b4b69092e3",
+   "in": "6b6931ce21a24c68924f788b19b2885c12e8210ba6f4c467c0ea57f0e552b1e4",
+   "op": "pigment_shadow",
+   "out": "3e2f960b1e6b0eb0e62ee8ff230849f81a443d4a94c6ea1f327fafab3898d7aa",
+   "params": {
+    "fractions": [
+     765,
+     218,
+     15,
+     0
+    ],
+    "page": "2",
+    "rules": "red R-max(G,B)>=24; blue min(G,B)-R>=12",
+    "scan": 2,
+    "shadow_window": [
+     56,
+     182
+    ]
+   }
+  },
+  {
+   "chain": "a12a3d16de19d2b45b674bc05fc5bf053e92f903cbb066c973ccd48aeee22732",
+   "in": "d15d61b17efb78fa6ddd3741480d5a8fd4590fee6384126a2895c4659c630cd1",
+   "op": "pigment_shadow",
+   "out": "6911405b56be08c05fad04a73612cded43e6d6dd982cb4152b4513c3015e792c",
+   "params": {
+    "fractions": [
+     847,
+     117,
+     35,
+     0
+    ],
+    "page": "3",
+    "rules": "red R-max(G,B)>=24; blue min(G,B)-R>=12",
+    "scan": 3,
+    "shadow_window": [
+     62,
+     183
+    ]
+   }
+  },
+  {
+   "chain": "f223f2b96abae35080ad955d37056c01f57f470be7f461c9d987eb5adfbb34a5",
+   "in": "82dddc7f2e172099b4714deff4adcf4df252e7409e3c344a815070f5d1de78e9",
+   "op": "pigment_shadow",
+   "out": "b32eb64277a5e7afbb8f2a5f59bcdb5885d5d08338edb656ed79bd516e2370a0",
+   "params": {
+    "fractions": [
+     659,
+     265,
+     52,
+     22
+    ],
+    "page": "4",
+    "rules": "red R-max(G,B)>=24; blue min(G,B)-R>=12",
+    "scan": 4,
+    "shadow_window": [
+     60,
+     184
+    ]
+   }
+  },
+  {
+   "chain": "06d3f269924e2a6828d6a3e9fbdfb30201f35a0d8efc2eaf17908cd5355b775d",
+   "in": "04d763fbc72d454812a01741951b0246d3014f6f5b1456e2cadbe89f0cbb7412",
+   "op": "pigment_shadow",
+   "out": "de638c01c1ce79e6061fab48c31a3a7f83c8d0231e72f8cb738f1ffc7c67f8d9",
+   "params": {
+    "fractions": [
+     669,
+     232,
+     80,
+     18
+    ],
+    "page": "5",
+    "rules": "red R-max(G,B)>=24; blue min(G,B)-R>=12",
+    "scan": 5,
+    "shadow_window": [
+     35,
+     179
+    ]
+   }
+  },
+  {
+   "chain": "c4dd84258e8e93fc7484ce0a1e673712300dbc7dca8e07159c70485ac9548fc9",
+   "in": "abec96cc98958d1c31c57cf8af8b2cff6ad2fccba13cf72009b07481b00d6cc1",
+   "op": "pigment_shadow",
+   "out": "b36188a022b2e602a81c05effcc09a778a70f8541e2f65f5fbc7c6019b4f7d3c",
+   "params": {
+    "fractions": [
+     619,
+     216,
+     119,
+     44
+    ],
+    "page": "6",
+    "rules": "red R-max(G,B)>=24; blue min(G,B)-R>=12",
+    "scan": 6,
+    "shadow_window": [
+     32,
+     170
+    ]
+   }
+  },
+  {
+   "chain": "dbefeac27be909bf2d59490f329a1065249787614205f962f4d638dbb3793b15",
+   "in": "92f0908419435527f67990701d4dcc9d5aa358328ba5f2059e6cf4d688c12e9e",
+   "op": "pigment_shadow",
+   "out": "982b289d457917b5b2629c389e605cc515400a64c4bd4a60f8ac0ec1684286a3",
+   "params": {
+    "fractions": [
+     619,
+     201,
+     167,
+     11
+    ],
+    "page": "7",
+    "rules": "red R-max(G,B)>=24; blue min(G,B)-R>=12",
+    "scan": 7,
+    "shadow_window": [
+     45,
+     177
+    ]
+   }
+  },
+  {
+   "chain": "a94e809d6ddf27b2cee25246325f787b8af642703189cd80c4e21e2cac70c344",
+   "in": "e26574f3c683347e79939f3f91dbcc3ee4eb0db6cbc4bb02d2363b22d7864811",
+   "op": "pigment_shadow",
+   "out": "d59d45c31d6e23d123158f4b077eccc4acca934f9dc6c039f488aa8bdf2aa41c",
+   "params": {
+    "fractions": [
+     648,
+     205,
+     145,
+     0
+    ],
+    "page": "8",
+    "rules": "red R-max(G,B)>=24; blue min(G,B)-R>=12",
+    "scan": 8,
+    "shadow_window": [
+     41,
+     177
+    ]
+   }
+  },
+  {
+   "chain": "7c47e8081f30ba9e75308d8b9f458e11e0a5b8b32534b22ab74a9868e16fbe00",
+   "in": "4473131f3a2c08eb17a1af76b081086f8b06c7d7ae3bb9f568de1ffe58ff72bc",
+   "op": "pigment_shadow",
+   "out": "bb0c0c233b9cb9082c893353048419086dc6612afbae3aae9fde12ed676d9f4c",
+   "params": {
+    "fractions": [
+     660,
+     210,
+     117,
+     12
+    ],
+    "page": "9",
+    "rules": "red R-max(G,B)>=24; blue min(G,B)-R>=12",
+    "scan": 9,
+    "shadow_window": [
+     50,
+     171
+    ]
+   }
+  },
+  {
+   "chain": "982813f70061ce74cf996cd953300ce4fc2447068d4db106384650b9e0f040a5",
+   "in": "694c58acc050c6c6f82cd9c7fa0d4f95896ff630109b94997da218ae9f389a51",
+   "op": "pigment_shadow",
+   "out": "888c0e986c377f39e9ccaf0364a34603e87a8d993ec6c9a616f9fbdcd846b366",
+   "params": {
+    "fractions": [
+     660,
+     194,
+     145,
+     0
+    ],
+    "page": "10",
+    "rules": "red R-max(G,B)>=24; blue min(G,B)-R>=12",
+    "scan": 10,
+    "shadow_window": [
+     60,
+     178
+    ]
+   }
+  },
+  {
+   "chain": "33d4f35ee05a37c78ea7b4bdb8534681abcf6644f18bf9a53ef6c4ccf86d7df8",
+   "in": "dbdedb1bd25199af031c19763a46e489d511aaeac0413c53229bc83997345542",
+   "op": "pigment_shadow",
+   "out": "0a244632237bd88792520c3ec93a451fbfa9cec795c15904b5f25d187abfc440",
+   "params": {
+    "fractions": [
+     603,
+     211,
+     171,
+     13
+    ],
+    "page": "11",
+    "rules": "red R-max(G,B)>=24; blue min(G,B)-R>=12",
+    "scan": 11,
+    "shadow_window": [
+     54,
+     168
+    ]
+   }
+  },
+  {
+   "chain": "44430ec5db59f3d059dc3b8167065d5684767e239a318077afe8c02f5fdb0789",
+   "in": "8d77d678e5584b9b9b5fe23805aa70feccf0f74d00df1172d792768aa3a11670",
+   "op": "pigment_shadow",
+   "out": "fc2e4bf6e7c5f637b17c3ea32840fa82cd73f861cf0e01df195d53644954d715",
+   "params": {
+    "fractions": [
+     635,
+     208,
+     154,
+     1
+    ],
+    "page": "12",
+    "rules": "red R-max(G,B)>=24; blue min(G,B)-R>=12",
+    "scan": 12,
+    "shadow_window": [
+     61,
+     177
+    ]
+   }
+  },
+  {
+   "chain": "941d3f7617eac8369ba2b698e3c063109944118d4dec578e863f1d8a6dab1d4c",
+   "in": "d746afb7d4c8469aa8e2523b62243104f827f7de71ead289d6904a80e8bb1588",
+   "op": "pigment_shadow",
+   "out": "d3c2ed0b1cc5be75f145f9973863dd08857b1e2a476c45fb74f3fd2e1b2431d8",
+   "params": {
+    "fractions": [
+     607,
+     202,
+     189,
+     0
+    ],
+    "page": "13",
+    "rules": "red R-max(G,B)>=24; blue min(G,B)-R>=12",
+    "scan": 13,
+    "shadow_window": [
+     53,
+     168
+    ]
+   }
+  },
+  {
+   "chain": "8491cb000d99bca75992d1be3c4f2b4b2a3f7d47b83785accdd0e181a7de14d3",
+   "in": "5695f6072467a5b87851d8af7ba9be8df864fc2c09de23fb61b3b60d5480ae83",
+   "op": "pigment_shadow",
+   "out": "f200c3554ec7125e66a168b21067610e73c2dc7435a2d683633c821c711bbdef",
+   "params": {
+    "fractions": [
+     583,
+     213,
+     203,
+     0
+    ],
+    "page": "14",
+    "rules": "red R-max(G,B)>=24; blue min(G,B)-R>=12",
+    "scan": 14,
+    "shadow_window": [
+     56,
+     171
+    ]
+   }
+  },
+  {
+   "chain": "c0685c6928897b9a6a586c2ae8ea0ed863b010122be28745a7b86a959ccbbd84",
+   "in": "368bdf10953daa820be5140bd414a73e2884012f8ffa44bad4c23e0958e803dc",
+   "op": "pigment_shadow",
+   "out": "d8d510c35e56c52e5ad736ea63da05bee39c640d4523c7694b18255b6cd2b4d9",
+   "params": {
+    "fractions": [
+     633,
+     200,
+     165,
+     0
+    ],
+    "page": "15",
+    "rules": "red R-max(G,B)>=24; blue min(G,B)-R>=12",
+    "scan": 15,
+    "shadow_window": [
+     51,
+     171
+    ]
+   }
+  },
+  {
+   "chain": "4b45ddb1f77b3c940c7a1fdb525c5ecc81694931710f1c154dcc8d1fbf8553eb",
+   "in": "709bf1b3f6e1d263e6c3d6484b741d97930f39df307626c89e49695693788eaf",
+   "op": "pigment_shadow",
+   "out": "4128ae922f108fd2588f6454406aaa432cf2e574fdbcaf9a5fcf8446f2be0a98",
+   "params": {
+    "fractions": [
+     603,
+     204,
+     191,
+     0
+    ],
+    "page": "16",
+    "rules": "red R-max(G,B)>=24; blue min(G,B)-R>=12",
+    "scan": 16,
+    "shadow_window": [
+     49,
+     177
+    ]
+   }
+  },
+  {
+   "chain": "7e0bd71534848982b14cf08d181470c9909887fd2bb8320c6998a3a3e862e8bf",
+   "in": "031c1fe0cfa51954d043abf70a7812d711578e478ad61c8d47a49b13d028194e",
+   "op": "pigment_shadow",
+   "out": "4725387442c3787fb9698e4abfa8ce6e2d78b78547c21c61f8bd6b56e0147f6c",
+   "params": {
+    "fractions": [
+     629,
+     203,
+     167,
+     0
+    ],
+    "page": "17",
+    "rules": "red R-max(G,B)>=24; blue min(G,B)-R>=12",
+    "scan": 17,
+    "shadow_window": [
+     15,
+     176
+    ]
+   }
+  },
+  {
+   "chain": "4b71dbd194ca3c7dcc3334c0d76547cf86d8088ed47daab3d35fb94b314e50d3",
+   "in": "f4115fb1b62e611ba1ddd0f47d95a1402a15575669ecbc4e3d33f61a4022e62b",
+   "op": "pigment_shadow",
+   "out": "ae3619f28c82e6a54613c22b855a8437e612b33618542c1a4316c863e1598315",
+   "params": {
+    "fractions": [
+     666,
+     228,
+     105,
+     0
+    ],
+    "page": "18",
+    "rules": "red R-max(G,B)>=24; blue min(G,B)-R>=12",
+    "scan": 18,
+    "shadow_window": [
+     32,
+     185
+    ]
+   }
+  },
+  {
+   "chain": "1979fff46ea6955570cf182778edf9aac10816c38d968d968fc0e388ed903717",
+   "in": "d55c1224c1b395578c21fe3c79a816af85ab735693459a12aceab50dd2264532",
+   "op": "pigment_shadow",
+   "out": "64af0fdd1a2bd8ec1f14378bfca1ef98b91d3151e591e6596e314fcac1cf7cb5",
+   "params": {
+    "fractions": [
+     587,
+     234,
+     177,
+     0
+    ],
+    "page": "19",
+    "rules": "red R-max(G,B)>=24; blue min(G,B)-R>=12",
+    "scan": 19,
+    "shadow_window": [
+     75,
+     186
+    ]
+   }
+  },
+  {
+   "chain": "aa20f148e89dd1f572e6563123bc4bb508ac74d22fd62929ad55020c89c14676",
+   "in": "650edddc5d6a0e266f9ffa5fad9043027e9ea5359488da4ecc5c50a17fe13b11",
+   "op": "pigment_shadow",
+   "out": "5e339800a5e72b824c8e825af11f71728c50eef2758e0bb4497d78ee04477d86",
+   "params": {
+    "fractions": [
+     590,
+     225,
+     184,
+     0
+    ],
+    "page": "20",
+    "rules": "red R-max(G,B)>=24; blue min(G,B)-R>=12",
+    "scan": 20,
+    "shadow_window": [
+     74,
+     186
+    ]
+   }
+  },
+  {
+   "chain": "3bca14fc0e63e4b04fd3bdac012c2841e910230d914f8055910f88c1fa6c6c14",
+   "in": "87810718b4e3a407dbe8a8e8a77ef7ac5e72e6564f1a2c536b3f8a234c0241d0",
+   "op": "pigment_shadow",
+   "out": "b1bf48efd404ec8442a5e976d5413e03c6da4b120e8eb5c69769e5461d3a7617",
+   "params": {
+    "fractions": [
+     648,
+     222,
+     128,
+     0
+    ],
+    "page": "21",
+    "rules": "red R-max(G,B)>=24; blue min(G,B)-R>=12",
+    "scan": 21,
+    "shadow_window": [
+     37,
+     183
+    ]
+   }
+  },
+  {
+   "chain": "260600c7da47cc518585ce176b84e9134de912fa9a165c6b2b9ace7cf420acc9",
+   "in": "dfd5bfd622de63a382916700a46bb77b0f4658de09aa2b2716c99ecda788a4d5",
+   "op": "pigment_shadow",
+   "out": "aba654590241fd1a91f65ce3a7deb89c3aec42dbf679297db38aec91ef550f06",
+   "params": {
+    "fractions": [
+     654,
+     208,
+     136,
+     0
+    ],
+    "page": "22",
+    "rules": "red R-max(G,B)>=24; blue min(G,B)-R>=12",
+    "scan": 22,
+    "shadow_window": [
+     14,
+     186
+    ]
+   }
+  },
+  {
+   "chain": "616cf8c00b88072cd8ab82db5421cc0e65058d36412e7b5955a1eda18a49caac",
+   "in": "baa4f2d933fbea9c17bb0599220fd6ca67eeaae4d7974a5c6b3af35566bc11d4",
+   "op": "pigment_shadow",
+   "out": "102bbd7e6c97ec4a96f62f8aa121edcf871a3c31ea12cdfe7e5727ea5c62c1a0",
+   "params": {
+    "fractions": [
+     705,
+     218,
+     75,
+     0
+    ],
+    "page": "23",
+    "rules": "red R-max(G,B)>=24; blue min(G,B)-R>=12",
+    "scan": 23,
+    "shadow_window": [
+     47,
+     190
+    ]
+   }
+  },
+  {
+   "chain": "2bd0ea02bd752849f185c05d29b0369bc7540b656efa95e8e62743ef807191ef",
+   "in": "e91d6061d5fc8a0b51f97eabe9c18c11f2c630ce082491786645f76f890de479",
+   "op": "pigment_shadow",
+   "out": "2e0a94cd70872b42b84890790332990f7ccc66289d102bf3fb67c7fe05165051",
+   "params": {
+    "fractions": [
+     691,
+     223,
+     85,
+     0
+    ],
+    "page": "24",
+    "rules": "red R-max(G,B)>=24; blue min(G,B)-R>=12",
+    "scan": 24,
+    "shadow_window": [
+     19,
+     186
+    ]
+   }
+  },
+  {
+   "chain": "b8b3edf19efe40739bcfaf18d6af3d0170c5f37b6b5bcb1eb75bdfd705e26b81",
+   "in": "1a6e983359da1d5de12dfc2f82b4a905f3b5e078ba83235fc36f9fe53bc565a2",
+   "op": "pigment_shadow",
+   "out": "1dca5f3702bbfe5a45f04c88fc824f5502fb0b80ad852db30639c9726bba4bd4",
+   "params": {
+    "fractions": [
+     696,
+     225,
+     77,
+     0
+    ],
+    "page": "25",
+    "rules": "red R-max(G,B)>=24; blue min(G,B)-R>=12",
+    "scan": 25,
+    "shadow_window": [
+     16,
+     174
+    ]
+   }
+  },
+  {
+   "chain": "0701c5b062c6dd70a5c5263ca1e270a57be827946749815f5b897df2ab170611",
+   "in": "f429084a6b90f2dc5b7740ea650a66b3cb8cf89aa08854bcf1a1265144f93bd9",
+   "op": "pigment_shadow",
+   "out": "7677e9db53721ba5bcbb1b28856e885fda77994e4dc67161dd6e2eba368e2d6a",
+   "params": {
+    "fractions": [
+     666,
+     236,
+     97,
+     0
+    ],
+    "page": "26",
+    "rules": "red R-max(G,B)>=24; blue min(G,B)-R>=12",
+    "scan": 26,
+    "shadow_window": [
+     45,
+     177
+    ]
+   }
+  },
+  {
+   "chain": "0d3cd314a4d565e69c266ead7ffbb45597eae7ca3d4162fc089905ef2eb9b7df",
+   "in": "e39745c0a668418fba76dcb6b86231f3d89fd882406678f1ab8a39fc9ec3e305",
+   "op": "pigment_shadow",
+   "out": "c57d10a455bfc4ed370e535cd8fd5e71740b85da5c5458580c5bf7390976b17f",
+   "params": {
+    "fractions": [
+     676,
+     227,
+     95,
+     0
+    ],
+    "page": "27",
+    "rules": "red R-max(G,B)>=24; blue min(G,B)-R>=12",
+    "scan": 27,
+    "shadow_window": [
+     15,
+     176
+    ]
+   }
+  },
+  {
+   "chain": "f4c2b351d3abe12dcf8f3fcbabb71e0b90645777f154f2f0cb4812b79d5b2def",
+   "in": "ea580a41b5e152c4d0e1515ff8cb7c598720998cd4ff3edf5d8feb6f32a524f7",
+   "op": "pigment_shadow",
+   "out": "1cab54727942d845e01d4c02b5a453f0f8aa9a8982d3cd253d0dcc8d3c66120d",
+   "params": {
+    "fractions": [
+     760,
+     207,
+     31,
+     0
+    ],
+    "page": "28",
+    "rules": "red R-max(G,B)>=24; blue min(G,B)-R>=12",
+    "scan": 28,
+    "shadow_window": [
+     46,
+     174
+    ]
+   }
+  },
+  {
+   "chain": "6ab5785b10a22ae957c7325704281b8c619f6825c487af215321c376d15a0c65",
+   "in": "3b2592202cf1280b950e64c31e879646702b44d93494aa21207fc5a9138d5cb1",
+   "op": "pigment_shadow",
+   "out": "64fe9df049d61b272a4230879461e80701dec47953c35db2640a32834958bc7f",
+   "params": {
+    "fractions": [
+     813,
+     122,
+     64,
+     0
+    ],
+    "page": "28*",
+    "rules": "red R-max(G,B)>=24; blue min(G,B)-R>=12",
+    "scan": 29,
+    "shadow_window": [
+     109,
+     206
+    ]
+   }
+  },
+  {
+   "chain": "71fa9f52f31ffc2c8f592e240c99881c95b5433856ddecd325802ef998415628",
+   "in": "2eb715ef620bc6f218b51cbc7609be0545592efc6416ee94201e3d09a4dcbc48",
+   "op": "pigment_shadow",
+   "out": "bf2764a142e7d08142e1d9425281a8be207f609a8e42b32828030c7f9b38a2b3",
+   "params": {
+    "fractions": [
+     798,
+     140,
+     61,
+     0
+    ],
+    "page": "28**",
+    "rules": "red R-max(G,B)>=24; blue min(G,B)-R>=12",
+    "scan": 30,
+    "shadow_window": [
+     103,
+     200
+    ]
+   }
+  },
+  {
+   "chain": "12e32f40372bf6ceaa78dd8dbb67fffdff35bbee1b6b039f3d478fccff05a551",
+   "in": "1b3c462bf95887143f278a9fbcbaa413d374ebded1f6fd70dbe4e2c05ec2da12",
+   "op": "pigment_shadow",
+   "out": "b94d28cf36160812fa4e99531fa4b0365567bc5d1e2ee160af6e03cda63949d0",
+   "params": {
+    "fractions": [
+     784,
+     163,
+     51,
+     0
+    ],
+    "page": "28***",
+    "rules": "red R-max(G,B)>=24; blue min(G,B)-R>=12",
+    "scan": 31,
+    "shadow_window": [
+     43,
+     196
+    ]
+   }
+  },
+  {
+   "chain": "04b7f25814e142ca30f7335af62991371b669a3f1d3f955117566ad4ec6ef946",
+   "in": "8618be918189d49449b0b19bdaa670296fcef916d9ea5bd5cd6b866c3b4148ed",
+   "op": "pigment_shadow",
+   "out": "549665f4032c07d8bfb9507d95b1cc659440ae8ddde44bce34098f3ed8702ea9",
+   "params": {
+    "fractions": [
+     649,
+     196,
+     154,
+     0
+    ],
+    "page": "29",
+    "rules": "red R-max(G,B)>=24; blue min(G,B)-R>=12",
+    "scan": 32,
+    "shadow_window": [
+     19,
+     189
+    ]
+   }
+  },
+  {
+   "chain": "b812069a67a536acc2baa836e68f8f441a59a938143221f54f0a245f15910a39",
+   "in": "7533e03667bd2111b727fa8f4104d91daeff6bba6ff25f8392c1c4fd4faa5857",
+   "op": "pigment_shadow",
+   "out": "46362f78a779edf674879aed5c94ba95ca21b09c739ae7ae32cf30870e3eb38c",
+   "params": {
+    "fractions": [
+     602,
+     202,
+     195,
+     0
+    ],
+    "page": "30",
+    "rules": "red R-max(G,B)>=24; blue min(G,B)-R>=12",
+    "scan": 33,
+    "shadow_window": [
+     50,
+     186
+    ]
+   }
+  },
+  {
+   "chain": "aeacb77a1e3c34610a310110cecf143ba32f9e2e345668213daac11d0c5b385c",
+   "in": "7cf8c54c123020cbadf95b6e49608f264c1d27adc77b32c2c751fdd169f5e6a2",
+   "op": "pigment_shadow",
+   "out": "cb6ccfc802295909dd60c8d6115b7ad7623edd7f128b583e0f43dff0789f7d99",
+   "params": {
+    "fractions": [
+     600,
+     215,
+     183,
+     0
+    ],
+    "page": "31",
+    "rules": "red R-max(G,B)>=24; blue min(G,B)-R>=12",
+    "scan": 34,
+    "shadow_window": [
+     54,
+     182
+    ]
+   }
+  },
+  {
+   "chain": "d2c5758c5a9563ecaabc44fe7da24d2040847381497f392da216ec8df525efe4",
+   "in": "b3cad69e40b195e6984a6df340cef22c57cdf6714052d48fc3484e8f77be0c17",
+   "op": "pigment_shadow",
+   "out": "2289907693cee3e6bbe9515ba40acdeb2c614355e8e304f24e51a9815790943a",
+   "params": {
+    "fractions": [
+     616,
+     213,
+     170,
+     0
+    ],
+    "page": "32",
+    "rules": "red R-max(G,B)>=24; blue min(G,B)-R>=12",
+    "scan": 35,
+    "shadow_window": [
+     53,
+     177
+    ]
+   }
+  },
+  {
+   "chain": "ca21d5ef1aeae4b1aa0419f90b2bb526d956473b28ee8a4415bbcaa5f4d40279",
+   "in": "f84b7d662b73a0efb62c99e632d5878bcd1fa06d266b1510956a2bf16ab5a720",
+   "op": "pigment_shadow",
+   "out": "4f4f9ba50f073ae11d6ea7ecdbf8e6d4417d6232829e133d661128757de4704d",
+   "params": {
+    "fractions": [
+     596,
+     202,
+     196,
+     4
+    ],
+    "page": "33",
+    "rules": "red R-max(G,B)>=24; blue min(G,B)-R>=12",
+    "scan": 36,
+    "shadow_window": [
+     61,
+     185
+    ]
+   }
+  },
+  {
+   "chain": "8943a7826ae395e6f48f899b290c294ac8c5fcb9bac42372ad6c9380af8cea6e",
+   "in": "9f55e5c0ae092cb07ebb850043c4e9aa68373e310b1ca64810c688257c60b521",
+   "op": "pigment_shadow",
+   "out": "8bbe10a97f430119379ce4ef1556195c5c4af8a93bfae1b4739deeb4299c4fcc",
+   "params": {
+    "fractions": [
+     617,
+     192,
+     169,
+     20
+    ],
+    "page": "34",
+    "rules": "red R-max(G,B)>=24; blue min(G,B)-R>=12",
+    "scan": 37,
+    "shadow_window": [
+     72,
+     174
+    ]
+   }
+  },
+  {
+   "chain": "11d7c439aba37db7030e357dbf4830d78087c6b344d23e967559861f73d07e8a",
+   "in": "b70129115e8b3c37e82c487a8e8455805280e666861af488f1ef7deb2acf8b33",
+   "op": "pigment_shadow",
+   "out": "72c2b1fb855b9126acb45e87536551a305c63e239ab91955f2760f68787b46c8",
+   "params": {
+    "fractions": [
+     607,
+     209,
+     175,
+     7
+    ],
+    "page": "35",
+    "rules": "red R-max(G,B)>=24; blue min(G,B)-R>=12",
+    "scan": 38,
+    "shadow_window": [
+     66,
+     180
+    ]
+   }
+  },
+  {
+   "chain": "df3b8d53f2812cfac80b273f11657a9e0bfe7b20c723534a3c032affcfc03add",
+   "in": "fe233839687c19b615bdeac8cc225b70f6a63e73f937b1c1ba56ca76c6e924ff",
+   "op": "pigment_shadow",
+   "out": "6e3fb2d67a4a69a1214554c8addf6be38268da265885e89f8f4ee5d26d4d345d",
+   "params": {
+    "fractions": [
+     648,
+     186,
+     159,
+     5
+    ],
+    "page": "36",
+    "rules": "red R-max(G,B)>=24; blue min(G,B)-R>=12",
+    "scan": 39,
+    "shadow_window": [
+     75,
+     174
+    ]
+   }
+  },
+  {
+   "chain": "55fb99f279bc7ae2600c57ff6af2a448475fabdbe71f2eb1ef4d7ee9293a5991",
+   "in": "e765cdf284a8af96c5371aae10e5c154a872d985c2efae5698214ab15199e5cb",
+   "op": "pigment_shadow",
+   "out": "9582bd0f5470964109f139ea043f6df5f5f957892741f68816c093a4c9d72a06",
+   "params": {
+    "fractions": [
+     679,
+     199,
+     116,
+     5
+    ],
+    "page": "37",
+    "rules": "red R-max(G,B)>=24; blue min(G,B)-R>=12",
+    "scan": 40,
+    "shadow_window": [
+     74,
+     180
+    ]
+   }
+  },
+  {
+   "chain": "f33b67dd1f90e98694abc9fb91ba05a9c8ea6eecec61a866cc21aaedb97da951",
+   "in": "5fefdfe1bd8b25eb6660e88c3e82f85e944c43280912bea43956cc8bf6a474f4",
+   "op": "pigment_shadow",
+   "out": "21a1a4c9903f04d2d9bf72784bc27d2de50b365e423e844eaba190a80d7e568f",
+   "params": {
+    "fractions": [
+     604,
+     212,
+     175,
+     7
+    ],
+    "page": "38",
+    "rules": "red R-max(G,B)>=24; blue min(G,B)-R>=12",
+    "scan": 41,
+    "shadow_window": [
+     46,
+     170
+    ]
+   }
+  },
+  {
+   "chain": "f07134a79390de3f63ae44b04a874db4fa863aa0649c3fcf12431ddb38b67407",
+   "in": "14c658a684515a30678858b1113323eb854083783b20c53780cfd5eacf674531",
+   "op": "pigment_shadow",
+   "out": "79c1e921c6a6b7234c7650fc2734f679e846881965362db97fe48ab28a1abf5e",
+   "params": {
+    "fractions": [
+     616,
+     181,
+     196,
+     6
+    ],
+    "page": "39",
+    "rules": "red R-max(G,B)>=24; blue min(G,B)-R>=12",
+    "scan": 42,
+    "shadow_window": [
+     47,
+     176
+    ]
+   }
+  },
+  {
+   "chain": "624e26cfe9a1efb5ce2fde5e913863fa03c043792734dc6bc398eec1919e2669",
+   "in": "d1573fbd760a2f5babf1b8f40273fe3a6d8a0f267c3fe154b2cfb15a47988777",
+   "op": "pigment_shadow",
+   "out": "65a67a47d32279b6798cd67852794a5c652898a69f4187da25bdbea20a24054f",
+   "params": {
+    "fractions": [
+     643,
+     207,
+     143,
+     4
+    ],
+    "page": "40",
+    "rules": "red R-max(G,B)>=24; blue min(G,B)-R>=12",
+    "scan": 43,
+    "shadow_window": [
+     31,
+     174
+    ]
+   }
+  },
+  {
+   "chain": "91f72c86dc13c89d6317f39b5b98ba8dc18edc758f77349f3ba1fba61c629cb5",
+   "in": "9329a1b66b2934d8db416a99221303d3f4f55f6f65ee1ed3390456ee26cc7f83",
+   "op": "pigment_shadow",
+   "out": "74ec9e80afb9f7fa4fa031e25ac0307b0a1575647c5c1135ca8d17e3ecb14a59",
+   "params": {
+    "fractions": [
+     616,
+     227,
+     145,
+     9
+    ],
+    "page": "41",
+    "rules": "red R-max(G,B)>=24; blue min(G,B)-R>=12",
+    "scan": 44,
+    "shadow_window": [
+     37,
+     180
+    ]
+   }
+  },
+  {
+   "chain": "33ac8fe72915bda50159c3746d2c735f77b9e0cfd9901b3559bfdab681de4374",
+   "in": "9e0a1c488ce24affdbe60c775c93a6baf39e62ba56175afd6151ebe980c4f54a",
+   "op": "pigment_shadow",
+   "out": "f42f3698b3da398a1cf249918543feaec691cf2d9420360c7b46eb046e433f55",
+   "params": {
+    "fractions": [
+     625,
+     248,
+     126,
+     0
+    ],
+    "page": "42",
+    "rules": "red R-max(G,B)>=24; blue min(G,B)-R>=12",
+    "scan": 45,
+    "shadow_window": [
+     46,
+     176
+    ]
+   }
+  },
+  {
+   "chain": "9ac9f89138474bc59ecb47d121bf2c38f85ec5645c4b6ae6988f0ea87c483f41",
+   "in": "7253ff9c4d7182ed87083f9cbd9058b440a80ddef28b359ac19060b9e0dc1ec1",
+   "op": "pigment_shadow",
+   "out": "bfa7f8c63848ea9f14597e521568209e11d2d4581d0c59923ccf8164c60f1125",
+   "params": {
+    "fractions": [
+     623,
+     234,
+     142,
+     0
+    ],
+    "page": "43",
+    "rules": "red R-max(G,B)>=24; blue min(G,B)-R>=12",
+    "scan": 46,
+    "shadow_window": [
+     43,
+     183
+    ]
+   }
+  },
+  {
+   "chain": "46d2336e7be6fd4ff610861b3a5966abb807ba32530dd3d264db5051634854ae",
+   "in": "af65bae258b0242a4b0a1910fe0e36092549e76e9741de71c9d789f9e5f72731",
+   "op": "pigment_shadow",
+   "out": "405f1259f11513377a230e480258d8af59cf85ff5773e5b366558dc98b8946e0",
+   "params": {
+    "fractions": [
+     630,
+     251,
+     117,
+     0
+    ],
+    "page": "44",
+    "rules": "red R-max(G,B)>=24; blue min(G,B)-R>=12",
+    "scan": 47,
+    "shadow_window": [
+     37,
+     177
+    ]
+   }
+  },
+  {
+   "chain": "7f99c699318edfdec16c4d8c9d32cb27a6e237ed0734748eb034cc775734be6a",
+   "in": "de5f8a2df99a67694afa2a9ebea6279662557cb54dc2603760acd65d32d460c9",
+   "op": "pigment_shadow",
+   "out": "7dcd45b4d4ae69d82e32d74c141d6b376222a20ddbabeeb60a8eafb97f6cf50a",
+   "params": {
+    "fractions": [
+     592,
+     289,
+     117,
+     0
+    ],
+    "page": "45",
+    "rules": "red R-max(G,B)>=24; blue min(G,B)-R>=12",
+    "scan": 48,
+    "shadow_window": [
+     5,
+     175
+    ]
+   }
+  },
+  {
+   "chain": "c9fd351c4c3916e03c756ba2e291eec3b8653eed83b15fb9ce183c7e348a909a",
+   "in": "228823fbba1908cd707de44709d828335483214d3069af11333ee65b25dcd33d",
+   "op": "pigment_shadow",
+   "out": "77474da907f20823fd5619cbab580a0acb91f5232b60267955d7a7809890696c",
+   "params": {
+    "fractions": [
+     661,
+     243,
+     90,
+     4
+    ],
+    "page": "46",
+    "rules": "red R-max(G,B)>=24; blue min(G,B)-R>=12",
+    "scan": 49,
+    "shadow_window": [
+     12,
+     182
+    ]
+   }
+  },
+  {
+   "chain": "bd24cbce2f7edba9e8e9290a30a1caa83825b463984884a67e7c94e2ec517e44",
+   "in": "c00a0ca0676dccb6e70c8cc369e5cfa2a1a7b8f2d8667ea66beb54caf15e5f7b",
+   "op": "pigment_shadow",
+   "out": "143655801111752dd8df8364f9b55f9767aea162d553fd893349b8492328779d",
+   "params": {
+    "fractions": [
+     508,
+     240,
+     216,
+     33
+    ],
+    "page": "47",
+    "rules": "red R-max(G,B)>=24; blue min(G,B)-R>=12",
+    "scan": 50,
+    "shadow_window": [
+     31,
+     166
+    ]
+   }
+  },
+  {
+   "chain": "d20936dd43bb10f65fcf4085865fe903427032dccae53373b0d967c03efc9d89",
+   "in": "3193ab2d1f15260e600876ba83fbd16e38554c8dfdfb6f02cfdba245b6a0ffe6",
+   "op": "pigment_shadow",
+   "out": "f973537284e0ab9f7d2b831ffd9e7e873f32b546e326fda33ca9a1fb1aec7ecd",
+   "params": {
+    "fractions": [
+     470,
+     260,
+     238,
+     30
+    ],
+    "page": "48",
+    "rules": "red R-max(G,B)>=24; blue min(G,B)-R>=12",
+    "scan": 51,
+    "shadow_window": [
+     60,
+     165
+    ]
+   }
+  },
+  {
+   "chain": "72aec3e431f350ecaad2021af638d50f54d83e07b47e91789c300baf809f8d52",
+   "in": "6fbed8d49d31d0f15b1a3654de5f2f37fd89f2c55132f99150e0c95a997bfbea",
+   "op": "pigment_shadow",
+   "out": "87cdc88946f6b250b19b46fd5004dc0a7889270cf722367e2f042f842755d9d9",
+   "params": {
+    "fractions": [
+     458,
+     237,
+     279,
+     24
+    ],
+    "page": "49",
+    "rules": "red R-max(G,B)>=24; blue min(G,B)-R>=12",
+    "scan": 52,
+    "shadow_window": [
+     60,
+     157
+    ]
+   }
+  },
+  {
+   "chain": "54b7948fe22227ffc3a270b5cc9f757cd0672bbb02c78f316c7e3f8634ec7191",
+   "in": "63d055521937ac91da3f5848812ab0f9de89ad8005e12f99bd469d6c87638fa9",
+   "op": "pigment_shadow",
+   "out": "95dd9d62c1aebec6691a172687473f312d02687b11dbe5be07f10dca71a10889",
+   "params": {
+    "fractions": [
+     453,
+     236,
+     281,
+     29
+    ],
+    "page": "50",
+    "rules": "red R-max(G,B)>=24; blue min(G,B)-R>=12",
+    "scan": 53,
+    "shadow_window": [
+     60,
+     159
+    ]
+   }
+  },
+  {
+   "chain": "5be3342d54040a50a4ebbeb26343021335824f3cc5bf833174cdf81d16f786f3",
+   "in": "04fc0ee4566ca22ae3c46a2ddc5e408ab33cbffd8a31cb2ed0a63affd2acefc2",
+   "op": "pigment_shadow",
+   "out": "a382492501ddabaca2ab66d57c46bfa1569ce555272f82ed334265a2da0893f6",
+   "params": {
+    "fractions": [
+     482,
+     207,
+     308,
+     0
+    ],
+    "page": "51",
+    "rules": "red R-max(G,B)>=24; blue min(G,B)-R>=12",
+    "scan": 54,
+    "shadow_window": [
+     53,
+     167
+    ]
+   }
+  },
+  {
+   "chain": "ddbc1d5c6c89fea117ded49f2d6e287e94d73a2e6677f0e0f89f8b3f8447d01f",
+   "in": "f2309e306b9c83f3e247b6829f246286974fc26b64835eb00719e6acbbcafbd1",
+   "op": "pigment_shadow",
+   "out": "fffcbea9180b943bb964573f5807620022388c98facb67006046b2f00756bbc0",
+   "params": {
+    "fractions": [
+     494,
+     198,
+     307,
+     0
+    ],
+    "page": "52",
+    "rules": "red R-max(G,B)>=24; blue min(G,B)-R>=12",
+    "scan": 55,
+    "shadow_window": [
+     55,
+     176
+    ]
+   }
+  },
+  {
+   "chain": "1da965db2f09ad4e662671a20d41e6b0381741dd26dcce1bad9f30247a936a0a",
+   "in": "35e5163bf116ec5b06158c19a139aeb97c7235eff9c0bcce46d60494a6a3c433",
+   "op": "pigment_shadow",
+   "out": "a6d6073ade5c843cc2f8548cd7df7ffed8113eec83fd2507bde40bae61667a95",
+   "params": {
+    "fractions": [
+     540,
+     212,
+     247,
+     0
+    ],
+    "page": "53",
+    "rules": "red R-max(G,B)>=24; blue min(G,B)-R>=12",
+    "scan": 56,
+    "shadow_window": [
+     57,
+     174
+    ]
+   }
+  },
+  {
+   "chain": "1e467b8204b74fcb58beab7f2383dd29b053191b0ee507405dfbcd9cf244fc14",
+   "in": "8f2235e87a147abf55020ad73ab0c166d3dadac57debb668d4f9da5cb9fa857e",
+   "op": "pigment_shadow",
+   "out": "84e141e9fdbbb866908c3413b3d9af4a918d46cabe1e37487cce6eca2de58985",
+   "params": {
+    "fractions": [
+     511,
+     225,
+     263,
+     0
+    ],
+    "page": "54",
+    "rules": "red R-max(G,B)>=24; blue min(G,B)-R>=12",
+    "scan": 57,
+    "shadow_window": [
+     42,
+     180
+    ]
+   }
+  },
+  {
+   "chain": "fd184cee7ed84137bb7f3398808598fef77856abb46c3e037bcb36ab9aeac3a6",
+   "in": "0bd11878a3be85151ee9fe89ee135f380d4a2e94733d66e40e57fb15af0acc19",
+   "op": "pigment_shadow",
+   "out": "7e81bff2e13de5675ca863f24a4b9ca4ed701e245367423aa925f2fdf27c6301",
+   "params": {
+    "fractions": [
+     523,
+     227,
+     248,
+     0
+    ],
+    "page": "55",
+    "rules": "red R-max(G,B)>=24; blue min(G,B)-R>=12",
+    "scan": 58,
+    "shadow_window": [
+     35,
+     176
+    ]
+   }
+  },
+  {
+   "chain": "d05d19854f01026c841b8aab53b78080020b17cb7249ac47f2b190e0772bc287",
+   "in": "326e5a7fd028013925bcdd9796542880759f636606c6317e45938a17c0067b08",
+   "op": "pigment_shadow",
+   "out": "93d3ba1aa6013f533214d719dce13a3774879677f7b2a369cc72b82a85a62808",
+   "params": {
+    "fractions": [
+     544,
+     251,
+     203,
+     0
+    ],
+    "page": "56",
+    "rules": "red R-max(G,B)>=24; blue min(G,B)-R>=12",
+    "scan": 59,
+    "shadow_window": [
+     35,
+     183
+    ]
+   }
+  },
+  {
+   "chain": "abe26482059b916412bc80589ceb087dd65b1f1b7028874d2fc4a3ffb49f93c2",
+   "in": "b1a40959be9eaa70d292897faee617279dfd0a6c21da86e3181d65d70edfa94b",
+   "op": "pigment_shadow",
+   "out": "01c16be7b44df9983c8c0d3803b9d1c4b8412231e0bcdf3879bdcc0f7bea4345",
+   "params": {
+    "fractions": [
+     521,
+     255,
+     223,
+     0
+    ],
+    "page": "57",
+    "rules": "red R-max(G,B)>=24; blue min(G,B)-R>=12",
+    "scan": 60,
+    "shadow_window": [
+     32,
+     173
+    ]
+   }
+  },
+  {
+   "chain": "ac65f80d236722f0563e4a069a27a31904185e8305af183d8d4d09c9db7c4a54",
+   "in": "94a0bc5a4f1b88b512a82fd5f6510384d8de888db672a95710a6c38cd3518f0d",
+   "op": "pigment_shadow",
+   "out": "70d98073a89e34bbfa077f10ac411bbcb2d5dbcf3fafc47423598a60034853af",
+   "params": {
+    "fractions": [
+     469,
+     260,
+     264,
+     5
+    ],
+    "page": "58",
+    "rules": "red R-max(G,B)>=24; blue min(G,B)-R>=12",
+    "scan": 61,
+    "shadow_window": [
+     24,
+     167
+    ]
+   }
+  },
+  {
+   "chain": "dbcf0c3d36a4c68504aefd79462be01ed9a1d10f0b4a113c0383248376940dd2",
+   "in": "f0c7ed39a83ea6ad1e3f758053372692d0768622c45d3d5d63c5f1d5d15a85f0",
+   "op": "pigment_shadow",
+   "out": "b34bd168d00a957d85df5f9fba9d7c671656b2612c2eaea5c10c13dc887e5c3c",
+   "params": {
+    "fractions": [
+     529,
+     231,
+     233,
+     5
+    ],
+    "page": "59",
+    "rules": "red R-max(G,B)>=24; blue min(G,B)-R>=12",
+    "scan": 62,
+    "shadow_window": [
+     16,
+     173
+    ]
+   }
+  },
+  {
+   "chain": "bbe8f6327bff993dcd2f18ebe5da502f73a41ecdf6405393c0956446560d2d36",
+   "in": "91c0069abc806aac886df19abfc288856afd8631fe24f297b7fbdff59fdca374",
+   "op": "pigment_shadow",
+   "out": "3d624da4ecf5c275e548d100e1a90f3d35ee35a08e95f2fb3e7196fcaf2f1473",
+   "params": {
+    "fractions": [
+     501,
+     228,
+     249,
+     21
+    ],
+    "page": "60",
+    "rules": "red R-max(G,B)>=24; blue min(G,B)-R>=12",
+    "scan": 63,
+    "shadow_window": [
+     21,
+     157
+    ]
+   }
+  },
+  {
+   "chain": "8114fa5bf349d77e84b0432793bc7930087428a4a7052fb379436cccc790d937",
+   "in": "b485562fb87a3ac2ddb95f6a53f392ee25a650a1c6b3b69b0fede6b53d65e4f4",
+   "op": "pigment_shadow",
+   "out": "be75ce5f1341822e20dc45951fa6b2807e0e3715b8d37577a6d0b8bc022c8ec7",
+   "params": {
+    "fractions": [
+     818,
+     168,
+     12,
+     0
+    ],
+    "page": "60*",
+    "rules": "red R-max(G,B)>=24; blue min(G,B)-R>=12",
+    "scan": 64,
+    "shadow_window": [
+     24,
+     183
+    ]
+   }
+  },
+  {
+   "chain": "212b195949f2c8542e6aa132926ecbdd865e3e65b261f15da24128b352131604",
+   "in": "dbae153526c0d89dedcf7b75954b99e683fad29cf025de503aca675fd57fc35e",
+   "op": "pigment_shadow",
+   "out": "e576bc7e2c9e4d16461e6658e6a078033228bf89dae2ef16b80f9acd328be428",
+   "params": {
+    "fractions": [
+     688,
+     224,
+     79,
+     7
+    ],
+    "page": "61",
+    "rules": "red R-max(G,B)>=24; blue min(G,B)-R>=12",
+    "scan": 65,
+    "shadow_window": [
+     12,
+     184
+    ]
+   }
+  },
+  {
+   "chain": "e2d3ad03460b8b1e8a7fb38015adb6aa5935ea5874910e1b5b1eacefab11772b",
+   "in": "01a566c6a60d3bb5586f318ab2eb8d6d9bf8cd8fe132d8cc5d957c068e8f0d66",
+   "op": "pigment_shadow",
+   "out": "8f1b302ccbbceea722185ab0fdb1189ab157ded8cf4b223750ef4ffdf176c50b",
+   "params": {
+    "fractions": [
+     619,
+     222,
+     157,
+     0
+    ],
+    "page": "62",
+    "rules": "red R-max(G,B)>=24; blue min(G,B)-R>=12",
+    "scan": 66,
+    "shadow_window": [
+     22,
+     192
+    ]
+   }
+  },
+  {
+   "chain": "fc7bdeafe3c85b9982d93709200615bebddcb2187b461233943b537e1e93dab9",
+   "in": "1f2c54486ac45d049b02419e2f8abc2c1b4c572624783c735cbfb794f8dd31e1",
+   "op": "pigment_shadow",
+   "out": "85179dcc6e635d9943a4e929b75ecd059877e1a08b0a92d656298c1001c1a180",
+   "params": {
+    "fractions": [
+     635,
+     215,
+     149,
+     0
+    ],
+    "page": "63",
+    "rules": "red R-max(G,B)>=24; blue min(G,B)-R>=12",
+    "scan": 67,
+    "shadow_window": [
+     38,
+     200
+    ]
+   }
+  },
+  {
+   "chain": "e997d25c708558e4de401a0d6ae83abe107579c914d11ee272ab73b8f513b6e5",
+   "in": "f99a84aaadfb9d68de172c85c3fc478db965c28dcbb32b0bde3c7b3e9716c03a",
+   "op": "pigment_shadow",
+   "out": "63224a9b899c8c11a8fbe2be1759849ca116cc7ac1659434f8277f75491c4c9a",
+   "params": {
+    "fractions": [
+     629,
+     209,
+     160,
+     0
+    ],
+    "page": "64",
+    "rules": "red R-max(G,B)>=24; blue min(G,B)-R>=12",
+    "scan": 68,
+    "shadow_window": [
+     40,
+     193
+    ]
+   }
+  },
+  {
+   "chain": "100a0ed5c9ecdc3206d30f5c3566bc1079970c6d564e7070b9815a213391cb29",
+   "in": "c9ae6d5580d89820d8a147554de877ccd6852764d0013dac1ff102755dee553b",
+   "op": "pigment_shadow",
+   "out": "46f671ccda7688495983fdca02395fdce20a4533f1fbd990b70958ef39fe5d76",
+   "params": {
+    "fractions": [
+     631,
+     226,
+     138,
+     4
+    ],
+    "page": "65",
+    "rules": "red R-max(G,B)>=24; blue min(G,B)-R>=12",
+    "scan": 69,
+    "shadow_window": [
+     24,
+     184
+    ]
+   }
+  },
+  {
+   "chain": "b271771cdc25c7488f1f780a3c51a6ca3a1fe1cad6d90dc1c6e2d2dd0ce08a13",
+   "in": "2737bb88772a9e5776334096e353dd61b6c3987efbfa544525ec940644192721",
+   "op": "pigment_shadow",
+   "out": "965032ae615526da48c91a6f3c8561e207fa6971810d42ad1473a840c83ef3c1",
+   "params": {
+    "fractions": [
+     650,
+     204,
+     136,
+     9
+    ],
+    "page": "66",
+    "rules": "red R-max(G,B)>=24; blue min(G,B)-R>=12",
+    "scan": 70,
+    "shadow_window": [
+     25,
+     186
+    ]
+   }
+  },
+  {
+   "chain": "82dc14150b399270c2d950af678d51728afa76632f1b2f04442e259823e0de73",
+   "in": "42285a7b3988fa4b308607f8a7f85acb80373d2ebc3d797fec9f4d62f1e56b33",
+   "op": "pigment_shadow",
+   "out": "9eb169bc5c0ff751b2af2185e3eb7e670c2a327e1ed4bf8ec5d3c77db6645fd8",
+   "params": {
+    "fractions": [
+     635,
+     209,
+     141,
+     12
+    ],
+    "page": "67",
+    "rules": "red R-max(G,B)>=24; blue min(G,B)-R>=12",
+    "scan": 71,
+    "shadow_window": [
+     45,
+     193
+    ]
+   }
+  },
+  {
+   "chain": "a01be9a6cd314d69d75c0f55b080ca1c61fd27f1c7bf83af965c060e76ffae44",
+   "in": "e3e818b96c85c45905f7ffcd06e66562f0c7784c4c9cea42c7bec02ce779371d",
+   "op": "pigment_shadow",
+   "out": "81c7e9ea3da26daaf0c0f592743bffd61266215b508c9e9deeb530b34e4b84f1",
+   "params": {
+    "fractions": [
+     599,
+     221,
+     156,
+     22
+    ],
+    "page": "68",
+    "rules": "red R-max(G,B)>=24; blue min(G,B)-R>=12",
+    "scan": 72,
+    "shadow_window": [
+     44,
+     182
+    ]
+   }
+  },
+  {
+   "chain": "9fc62659296a0ce710c4c8335ff46a133fa5a7639dac0e1979c405e63729ea70",
+   "in": "3c47865a8e312a042be29552c9a6445a4e6ce21cf77032ac227cdb7d370af220",
+   "op": "pigment_shadow",
+   "out": "0c9472490568df21af2d5596155d5d09a6ff44e640e6d62bb3a597a70e908b61",
+   "params": {
+    "fractions": [
+     509,
+     224,
+     193,
+     72
+    ],
+    "page": "69",
+    "rules": "red R-max(G,B)>=24; blue min(G,B)-R>=12",
+    "scan": 73,
+    "shadow_window": [
+     41,
+     167
+    ]
+   }
+  },
+  {
+   "chain": "2959e8dca3117d087a872e442f6dc83167905980bd225560debb2a84717e1218",
+   "in": "9d0624d5c4798edd2f2c1b06e87bb76e878fa426b394bf9360f6b7b42d2b2227",
+   "op": "pigment_shadow",
+   "out": "d205fcc88c792d361a799839f3726504ce2cf5233b1d6bf9d1bcd9c97638e958",
+   "params": {
+    "fractions": [
+     543,
+     231,
+     225,
+     0
+    ],
+    "page": "70",
+    "rules": "red R-max(G,B)>=24; blue min(G,B)-R>=12",
+    "scan": 74,
+    "shadow_window": [
+     51,
+     180
+    ]
+   }
+  },
+  {
+   "chain": "341f93e59815610678740cb9ccdd13fb2f11e95b428795c0f266b25fedae7654",
+   "in": "be5ece9360ccf7c1faa1509563f070ce29e214086a257c307ff12a0727dd37aa",
+   "op": "pigment_shadow",
+   "out": "5eb6db6fab820010fb3b7f9c4cbd732df4c2c1cc5b925462f2a72bf14e7c0f54",
+   "params": {
+    "fractions": [
+     595,
+     206,
+     196,
+     1
+    ],
+    "page": "71",
+    "rules": "red R-max(G,B)>=24; blue min(G,B)-R>=12",
+    "scan": 75,
+    "shadow_window": [
+     56,
+     176
+    ]
+   }
+  },
+  {
+   "chain": "efebe5986adeb0810bf6d561662f3cce66582d4de66bd928efdc1133965aca9f",
+   "in": "b5566fb84825ab2ab06d85cc96f8b8e55c6251f854a8a99be98226b32ba8ebf0",
+   "op": "pigment_shadow",
+   "out": "68e3e4f9a1997da9c1769f9df711a4af7b72896aeacb8f4cd2035e692ed36bea",
+   "params": {
+    "fractions": [
+     621,
+     222,
+     155,
+     1
+    ],
+    "page": "72",
+    "rules": "red R-max(G,B)>=24; blue min(G,B)-R>=12",
+    "scan": 76,
+    "shadow_window": [
+     53,
+     174
+    ]
+   }
+  },
+  {
+   "chain": "2ba26fe5060e6799d58decf9a9b1e23594702692355128bdfe573a621c09e481",
+   "in": "8ceaf9134dbc55efc9913b9e2c196c54a2622b3b178c996ce0f480f1f93c5f35",
+   "op": "pigment_shadow",
+   "out": "ace47cf094f11df70a0fbdf195286410b9b6e15fe316bd533a0640025d6e0b4e",
+   "params": {
+    "fractions": [
+     575,
+     266,
+     152,
+     5
+    ],
+    "page": "73",
+    "rules": "red R-max(G,B)>=24; blue min(G,B)-R>=12",
+    "scan": 77,
+    "shadow_window": [
+     30,
+     180
+    ]
+   }
+  },
+  {
+   "chain": "03449c6b13d21b6c18c5e5143da43190589f0bf7c3a15647791064aea8219bf4",
+   "in": "21d85f4695587bcf3e64f7e38bf0536c0857c81ebe287d848903b333bf5912c6",
+   "op": "pigment_shadow",
+   "out": "a019b24ccee3aeaedd592b7885ad7e149e5cccef8623a92f75e27dda183d5ef6",
+   "params": {
+    "fractions": [
+     335,
+     220,
+     343,
+     100
+    ],
+    "page": "74",
+    "rules": "red R-max(G,B)>=24; blue min(G,B)-R>=12",
+    "scan": 78,
+    "shadow_window": [
+     15,
+     127
+    ]
+   }
+  },
+  {
+   "chain": "556dba9082ef6f7ee1343d3df7c6a111103dfc3c6fcbad5d552f492dcdf76390",
+   "in": "search",
+   "op": "locate_exhibit",
+   "out": "77ee8446e0cab746696cf322d27632bf04deb714358c5fade9273b01d1380e28",
+   "params": {
+    "exhibit": "exhibit A (WDL viewer screenshot, blue column + figures)",
+    "margin_milli": 518,
+    "milli": 7604,
+    "page": "69",
+    "scan": 73,
+    "x": 216,
+    "y": 112
+   }
+  },
+  {
+   "chain": "b2920448d26fe68b951eefa8f208dc348532111f050b1e78dd38c98848ab97e8",
+   "in": "search",
+   "op": "locate_exhibit",
+   "out": "77ee8446e0cab746696cf322d27632bf04deb714358c5fade9273b01d1380e28",
+   "params": {
+    "exhibit": "exhibit B (researcher's SHADOWS adjustment, right page-half)",
+    "margin_milli": 587,
+    "milli": 7793,
+    "page": "69",
+    "scan": 73,
+    "x": 0,
+    "y": 56
+   }
+  }
+ ]
+}
