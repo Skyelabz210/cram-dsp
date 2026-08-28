@@ -54,6 +54,7 @@ operators standard CRT homomorphisms, so the A3 distortion certificate is trivia
   forensics.py: A1 CLEAN
   ingest.py: A1 CLEAN
   metrics.py: A1 CLEAN
+  registration.py: A1 CLEAN
   render.py: A1 CLEAN
   spectral.py: A1 CLEAN
   synth.py: A1 CLEAN
