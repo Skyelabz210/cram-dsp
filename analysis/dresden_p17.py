@@ -50,6 +50,8 @@ import sys
 import numpy as np
 from PIL import Image, ImageDraw, ImageFont
 
+Image.MAX_IMAGE_PIXELS = None
+
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 from cram_dsp import dresden
@@ -201,9 +203,20 @@ def main():
                              for c in icons]}, f)
 
     # inventory overlay — inspected before any registration is run
-    S = 2
-    img = Image.fromarray(rgb).convert("RGB").resize(
-        (rgb.shape[1] * S, rgb.shape[0] * S), Image.LANCZOS)
+    # Draw on the high-resolution scan when it is present (see the same
+    # receipt in analysis/dresden_segment.py): the analysis runs on the PDF's
+    # 684x1350 pages, but delivering the overlay on them made the picture
+    # unreadable. Boxes are the same exact integers in scan coordinates.
+    _hp = os.path.join(DATA, "hires", "slub_p%02d.jpg" % SCAN)
+    if os.path.exists(_hp):
+        _b = Image.open(_hp).convert("RGB")
+        _OW = 1700
+        img = _b.resize((_OW, _b.height * _OW // _b.width), Image.LANCZOS)
+        S = _OW / rgb.shape[1]
+    else:
+        S = 2
+        img = Image.fromarray(rgb).convert("RGB").resize(
+            (rgb.shape[1] * S, rgb.shape[0] * S), Image.LANCZOS)
     pan = Image.new("RGB", (img.width, img.height + 46), (16, 16, 16))
     pan.paste(img, (0, 46))
     d = ImageDraw.Draw(pan)
@@ -215,17 +228,17 @@ def main():
                     "cross-target control.", fill=(150, 150, 150), font=F)
     for i, t in enumerate(targets):
         b = t["box"]
-        d.rectangle([S * (b[2] + leaf[2]), S * (b[0] + leaf[0]) + 46,
-                     S * (b[3] + leaf[2]), S * (b[1] + leaf[0]) + 46],
+        d.rectangle([int(S * (b[2] + leaf[2])), int(S * (b[0] + leaf[0])) + 46,
+                     int(S * (b[3] + leaf[2])), int(S * (b[1] + leaf[0])) + 46],
                     outline=(0, 235, 120), width=3)
-        d.text((S * (b[2] + leaf[2]) + 4, S * (b[0] + leaf[0]) + 49),
+        d.text((int(S * (b[2] + leaf[2])) + 4, int(S * (b[0] + leaf[0])) + 49),
                "T%d" % i, fill=(0, 235, 120), font=FB)
     for j, c in enumerate(icons):
         b = c["box"]
-        d.rectangle([S * (b[2] + leaf[2]), S * (b[0] + leaf[0]) + 46,
-                     S * (b[3] + leaf[2]), S * (b[1] + leaf[0]) + 46],
+        d.rectangle([int(S * (b[2] + leaf[2])), int(S * (b[0] + leaf[0])) + 46,
+                     int(S * (b[3] + leaf[2])), int(S * (b[1] + leaf[0])) + 46],
                     outline=(255, 205, 60), width=2)
-        d.text((S * (b[2] + leaf[2]) + 2, S * (b[0] + leaf[0]) + 47),
+        d.text((int(S * (b[2] + leaf[2])) + 2, int(S * (b[0] + leaf[0])) + 47),
                str(j), fill=(255, 205, 60), font=F)
     pan.save(os.path.join(DEMO, "dresden_p17_inventory.jpg"), quality=80,
              optimize=True)

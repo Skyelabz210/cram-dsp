@@ -34,6 +34,8 @@ import sys
 import numpy as np
 from PIL import Image, ImageDraw, ImageFont
 
+Image.MAX_IMAGE_PIXELS = None
+
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 from cram_dsp import dresden
@@ -608,14 +610,31 @@ def main():
             json.dump({"scan": k, "page": lab, "registers": len(bounds) - 1,
                        "leaf_box": leaf, "otsu": int(thr), "counts": counts,
                        "hollow_dots": hollow, "elements": elems}, f)
-        SCALE = 2
-        img = Image.fromarray(rgb).convert("RGB").resize(
-            (rgb.shape[1] * SCALE, rgb.shape[0] * SCALE), Image.LANCZOS)
+        # RENDER FROM THE HIGH-RESOLUTION SCAN WHEN IT IS PRESENT.
+        # Receipt: the analysis ran on the 684x1350 pages embedded in the
+        # source PDF, and the overlays were ALSO drawn on them, upscaled 2x.
+        # That made the delivered pictures worse than they had to be — the
+        # researcher could not read their own codex in them. Boxes are exact
+        # integers in scan coordinates either way; only the surface they are
+        # drawn on changes, and it is the library's own scan of the same
+        # object (identity verified, see tools/fetch_slub.py).
+        hp = os.path.join(DATA, "hires", "slub_p%02d.jpg" % k)
+        if os.path.exists(hp):
+            base = Image.open(hp).convert("RGB")
+            OW = 1700
+            base = base.resize((OW, base.height * OW // base.width),
+                               Image.LANCZOS)
+            SCALE = OW / rgb.shape[1]
+        else:
+            SCALE = 2
+            base = Image.fromarray(rgb).convert("RGB").resize(
+                (rgb.shape[1] * SCALE, rgb.shape[0] * SCALE), Image.LANCZOS)
+        img = base
         pan = Image.new("RGB", (img.width + 250, img.height + 46), (16, 16, 16))
         pan.paste(img, (0, 46))
         d = ImageDraw.Draw(pan)
         def S2(v):
-            return v * SCALE
+            return int(v * SCALE)
 
         d.text((8, 8), "SEGMENTATION  scan %02d  /  Forstemann page %s   "
                        "leaf y%d-%d x%d-%d   %d registers   %d elements"
@@ -663,7 +682,7 @@ def main():
         yy += 20
         d.text((img.width + 12, yy), "otsu %d" % int(thr),
                fill=(200, 200, 200), font=F)
-        pan.save(os.path.join(OVR, "scan%02d_seg.jpg" % k), quality=70,
+        pan.save(os.path.join(OVR, "scan%02d_seg.jpg" % k), quality=66,
                  optimize=True)
         ledger.record("segment", {"scan": k, "page": lab,
                                   "elements": len(elems),

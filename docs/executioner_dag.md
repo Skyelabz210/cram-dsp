@@ -529,3 +529,39 @@ their "zone 122 is a face" and "162 I've seen on other pages" do not match
 this repo's segmentation IDs (122 is a numeral bar over blank plaster, 162 a
 fragment of line over the red rule), so the numbering they are reading is not
 identified yet.
+
+## HIRES RENDER — 2026-08-28 (the second half of the researcher's complaint)
+
+Researcher, a third time: "The quality the images that you're showing me are
+those what you're looking at because those are way lower quality than what I
+gave you."
+
+Two separate facts, and only one was answered before.
+
+FACT 1, now verified rigorously rather than by byte-scan. A full walk of the
+PDF's 491 indirect objects finds 156 image objects, of which exactly 78 are
+page images at 684x1350 DCTDecode. Total image content: 72.0 M pixels =
+78 x 684 x 1350 exactly. There is nothing else in that file. The source was
+not degraded here; it simply contains no more detail.
+
+FACT 2, and this one was the agent's fault. The analysis ran on those 684
+pages AND the delivered overlays were drawn on them too, upscaled 2x, at JPEG
+quality 66-78 — and the per-registration overlays used 6x NEAREST. The
+pictures handed back were therefore worse than even the 684 source allowed,
+and the researcher could not read their own codex in them.
+
+Fixed: analysis/dresden_segment.py and analysis/dresden_p17.py now draw every
+overlay on the SLUB scan (1700 px wide render, from 3874x7649) whenever it is
+present, falling back to the PDF page when it is not. Element boxes are the
+same exact integers in scan coordinates; only the surface they are drawn on
+changes, and it is the library's own scan of the same object with identity
+verified per page.
+
+All 78 segmentation overlays and the p17 inventory regenerated. Counts
+unchanged and reproduced exactly: 17,552 elements, 376 figure, 11,679
+glyph_block, 878 numeral_bar, 4,205 numeral_dot, 4 panel_ground, 273 rule_h,
+137 rule_v, 0 margin. FIXTURES 18/0, a1_lint PASS.
+
+Still to do: re-run the ANALYSIS natively at high resolution (thresholds and
+size windows scale by 5.66), not merely the rendering. The measurements above
+are still 684-derived.
