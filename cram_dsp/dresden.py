@@ -160,6 +160,40 @@ def label_components(mask, conn: int = 8):
     return remap[labels], nxt
 
 
+def open_line(mask, length: int, axis: int = 1):
+    """Morphological opening of `mask` by a straight line of `length` pixels
+    along `axis` (1 = horizontal, 0 = vertical). Exact; integer prefix sums
+    only, no float and no library morphology.
+
+    Why this exists (receipt): register rules were first detected by
+    connected-component SHAPE — a component long and thin enough was called a
+    rule. On real pages the red rule touches the surrounding red-brown
+    mottling of the damaged plaster, so the component is a blob, not a line,
+    and the detector returned ZERO rules on pages whose rules are plainly
+    visible. A line opening tests the property that actually distinguishes a
+    rule (an unbroken run of `length` pixels) instead of a property of the
+    connected component it happens to belong to.
+    """
+    m = np.asarray(mask).astype(np.int64)
+    if axis == 0:
+        m = m.T
+    H, W = m.shape
+    if length < 1 or length > W:
+        return np.zeros(mask.shape, dtype=bool)
+    c = np.zeros((H, W + 1), dtype=np.int64)
+    np.cumsum(m, axis=1, out=c[:, 1:])
+    # erosion: every window of `length` starting at x is entirely set
+    er = (c[:, length:] - c[:, :W - length + 1]) == length
+    e = np.zeros((H, W), dtype=np.int64)
+    e[:, :W - length + 1] = er
+    d = np.zeros((H, W + 1), dtype=np.int64)
+    np.cumsum(e, axis=1, out=d[:, 1:])
+    x = np.arange(W)
+    lo = np.maximum(x - length + 1, 0)
+    out = (d[:, x + 1] - d[:, lo]) > 0
+    return out.T if axis == 0 else out
+
+
 def dilate(mask, steps: int = 1):
     """8-neighbour binary dilation by shift-OR, `steps` times. Exact."""
     m = np.asarray(mask).copy()
