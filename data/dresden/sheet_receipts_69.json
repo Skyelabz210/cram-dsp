@@ -1,0 +1,29 @@
+{
+ "chain": "d11090a518e17bcb91fa4506b6838142771198b87cc0f84d8481405d17a0418f",
+ "entries": [
+  {
+   "chain": "d11090a518e17bcb91fa4506b6838142771198b87cc0f84d8481405d17a0418f",
+   "in": "5acc183693c85e72b611d9d871d6ef3642733b9ce150965a905cdd791efab1ab",
+   "op": "sheet",
+   "out": "/home/user/cram-dsp/demo/dresden_sheet_p69.png",
+   "params": {
+    "box": [
+     768,
+     1350,
+     64,
+     274
+    ],
+    "dressing_pairs": 4,
+    "freeze": [
+     177,
+     223
+    ],
+    "page": "69",
+    "path_nodes": 6,
+    "scan": 73,
+    "sequenced_glyphs": 12,
+    "white_threshold": 24
+   }
+  }
+ ]
+}

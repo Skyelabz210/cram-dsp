@@ -353,3 +353,255 @@ Both readings ship with their unit and nothing is concluded from either.
 Remaining unbuilt instruments: trail-vs-materials discrimination (needs
 physical-object or multi-illumination evidence) and higher-resolution
 capture (the 684x1350 bound on every matching number).
+
+## SEGMENTATION — 2026-08-28 (a dropped deliverable, recovered)
+
+Researcher instruction: "go back to the beginning of our session and read it
+again." Turn one asked for the codex saved to the repo "with each page
+**carefully segmented** numbered and grouped into common assumed categories."
+Three verbs. Only two were built: `data/dresden/INDEX.md` numbered the pages
+and grouped them into sections, and the task was written down as "pages
+numbered + grouped into assumed categories" and marked complete. The
+segmentation was silently dropped, and every later stage stood on its
+absence — figure detectors that merged a page into one blob, glyph detectors
+returning three boxes for a column holding a dozen glyphs.
+
+analysis/dresden_segment.py — 78 pages, **17,552 numbered elements**,
+hierarchy `leaf -> registers -> zones -> rows -> cells`, 8 geometric
+categories. New production primitive `cram_dsp.dresden.open_line`: exact
+integer morphological opening by a straight line, via prefix sums.
+
+Totals: 376 figure, 11,679 glyph_block, 878 numeral_bar, 4,205 numeral_dot,
+4 panel_ground, 273 rule_h, 137 rule_v, 0 margin.
+
+Four defects found by this stage, each kept as a receipt:
+
+1. Every geometric threshold was keyed to the SCAN FRAME. Each WDL scan
+   carries slivers of the ADJACENT LEAVES, so the frame is ~20% wider than
+   the page and its edges are the neighbours — "40 px from the edge" was
+   measuring the next leaf. `leaf_block` locates the gutter and mount bands
+   as dark-fraction peaks in the outer quarter (rows: outer fifth).
+2. Register rules detected by component SHAPE returned ZERO on scan 50,
+   whose rules are plainly visible: a rule touches the red-brown mottling of
+   the damaged plaster and the component becomes a blob. Replaced by a line
+   opening, which tests the property a rule actually has.
+3. A single gap threshold per zone under-splits dense writing. Cells wider
+   or taller than 3/2 of the page's own median glyph cell are re-cut at the
+   minimum of their own projection.
+4. Red bar-and-dot numerals were invisible to a black-ink-only cell pass;
+   folding red into the same projection merged them into their neighbouring
+   glyph cells. They get their own component pass.
+
+MEASURED limits, nothing closed:
+* Line-drawn figures are not separable from dense line-drawn writing at
+  684x1350. Figures carry their provenance (`colour_mass` reliable,
+  `stroke_mass` candidate). The discriminator tried — largest undilated
+  stroke as a share of the mass — does not separate them: 52/1000 on 402
+  raw strokes for the true seated figure of p69 (scan 73) against 43/1000
+  on 399 for a block of merged writing on the same page. Both numbers ship
+  with every stroke-mass figure for a higher-resolution capture to test.
+* `margin` fired 0 times across all 78 pages; the category is subsumed by
+  the leaf boundary. Reported as zero, not removed.
+
+The p69 seated figure — the column this whole build exists to read — is now
+found by the machine itself (scan 73, element 98) instead of by being
+pointed at.
+
+Gates: FIXTURES 18 checks / 0 failures; a1_lint PASS; py_compile clean;
+run_all 2,585,391 checks / 0 failures.
+
+Next: re-run the downstream machinery (correspondence experiment, the
+8-panel sheet) on this segmentation substrate rather than on ad-hoc
+per-stage detectors.
+
+## p17 CORRESPONDENCE — 2026-08-28 (researcher-selected page)
+
+Researcher: "Do page 17 of 78 — I definitely see this page." Scan 17 is the
+concept illustration's layout made literal: the oval icons float in the SAME
+OPEN FIELD as the figures, not in a text grid as on p47 and p69.
+
+New production primitive `cram_dsp.dresden.local_dark_field` — per-pixel
+darkness below the LOCAL substrate level (lower-quartile luma of each 24x24
+block's non-ink pixels). An evidence transform, not an enhancement. It exists
+because global Otsu misses this page's figures entirely: under the previous
+detector all five "figures" on p17 were blocks of WRITING and not one of the
+four real figures was found.
+
+Four separations tried, all receipted: second global Otsu (selects 323/1000
+of the page, shading included); removing heavy ink (destroys the figures —
+the line is not lighter than the cut); stroke-width opening (separates figure
+from writing but not figure from icon — the ovals are thin rings too); and
+cutting the segmentation cells out of the targets (shreds the figures, since
+the cell pass also boxes figure parts). What works is TOPOLOGY: an oval is a
+small CLOSED loop, the figure line is a large open structure. 67 icons
+(median 34x41, all carrying a hole) against 10 targets, disjoint by component
+identity.
+
+Two defects this run found in its own machinery:
+* SELF-MATCHING. With targets taken as thin-stroke components the ovals
+  joined the figure's component, so every target contained the icons around
+  it. That run's top result (icon 32 -> T5, IoU 547, boundary overlap
+  982/1000) is visibly the icon landing on a NEIGHBOURING OVAL outside the
+  figure. Caught by looking at the picture, not by a score.
+* DEGENERATE NULL. "608 of 608 clear their own matched null" is near
+  tautological — the argmax of a distribution beats its own p99. Replaced by
+  a FOREIGN-ICON control: icons from scan 5, same extraction rule, same
+  targets.
+
+MEASURED, natural scale (the researcher's specification — original size
+before resizing): p17's own icons median IoU 389 / p75 455 / p95 577 /
+max 684 (n=670); foreign icons from scan 5 median 391 / p75 473 / p95 574 /
+max 696 (n=400). 30 of 670 exceed their target's foreign p95 against ~34 by
+chance — at or below chance. 0 pass the topology gate. Icon preference tracks
+target AREA (the largest target, a writing block, takes 17 of 67).
+
+On the permissive scale ladder: 407 vs 412 median, 68 over foreign p95, 3
+pass topology — and every one of the top eight chose scale 2/3 or 3/4, the
+shrinkage bias already receipted on p47.
+
+Visual verification: the best natural-scale fit on a figure (icon 3 -> T3,
+IoU 684, boundary overlap 966/1000) is a contour arc lying along the
+figure's hem line. High score, no correspondence.
+
+METHOD-LIMITED: local window IoU on a sparse line drawing is dominated by
+local INK DENSITY, not shape, so any ~35 px form scores ~400/1000 wherever
+density is comparable. The objective has almost no shape selectivity at
+684x1350 and cannot yet address the correspondence question. This is a
+statement about the objective function, NOT about the researcher's
+hypothesis, and it closes nothing.
+
+Gap stated: three of four figures are targets; the top-left figure
+(scan y180-441 x71-245) did not clear the size floor.
+
+Next instrument (a scale, not a gate): an edge-orientation agreement score
+inside inked windows; density normalisation; higher-resolution capture.
+
+Gates: FIXTURES 18/0, a1_lint PASS, py_compile clean, run_all 2,585,391
+checks / 0 failures.
+
+## HIRES — 2026-08-28 (the resolution bound, removed)
+
+Researcher, twice: "When I zoom into this image it's visually obscured and
+lower quality than what I gave you — is this what you're using or what you're
+showing me?" Answer, established by inspecting the source: BOTH. The
+researcher's PDF embeds 78 images at 684x1350; that is its native resolution
+and nothing here downsampled it. The blur is in the source file.
+
+Every matching number this campaign has produced carried "the 684x1350
+resolution bound" as a named limit (DRESDEN_MACHINE_STATUS.md instrument 4;
+DRESDEN_P17.md section 6). The bound was never intrinsic — it was an artifact
+of the delivery format.
+
+tools/fetch_slub.py — Codex Dresdensis, Mscr.Dresd.R.310, Saechsische
+Landesbibliothek Dresden (SLUB), Public Domain Mark 1.0 as declared in the
+object's own METS record, reached through the SLUB OAI-PMH endpoint.
+78 pages at **3874x7649**: 5.7x linear, **32x the pixels**.
+
+Page correspondence is VERIFIED, not assumed: each fetched page is downscaled
+to the PDF page's size and correlated against it. Identity correlation min
+990 / median 992 / max 996 per 1000 across all 78; zero failures. Receipts
+(URL, byte length, SHA-256, dimensions, correlation) in
+data/dresden/hires/RECEIPTS.json, digests pinned in SHA256SUMS.txt. The 386 MB
+of images stay out of git and are regenerable by re-running the tool.
+
+What this changes, visibly: at 684 the interior structure of a glyph icon is
+not resolved at all. At 3874 it is. DRESDEN_P17.md concluded METHOD-LIMITED —
+"local window IoU on a sparse line drawing is dominated by ink density, not
+shape ... almost no shape selectivity at 684x1350". That conclusion stands as
+written for that resolution, and the likeliest reading is now that the
+objective had no internal structure to work with rather than that the
+objective is wrong. Both readings stay open; nothing is closed.
+
+RESEARCHER REFRAMING, recorded: "the ones with the dots are the turtle shell
+at different angles ... these are not going to be in a character." The dotted
+ovals are one object depicted at different viewing angles, not components
+that assemble into the figure. The icon-to-character registration test is
+therefore the WRONG TEST for this population, and is not to be re-run on
+them. The right test is a POSE-FAMILY test: if these are one object rotated,
+the interior dot count and arrangement stay stable while the outline
+compresses along a foreshortening axis; if they are distinct signs, the two
+vary independently. Measurable exactly, and now resolvable.
+
+demo/dresden_p17_dotted_icons.jpg — all 52 icons on p17 carrying interior
+dots (of 67), cut from the SLUB original and legibly numbered, so the
+researcher can point at specific glyphs. Open question put to the researcher:
+their "zone 122 is a face" and "162 I've seen on other pages" do not match
+this repo's segmentation IDs (122 is a numeral bar over blank plaster, 162 a
+fragment of line over the red rule), so the numbering they are reading is not
+identified yet.
+
+## HIRES RENDER — 2026-08-28 (the second half of the researcher's complaint)
+
+Researcher, a third time: "The quality the images that you're showing me are
+those what you're looking at because those are way lower quality than what I
+gave you."
+
+Two separate facts, and only one was answered before.
+
+FACT 1, now verified rigorously rather than by byte-scan. A full walk of the
+PDF's 491 indirect objects finds 156 image objects, of which exactly 78 are
+page images at 684x1350 DCTDecode. Total image content: 72.0 M pixels =
+78 x 684 x 1350 exactly. There is nothing else in that file. The source was
+not degraded here; it simply contains no more detail.
+
+FACT 2, and this one was the agent's fault. The analysis ran on those 684
+pages AND the delivered overlays were drawn on them too, upscaled 2x, at JPEG
+quality 66-78 — and the per-registration overlays used 6x NEAREST. The
+pictures handed back were therefore worse than even the 684 source allowed,
+and the researcher could not read their own codex in them.
+
+Fixed: analysis/dresden_segment.py and analysis/dresden_p17.py now draw every
+overlay on the SLUB scan (1700 px wide render, from 3874x7649) whenever it is
+present, falling back to the PDF page when it is not. Element boxes are the
+same exact integers in scan coordinates; only the surface they are drawn on
+changes, and it is the library's own scan of the same object with identity
+verified per page.
+
+All 78 segmentation overlays and the p17 inventory regenerated. Counts
+unchanged and reproduced exactly: 17,552 elements, 376 figure, 11,679
+glyph_block, 878 numeral_bar, 4,205 numeral_dot, 4 panel_ground, 273 rule_h,
+137 rule_v, 0 margin. FIXTURES 18/0, a1_lint PASS.
+
+Still to do: re-run the ANALYSIS natively at high resolution (thresholds and
+size windows scale by 5.66), not merely the rendering. The measurements above
+are still 684-derived.
+
+## RECURRENCE — 2026-08-28 (researcher-selected glyph; the method fails its control)
+
+Researcher: "162 is on this page see it the face", and earlier "162 I've seen
+on other pages." Resolved a numbering mismatch first — their 162 is on PAGE 7,
+not p17 (p17's element 162 is a figure's foot). p7 element 162 is a 173x102
+block this repo's detector merged into one `figure` (the stroke_mass merging
+defect), and inside it cartouche c2 is a face in profile within a dotted oval:
+eye, snout, jaw, legible at high resolution only. At 684 the glyph is 63x31 px
+with no resolved interior, which is why it was invisible to both of us.
+
+analysis/dresden_recur.py searched all 78 pages at 1937 px working width from
+the SLUB scans, 8 dihedral poses, weighted orientation planes, midrank
+normalization, exact integer cosine.
+
+Control battery: positive control passes (self-match 747, rank 1 of 78). Best
+other page scan 19 / p19 at 721. Median 702, min 667, spread 80.
+BEST NEAR-BLANK PAGE 712 — and scans 29 and 31, which are bare plaster, rank
+6th and 7th of 78, above 71 pages carrying writing. The best genuine page sits
+just 9 points above blank plaster on an 80-point scale.
+
+METHOD-LIMITED. A pooled orientation-histogram cosine compares the texture
+statistics of a sliding window; on a codex where nearly every window is dense
+line-work of similar stroke density, those statistics are near-constant. This
+is the TEXTURE FLOOR already receipted in DRESDEN_MACHINE_STATUS.md for the
+localizer — used again here and failing the same way. Recorded as an agent
+error, not a property of the codex.
+
+NO CLAIM is made about whether the glyph recurs. The researcher's recurrence
+claim stays OPEN and is not contradicted by anything measured here.
+
+Surfaced as candidates for the researcher's eye only, carrying no score-based
+support: scan 8 / p8 (an oval cartouche with an internal profile head, closest
+by eye) and scan 19 / p19.
+
+Next instrument: cartouche-to-cartouche shape comparison against the 11,679
+glyph_block cells already segmented across 78 pages — ring/sector signature,
+dihedral-normalized, plus interior topology. Page texture cannot enter such a
+comparison because blank plaster yields no cartouche at all. Feasible only now
+that cartouche interiors are resolved.
