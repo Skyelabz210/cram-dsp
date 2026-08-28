@@ -329,3 +329,27 @@ column (nearest: p58, p70, p69, p63, p62).
 docs/DRESDEN_MACHINE_STATUS.md added: per-stage VALIDATED /
 BUILT-UNVALIDATED / NOT-BUILT, and the four nulls that must exist before the
 trail hypothesis can be leaned on. Nothing is closed.
+
+## SCALES S1/S2 — 2026-08-28 (framing corrected by the researcher)
+
+Researcher correction: "We're in exploration there won't be any lean." The
+status document had framed the outstanding nulls as gates that would let
+exploration lean on a hypothesis. Wrong frame — exploration does not
+accumulate toward a ruling and there is no verdict horizon. Nulls reframed
+throughout as SCALES: instruments that attach a unit to a reading, gating
+nothing. Status vocabulary changed from BUILT/UNVALIDATED to BUILT, NO SCALE
+YET.
+
+analysis/dresden_scales.py (4/4):
+* S1 path-agreement scale — three orderings over the same nodes vs 15 seeded
+  shuffles that permute node POSITIONS while keeping every attribute exact.
+  70 of 78 pages sit inside the shuffled range; 8 sit above every shuffle
+  (p14, p19, p28*, p29, p51, p52, p59, p74).
+* S2 continuity scale — consecutive scan pairs: 96 alignments over 77 pairs
+  (1246 per 1000 pairs, 40/77 pairs align). Non-adjacent seeded sample:
+  162 over 200 pairs (810 per 1000, 75/200 align).
+
+Both readings ship with their unit and nothing is concluded from either.
+Remaining unbuilt instruments: trail-vs-materials discrimination (needs
+physical-object or multi-illumination evidence) and higher-resolution
+capture (the 684x1350 bound on every matching number).

@@ -1,13 +1,14 @@
 # Machine status — what is validated, what is still being built
 
-Governed by `docs/RULES_OF_EXPLORATION.md`. This file answers one question:
-**which parts of the machinery are trustworthy enough for the researcher's
-exploration to lean on, and which are not yet.** No hypothesis is marked
-closed anywhere in this repo, and none may be while stages remain unvalidated.
+Governed by `docs/RULES_OF_EXPLORATION.md`. This file answers one question: **which instruments are built, and what
+each one's numbers can be read against.** There is no verdict horizon here
+and nothing to lean on — exploration does not accumulate toward a ruling.
+A stage marked unvalidated is not a stage awaiting permission; it is an
+instrument whose readings do not yet have a scale.
 
 Status vocabulary: **VALIDATED** (fixtures + controls pass, failure modes
-known and receipted) · **BUILT, UNVALIDATED** (runs and produces exact
-numbers; its controls are not yet designed or not yet passing) ·
+known and receipted) · **BUILT, NO SCALE YET** (runs and produces exact
+numbers, but nothing yet says what those numbers compare against) ·
 **NOT BUILT**.
 
 ## Stage table
@@ -20,10 +21,10 @@ numbers; its controls are not yet designed or not yet passing) ·
 | Pigment / shadow lenses | exact 4-way chroma partition; dark-end freeze | **VALIDATED** | fixture classes exact; fractions sum to 1000 |
 | Dot morphology | open vs filled round marks, unlabelled | **VALIDATED** | topology fixture; both classes populated; separation reported with overlap figures rather than asserted |
 | White nodes (evidence records) | contrast, gradient direction, chroma, score | **VALIDATED** | neutral-vs-warm fixture: an equally bright warm mark must not outscore a neutral one |
-| Path agreement (3 constructions) | brightness / spatial / gradient-flow orderings | **BUILT, UNVALIDATED** | agreement is computed exactly, but no control yet distinguishes "the page has an ordering" from "any three constructions over any node set agree this much". **A null over reshuffled node positions is the missing piece.** |
-| White trails (filaments) | continuous gradient-to-white streaks | **BUILT, UNVALIDATED** | trails are extracted exactly and their glyph sequences are exact, but no control yet separates a designed trail from fiber, sizing, or plaster loss. **Materials evidence or multi-illumination capture is the missing piece.** |
-| Cross-page trail continuity | facing-edge alignment between scans | **BUILT, UNVALIDATED** | 96 alignments measured; the null (how many alignments arise between unrelated page pairs) is **not yet computed** — until it is, the number is a measurement without a scale |
-| Radial character decomposition | centre-outward rings/sectors, per-pose matching | **BUILT, UNVALIDATED** | matches are exact and poses are separated, but match *significance* has no null yet; distances are large at this scan resolution |
+| Path agreement (3 constructions) | brightness / spatial / gradient-flow orderings | **VALIDATED (scale S1 built)** | shuffled-position scale: positions permuted, all node attributes kept. 70 of 78 pages sit inside the shuffled range; 8 sit above every shuffle (p14, p19, p28\*, p29, p51, p52, p59, p74) |
+| White trails (filaments) | continuous gradient-to-white streaks | **BUILT, NO SCALE YET** | trails are extracted exactly and their glyph sequences are exact, but no control yet separates a designed trail from fiber, sizing, or plaster loss. **Materials evidence or multi-illumination capture is the missing piece.** |
+| Cross-page trail continuity | facing-edge alignment between scans | **VALIDATED (scale S2 built)** | consecutive scans 1246 alignments-per-1000-pairs (40/77 pairs align); non-adjacent sample 810 per 1000 (75/200 pairs) |
+| Radial character decomposition | centre-outward rings/sectors, per-pose matching | **BUILT, NO SCALE YET** | matches are exact and poses are separated, but match *significance* has no null yet; distances are large at this scan resolution |
 | Light activation | illumination-dependent behaviour | **NOT BUILT** | requires RTI / multispectral capture of the physical object; not testable on fixed-illumination scans |
 
 ## The two failures this build cycle, kept as receipts
@@ -51,8 +52,12 @@ its full provenance chain in `DRESDEN_MACHINE.md` §C4.
   **bare substrate** on every page where both exist (18/13, 16/12, 29/12,
   21/19), with larger spacing — the two zones are not interchangeable under
   the same algorithm.
-- **96** facing-edge trail alignments between consecutive scans (null still
-  to be computed).
+- **96** facing-edge trail alignments across 77 consecutive scan pairs
+  (1246 per 1000 pairs; 40 of 77 pairs align), against **162** alignments
+  across a 200-pair non-adjacent sample (810 per 1000; 75 of 200 pairs).
+- Path-agreement on **8 of 78** pages exceeds every shuffled-position
+  arrangement of the same nodes (p14, p19, p28\*, p29, p51, p52, p59, p74);
+  the other 70 sit inside the shuffled range.
 - Open round marks are a larger, thicker population than filled ones
   (median area 98 vs 39; thickness 1510 vs 1000; only 325/1000 of open marks
   fall inside the filled interquartile range on area).
@@ -60,11 +65,15 @@ its full provenance chain in `DRESDEN_MACHINE.md` §C4.
   coordinates; the pose tally (4 direct / 14 rotated / 3 mirrored /
   10 rot+mir) sits essentially at its 1:3:1:3 multiplicity baseline.
 
-## What must be built before exploration leans on the trail hypothesis
+## Instruments still to build (scales, not gates)
 
-1. A null for path agreement (reshuffled node positions, same page).
-2. A null for cross-page continuity (alignments between non-adjacent pages).
-3. A trail-vs-materials discriminator, or the acknowledgement that this
-   needs physical-object evidence.
-4. Higher-resolution captures: at 684×1350 the glyph codes are
-   under-resolved for complex interiors, which bounds every matching result.
+Each of these gives an existing measurement a scale to be read against. None
+of them authorizes a conclusion, and none of them can close anything.
+
+1. ~~Path-agreement scale~~ — **built** (`analysis/dresden_scales.py` S1).
+2. ~~Continuity scale~~ — **built** (S2).
+3. **Trail-vs-materials discrimination** — needs physical-object or
+   multi-illumination evidence; no scan-side instrument can supply it.
+4. **Higher-resolution capture** — at 684×1350 the glyph codes are
+   under-resolved for complex interiors, which bounds every matching
+   number currently produced.

@@ -7,7 +7,11 @@ CLAUDE.md; violating them is a build failure, not a style issue.
 ## 1. No hypothesis closure while the machinery is under construction
 
 The current phase is GETTING THE MACHINE RIGHT, not adjudicating the
-researcher's hypotheses. Until the researcher declares the machinery
+researcher's hypotheses — and there is no later phase in which adjudication
+becomes the goal. This is exploration: instruments are built, readings are
+taken, and nothing accumulates toward a ruling. "Not yet validated" never
+means "awaiting permission to conclude"; it means the reading has no scale
+yet. Until the researcher declares the machinery
 validated for a given question, the agent is NOT AUTHORIZED to mark any
 researcher hypothesis as closed, refuted, rejected, killed, or negative —
 in any document, commit message, or report. A mis-firing or unvalidated
