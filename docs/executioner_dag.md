@@ -284,3 +284,48 @@ only; (5) localization control battery required; (6) sequences require
 multi-path agreement; (7) morphology before semantics. Existing docs
 reframed accordingly (this record, per its append-only rule, is not
 rewritten — this entry IS the record of the change).
+
+## R1–R4 — 2026-08-28 (production spec implemented; fork material integrated)
+
+Researcher's production specification implemented in full, plus integration
+of the ARCHIMEDES suite the researcher supplied:
+
+* midrank_normalize — imported from BRANCH_SWEEP.md B2/B6, where independent
+  contrast stretches were shown to drive and even INVERT a metric. Both sides
+  of every cross-generation match are now marginal-equalized.
+* decide_with_abstention — archnet void rejection: thin margins decline to
+  name a winner. The no-closure rule enforced in code.
+* Branch-exhaustion posture: all controls run and are reported before any
+  statement, none used to close anything.
+
+R1 localizer (6/6): weighted orientation planes (edge confidence), anisotropic
+scale sweep, exact integer COSINE scoring, full control battery. TWO of my own
+failures were caught by the battery and are kept as receipts: (a) raw
+co-occurrence scores were not comparable across templates — texture floor
+2380 above the real query 826; (b) the first battery compared a different
+template's best score to the query's, which is meaningless — replaced by the
+per-query null (winner 826, median 685, min 648, best blank-page 709, rank
+percentile 1000/1000).
+
+R2 white-field v2 (7/7): node evidence records (contrast, gradient
+magnitude/direction, chroma spread, combined score — a warm bright mark can
+no longer outscore a neutral one); three independent orderings with exact
+pairwise agreement; written-zone vs bare-substrate comparison (written zones
+carry HIGHER node contrast on every page where both exist — 18/13, 16/12,
+29/12, 21/19); cross-page facing-edge trail continuity: 96 alignments, null
+not yet computed and flagged as such.
+
+R3 radial decomposition: character centre -> 4 rings x 8 sectors read
+outward, 31 pieces on the p69 character matched codex-wide with DIRECT /
+ROTATED / MIRRORED / ROT+MIR reported separately and the 1:3:1:3 chance
+baseline stated (observed 4/14/3/10 sits at baseline).
+
+R4 dot morphology (6/6): 34,410 round marks measured with no semantic
+labels; open marks are a larger/thicker population (median area 98 vs 39,
+thickness 1510 vs 1000, 325/1000 overlap with the filled IQR); spacing
+regularity per page and class; recurrence ranking against the located p69
+column (nearest: p58, p70, p69, p63, p62).
+
+docs/DRESDEN_MACHINE_STATUS.md added: per-stage VALIDATED /
+BUILT-UNVALIDATED / NOT-BUILT, and the four nulls that must exist before the
+trail hypothesis can be leaned on. Nothing is closed.
