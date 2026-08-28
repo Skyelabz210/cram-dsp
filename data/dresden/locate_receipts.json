@@ -1,18 +1,19 @@
 {
- "chain": "ce54f9bb8b2417fec2768a9cf9c6f7a0952d3669838488d6a440406bdc79017d",
+ "chain": "f0ff62a4a1f7e76705000b7b6eff1bee9ec97c324cb4c4a76c91a6e78def1e10",
  "entries": [
   {
-   "chain": "ce54f9bb8b2417fec2768a9cf9c6f7a0952d3669838488d6a440406bdc79017d",
+   "chain": "f0ff62a4a1f7e76705000b7b6eff1bee9ec97c324cb4c4a76c91a6e78def1e10",
    "in": "search",
-   "op": "locate_column",
+   "op": "locate_v2",
    "out": "3c47865a8e312a042be29552c9a6445a4e6ce21cf77032ac227cdb7d370af220",
    "params": {
-    "margin_milli": 222,
-    "method": "orientation co-occurrence, block 8, mag_t 18",
-    "milli_score": 9434,
+    "impostor_ceiling": 976,
+    "margin": 208,
+    "method": "weighted orientation co-occurrence, pool 8, aspect sweep 900/1000/1100 milli",
+    "milli": 861,
     "query": "queries/query_column_photo_q4.png",
-    "template_width": 210,
-    "winner_page": "69",
+    "rank_pct": 1000,
+    "texture_floor": 2380,
     "winner_scan": 73,
     "x": 64,
     "y": 768

@@ -506,6 +506,52 @@ def pool_planes(planes, block: int = 8):
         c, hb // block, block, wb // block, block).sum(axis=(2, 4))
 
 
+def midrank_normalize(values, levels: int = 256):
+    """Exact monotone midrank normalization — equalizes the marginal
+    histogram while leaving spatial order untouched.
+
+    Imported lesson (ARCHIMEDES branch-exhaustion sweep, `BRANCH_SWEEP.md`
+    §B2/B6): rasters exported with independent contrast stretches produce
+    metric differences that are pure export artifact — there, equalizing
+    marginals INVERTED the ±1 ordering, and the apparent effect vanished.
+    The same hazard applies to any comparison across scan generations,
+    JPEG grades, or lighting. Run this before comparing two images whose
+    tone curves were not produced by the same process.
+
+    Ties take the integer midrank of their run, so the map is monotone and
+    fully determined by value order — no float, no interpolation."""
+    a = np.asarray(values)
+    flat = a.reshape(-1)
+    n = flat.size
+    if n == 0:
+        return a.copy()
+    order = np.argsort(flat, kind="stable")
+    sorted_v = flat[order]
+    is_new = np.empty(n, dtype=bool)
+    is_new[0] = True
+    is_new[1:] = sorted_v[1:] != sorted_v[:-1]
+    starts = np.flatnonzero(is_new)
+    gid = np.cumsum(is_new) - 1
+    ends = np.append(starts[1:], n) - 1
+    mid = (starts[gid] + ends[gid]) // 2
+    out_sorted = (mid * (levels - 1)) // max(n - 1, 1)
+    out = np.empty(n, dtype=np.int64)
+    out[order] = out_sorted
+    return out.reshape(a.shape)
+
+
+def _integral_image(a):
+    """Exact 2-D prefix sums with a zero border (int64)."""
+    return np.pad(np.cumsum(np.cumsum(np.asarray(a, dtype=np.int64), axis=0),
+                            axis=1), ((1, 0), (1, 0)))
+
+
+def window_sums(a, th: int, tw: int):
+    """Exact sums over every th x tw window, by integral image."""
+    ii = _integral_image(a)
+    return (ii[th:, tw:] - ii[:-th, tw:] - ii[th:, :-tw] + ii[:-th, :-tw])
+
+
 def cooccurrence_map(page_planes, tpl_planes):
     """Exact co-occurrence score at every offset: sum over planes of the
     dot product between the template and the aligned page window. int64
@@ -520,6 +566,29 @@ def cooccurrence_map(page_planes, tpl_planes):
     return np.einsum("cijhw,chw->ij", wins, T)
 
 
+def orientation_planes_weighted(luma, mag_thresholds=(18, 36, 72)):
+    """Weighted orientation planes: same 8 octant bins as
+    `orientation_planes`, but each strong pixel carries an integer edge
+    weight = how many magnitude thresholds its L1 gradient clears (1..k).
+    A heavy ink stroke (weight 3) outweighs a faint fiber boundary
+    (weight 1) in the co-occurrence score, while everything stays integer.
+    Same mirror permutation applies (the bins are unchanged)."""
+    y = np.asarray(luma, dtype=np.int64)
+    gx = np.zeros_like(y)
+    gy = np.zeros_like(y)
+    gx[:, 1:-1] = y[:, 2:] - y[:, :-2]
+    gy[1:-1, :] = y[2:, :] - y[:-2, :]
+    mag = np.abs(gx) + np.abs(gy)
+    weight = np.zeros_like(y)
+    for t in mag_thresholds:
+        weight += (mag >= t).astype(np.int64)
+    ax, ay = np.abs(gx), np.abs(gy)
+    b = ((ay > ax).astype(np.int64) * 4
+         + ((gx < 0) ^ (gy < 0)).astype(np.int64) * 2
+         + (np.minimum(ax, ay) * 2 > np.maximum(ax, ay)).astype(np.int64))
+    return np.stack([np.where(b == k, weight, 0) for k in range(8)])
+
+
 MIRROR_PLANE_PERM = (2, 3, 0, 1, 6, 7, 4, 5)  # gx -> -gx toggles the XOR bit
 
 
@@ -528,6 +597,53 @@ def mirror_planes(planes):
     plus the exact bin permutation induced by gx -> -gx."""
     p = np.asarray(planes)
     return p[list(MIRROR_PLANE_PERM)][:, :, ::-1]
+
+
+def cooccurrence_normalized(page_planes, tpl_planes):
+    """Exact integer COSINE (in milli, 0..1000) between the template's
+    orientation-weight vector and every aligned page window.
+
+    Why this replaced the raw co-occurrence score: the raw dot product
+    scales with the window's own edge mass, so scores from different
+    templates were not comparable — the control battery caught it (a
+    texture-only template scored 2380 against the real query's 861 on the
+    same scale, i.e. the "floor" sat above the "signal"). Normalizing by
+    both norms makes every score a bounded similarity that IS comparable
+    across templates, pages and scales. Cauchy-Schwarz guarantees the
+    result never exceeds 1000, exactly.
+
+    All integer: dot^2 // window-norm, scaled, then exact integer sqrt."""
+    P = np.asarray(page_planes, dtype=np.int64)
+    T = np.asarray(tpl_planes, dtype=np.int64)
+    c, th, tw = T.shape
+    dot = cooccurrence_map(P, T)
+    if dot.size == 0:
+        return dot
+    wnorm = window_sums((P * P).sum(axis=0), th, tw)
+    tnorm = max(int((T * T).sum()), 1)
+    ratio = (dot * dot) // np.maximum(wnorm, 1)
+    return _isqrt_grid((1000 * 1000 * ratio) // tnorm)
+
+
+ABSTAIN = "ABSTAIN"
+
+
+def decide_with_abstention(ranked, min_margin: int = 20, min_score: int = 0):
+    """Void rejection, imported from the ARCHIMEDES archnet consensus rule:
+    a thin margin ABSTAINS instead of guessing.
+
+    `ranked` is a descending list of (score, key, ...) rows over distinct
+    candidates. Returns (winner_row_or_None, verdict, margin) where verdict
+    is the winner key or ABSTAIN. This is the no-closure rule
+    (docs/RULES_OF_EXPLORATION.md) enforced in code: the machine may
+    decline to name a winner, and declining is a reportable result."""
+    if not ranked:
+        return None, ABSTAIN, 0
+    win = ranked[0]
+    margin = win[0] - (ranked[1][0] if len(ranked) > 1 else 0)
+    if margin < min_margin or win[0] < min_score:
+        return win, ABSTAIN, margin
+    return win, win[1], margin
 
 
 def locate(page_luma, tpl_luma, block: int = 8, mag_threshold: int = 18):
@@ -810,6 +926,134 @@ def trail_glyph_sequence(polyline, boxes, reach: int = 40):
                 break
     seq.sort()
     return [bi for _, bi in seq]
+
+
+def node_records(rgb, top_milli: int = 965, min_area: int = 12,
+                 max_area: int = 4000):
+    """Full EVIDENCE records for white nodes (per the researcher's spec —
+    a node is a measurement bundle, not a dot):
+
+      (cy, cx, area, peak, median, local_contrast, grad_mag, grad_oct,
+       chroma_spread, score)
+
+    local_contrast = lower-median of the local-bright field over the node
+    (brightness above the node's own substrate); grad_mag/grad_oct = the
+    direction of increasing reflectance at the node (mean integer gradient
+    of luma over the node's pixels, octant-binned); chroma_spread = spread
+    between mean channels (0 = perfectly neutral white). Combined integer
+    score (stated formula, all exact):
+        score = 2*local_contrast + peak + max(0, 64 - 2*chroma_spread)
+    so ordinary warm paper brightness cannot masquerade as neutral white
+    structure. Returns (threshold, [records...]) sorted by score desc."""
+    a = np.asarray(rgb).astype(np.int64)
+    y = int_luma(rgb)
+    ink = ink_mask(y, otsu_threshold(y))
+    diff = local_bright_field(y, ink=ink)
+    gx = np.zeros_like(y)
+    gy = np.zeros_like(y)
+    gx[:, 1:-1] = y[:, 2:] - y[:, :-2]
+    gy[1:-1, :] = y[2:, :] - y[:-2, :]
+    thr = order_stat(y, top_milli)
+    mask = y >= thr
+    labels, n = label_components(mask)
+    recs = []
+    for i, b in enumerate(component_boxes(labels, n), start=1):
+        y0, y1, x0, x1, area = b
+        if not (min_area <= area <= max_area):
+            continue
+        sel = labels[y0:y1, x0:x1] == i
+        m = int(sel.sum())
+        vals = y[y0:y1, x0:x1][sel]
+        cyy = y0 + int(np.nonzero(sel)[0].sum()) // m
+        cxx = x0 + int(np.nonzero(sel)[1].sum()) // m
+        contrast = exact_median(diff[y0:y1, x0:x1][sel])
+        mgx = int(gx[y0:y1, x0:x1][sel].sum()) // m
+        mgy = int(gy[y0:y1, x0:x1][sel].sum()) // m
+        gmag = abs(mgx) + abs(mgy)
+        goct = int(octant_index(np.asarray([[mgy]]),
+                                np.asarray([[mgx]]))[0][0])
+        ch = [int(a[y0:y1, x0:x1, c][sel].sum()) // m for c in range(3)]
+        spread = max(ch) - min(ch)
+        peak = int(vals.max())
+        med = exact_median(vals)
+        score = 2 * contrast + peak + max(0, 64 - 2 * spread)
+        recs.append((cyy, cxx, area, peak, med, contrast, gmag, goct,
+                     spread, score))
+    recs.sort(key=lambda r: (-r[9], r[0], r[1]))
+    return thr, recs
+
+
+def order_brightness(recs, limit: int = 12):
+    """Ordering A: by score (already sorted); returns node indices."""
+    return list(range(min(limit, len(recs))))
+
+
+def order_spatial(recs, limit: int = 12):
+    """Ordering B: spatial-adjacency chain — start at the top-score node,
+    repeatedly step to the nearest unvisited node (exact L1). A pure
+    geometry ordering, blind to brightness after the start."""
+    m = min(limit, len(recs))
+    if m == 0:
+        return []
+    todo = set(range(1, m))
+    seq = [0]
+    while todo:
+        cy, cx = recs[seq[-1]][0], recs[seq[-1]][1]
+        nxt = min(todo, key=lambda i: (abs(recs[i][0] - cy)
+                                       + abs(recs[i][1] - cx), i))
+        seq.append(nxt)
+        todo.discard(nxt)
+    return seq
+
+
+def order_gradient_flow(recs, limit: int = 12, radius: int = 160):
+    """Ordering C: gradient-flow chain — from each node, step to the
+    unvisited node within `radius` (L1) that maximizes
+    4*(contrast gain) - distance//8 (stated integer cost); when none is in
+    radius, jump to the nearest unvisited. Follows ascent of local
+    contrast through space rather than raw rank."""
+    m = min(limit, len(recs))
+    if m == 0:
+        return []
+    todo = set(range(m))
+    start = min(todo, key=lambda i: (-recs[i][5], i))
+    seq = [start]
+    todo.discard(start)
+    while todo:
+        cy, cx, cc = recs[seq[-1]][0], recs[seq[-1]][1], recs[seq[-1]][5]
+        near = [i for i in todo
+                if abs(recs[i][0] - cy) + abs(recs[i][1] - cx) <= radius]
+        if near:
+            nxt = max(near, key=lambda i: (
+                4 * (recs[i][5] - cc)
+                - (abs(recs[i][0] - cy) + abs(recs[i][1] - cx)) // 8, -i))
+        else:
+            nxt = min(todo, key=lambda i: (abs(recs[i][0] - cy)
+                                           + abs(recs[i][1] - cx), i))
+        seq.append(nxt)
+        todo.discard(nxt)
+    return seq
+
+
+def ordering_agreement_milli(a, b) -> int:
+    """Exact pairwise-order agreement between two orderings of the same
+    node set: concordant pairs / total pairs, in milli. 1000 = identical
+    order, ~500 = unrelated, 0 = exactly reversed."""
+    pos_a = {v: i for i, v in enumerate(a)}
+    pos_b = {v: i for i, v in enumerate(b)}
+    common = [v for v in a if v in pos_b]
+    n = len(common)
+    if n < 2:
+        return 1000
+    conc = 0
+    total = 0
+    for i in range(n):
+        for j in range(i + 1, n):
+            total += 1
+            u, v = common[i], common[j]
+            if (pos_a[u] < pos_a[v]) == (pos_b[u] < pos_b[v]):
+                conc += 1
+    return (1000 * conc) // total
 
 
 def white_path(nodes, limit: int = 12, min_sep: int = 0):
