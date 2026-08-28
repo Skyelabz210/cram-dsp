@@ -52,6 +52,9 @@ Reproduce: `python3 run_all.py` (requires numpy, Pillow). Deterministic and seed
 | `docs/RULES_OF_EXPLORATION.md` | Researcher-set rules binding the Dresden track: no hypothesis closure while machinery is under construction; controls may not presuppose the hypothesis false; failed methods kept as receipts; evidence vs visualization; control battery; multi-path agreement; morphology before semantics |
 | `docs/DRESDEN_MACHINE_STATUS.md` | Per-stage VALIDATED / BUILT-UNVALIDATED / NOT-BUILT table, the failures kept as receipts, and the list of nulls that must exist before the trail hypothesis can be leaned on |
 | `docs/DRESDEN_WHITEFIELD.md` | White-field v2: evidence node records, three-path agreement per page, written-vs-bare comparison, cross-page trail continuity |
+| `tools/fetch_slub.py` | Receipted fetch of Codex Dresdensis Mscr.Dresd.R.310 (SLUB Dresden, PD Mark 1.0) at 3874x7649 — 32x the pixels of the source PDF; verifies page identity by correlation against each PDF page |
+| `data/dresden/hires/RECEIPTS.json` / `SHA256SUMS.txt` | Per-page URL, byte length, SHA-256, dimensions and identity correlation for all 78 high-resolution pages (images gitignored, regenerable) |
+| `demo/dresden_p17_dotted_icons.jpg` | All 52 p17 icons carrying interior dots, cut from the SLUB original, legibly numbered |
 | `analysis/dresden_p17.py` / `analysis/dresden_p17_report.py` | p17 icon-to-character exact registration: 67 icons x 10 targets x 2 spaces, foreign-icon control from scan 5, natural-scale and ladder runs |
 | `docs/DRESDEN_P17.md` | p17 report: the local-dark-field primitive, four failed separations, the self-matching defect, the degenerate null receipt, real-vs-foreign icon distributions, visual verification, named method limit |
 | `data/dresden/derived/p17/` | Natural-scale run: registrations, foreign control, correspondence matrix, per-registration overlays, receipts |

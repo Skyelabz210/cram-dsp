@@ -478,3 +478,54 @@ inside inked windows; density normalisation; higher-resolution capture.
 
 Gates: FIXTURES 18/0, a1_lint PASS, py_compile clean, run_all 2,585,391
 checks / 0 failures.
+
+## HIRES — 2026-08-28 (the resolution bound, removed)
+
+Researcher, twice: "When I zoom into this image it's visually obscured and
+lower quality than what I gave you — is this what you're using or what you're
+showing me?" Answer, established by inspecting the source: BOTH. The
+researcher's PDF embeds 78 images at 684x1350; that is its native resolution
+and nothing here downsampled it. The blur is in the source file.
+
+Every matching number this campaign has produced carried "the 684x1350
+resolution bound" as a named limit (DRESDEN_MACHINE_STATUS.md instrument 4;
+DRESDEN_P17.md section 6). The bound was never intrinsic — it was an artifact
+of the delivery format.
+
+tools/fetch_slub.py — Codex Dresdensis, Mscr.Dresd.R.310, Saechsische
+Landesbibliothek Dresden (SLUB), Public Domain Mark 1.0 as declared in the
+object's own METS record, reached through the SLUB OAI-PMH endpoint.
+78 pages at **3874x7649**: 5.7x linear, **32x the pixels**.
+
+Page correspondence is VERIFIED, not assumed: each fetched page is downscaled
+to the PDF page's size and correlated against it. Identity correlation min
+990 / median 992 / max 996 per 1000 across all 78; zero failures. Receipts
+(URL, byte length, SHA-256, dimensions, correlation) in
+data/dresden/hires/RECEIPTS.json, digests pinned in SHA256SUMS.txt. The 386 MB
+of images stay out of git and are regenerable by re-running the tool.
+
+What this changes, visibly: at 684 the interior structure of a glyph icon is
+not resolved at all. At 3874 it is. DRESDEN_P17.md concluded METHOD-LIMITED —
+"local window IoU on a sparse line drawing is dominated by ink density, not
+shape ... almost no shape selectivity at 684x1350". That conclusion stands as
+written for that resolution, and the likeliest reading is now that the
+objective had no internal structure to work with rather than that the
+objective is wrong. Both readings stay open; nothing is closed.
+
+RESEARCHER REFRAMING, recorded: "the ones with the dots are the turtle shell
+at different angles ... these are not going to be in a character." The dotted
+ovals are one object depicted at different viewing angles, not components
+that assemble into the figure. The icon-to-character registration test is
+therefore the WRONG TEST for this population, and is not to be re-run on
+them. The right test is a POSE-FAMILY test: if these are one object rotated,
+the interior dot count and arrangement stay stable while the outline
+compresses along a foreshortening axis; if they are distinct signs, the two
+vary independently. Measurable exactly, and now resolvable.
+
+demo/dresden_p17_dotted_icons.jpg — all 52 icons on p17 carrying interior
+dots (of 67), cut from the SLUB original and legibly numbered, so the
+researcher can point at specific glyphs. Open question put to the researcher:
+their "zone 122 is a face" and "162 I've seen on other pages" do not match
+this repo's segmentation IDs (122 is a numeral bar over blank plaster, 162 a
+fragment of line over the red rule), so the numbering they are reading is not
+identified yet.

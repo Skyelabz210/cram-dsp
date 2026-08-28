@@ -3,3 +3,4 @@ __pycache__/
 /tmp/
 data/archimedes_forgery.npz
 data/archimedes_control.npz
+data/dresden/hires/*.jpg
