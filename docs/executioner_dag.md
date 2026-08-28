@@ -353,3 +353,63 @@ Both readings ship with their unit and nothing is concluded from either.
 Remaining unbuilt instruments: trail-vs-materials discrimination (needs
 physical-object or multi-illumination evidence) and higher-resolution
 capture (the 684x1350 bound on every matching number).
+
+## SEGMENTATION — 2026-08-28 (a dropped deliverable, recovered)
+
+Researcher instruction: "go back to the beginning of our session and read it
+again." Turn one asked for the codex saved to the repo "with each page
+**carefully segmented** numbered and grouped into common assumed categories."
+Three verbs. Only two were built: `data/dresden/INDEX.md` numbered the pages
+and grouped them into sections, and the task was written down as "pages
+numbered + grouped into assumed categories" and marked complete. The
+segmentation was silently dropped, and every later stage stood on its
+absence — figure detectors that merged a page into one blob, glyph detectors
+returning three boxes for a column holding a dozen glyphs.
+
+analysis/dresden_segment.py — 78 pages, **17,552 numbered elements**,
+hierarchy `leaf -> registers -> zones -> rows -> cells`, 8 geometric
+categories. New production primitive `cram_dsp.dresden.open_line`: exact
+integer morphological opening by a straight line, via prefix sums.
+
+Totals: 376 figure, 11,679 glyph_block, 878 numeral_bar, 4,205 numeral_dot,
+4 panel_ground, 273 rule_h, 137 rule_v, 0 margin.
+
+Four defects found by this stage, each kept as a receipt:
+
+1. Every geometric threshold was keyed to the SCAN FRAME. Each WDL scan
+   carries slivers of the ADJACENT LEAVES, so the frame is ~20% wider than
+   the page and its edges are the neighbours — "40 px from the edge" was
+   measuring the next leaf. `leaf_block` locates the gutter and mount bands
+   as dark-fraction peaks in the outer quarter (rows: outer fifth).
+2. Register rules detected by component SHAPE returned ZERO on scan 50,
+   whose rules are plainly visible: a rule touches the red-brown mottling of
+   the damaged plaster and the component becomes a blob. Replaced by a line
+   opening, which tests the property a rule actually has.
+3. A single gap threshold per zone under-splits dense writing. Cells wider
+   or taller than 3/2 of the page's own median glyph cell are re-cut at the
+   minimum of their own projection.
+4. Red bar-and-dot numerals were invisible to a black-ink-only cell pass;
+   folding red into the same projection merged them into their neighbouring
+   glyph cells. They get their own component pass.
+
+MEASURED limits, nothing closed:
+* Line-drawn figures are not separable from dense line-drawn writing at
+  684x1350. Figures carry their provenance (`colour_mass` reliable,
+  `stroke_mass` candidate). The discriminator tried — largest undilated
+  stroke as a share of the mass — does not separate them: 52/1000 on 402
+  raw strokes for the true seated figure of p69 (scan 73) against 43/1000
+  on 399 for a block of merged writing on the same page. Both numbers ship
+  with every stroke-mass figure for a higher-resolution capture to test.
+* `margin` fired 0 times across all 78 pages; the category is subsumed by
+  the leaf boundary. Reported as zero, not removed.
+
+The p69 seated figure — the column this whole build exists to read — is now
+found by the machine itself (scan 73, element 98) instead of by being
+pointed at.
+
+Gates: FIXTURES 18 checks / 0 failures; a1_lint PASS; py_compile clean;
+run_all 2,585,391 checks / 0 failures.
+
+Next: re-run the downstream machinery (correspondence experiment, the
+8-panel sheet) on this segmentation substrate rather than on ad-hoc
+per-stage detectors.

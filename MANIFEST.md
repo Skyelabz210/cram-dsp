@@ -52,6 +52,11 @@ Reproduce: `python3 run_all.py` (requires numpy, Pillow). Deterministic and seed
 | `docs/RULES_OF_EXPLORATION.md` | Researcher-set rules binding the Dresden track: no hypothesis closure while machinery is under construction; controls may not presuppose the hypothesis false; failed methods kept as receipts; evidence vs visualization; control battery; multi-path agreement; morphology before semantics |
 | `docs/DRESDEN_MACHINE_STATUS.md` | Per-stage VALIDATED / BUILT-UNVALIDATED / NOT-BUILT table, the failures kept as receipts, and the list of nulls that must exist before the trail hypothesis can be leaned on |
 | `docs/DRESDEN_WHITEFIELD.md` | White-field v2: evidence node records, three-path agreement per page, written-vs-bare comparison, cross-page trail continuity |
+| `analysis/dresden_segment.py` | Per-page segmentation: leaf -> registers -> zones -> rows -> cells, 78 pages, 17,552 numbered elements, 8 geometric categories; fixtures 18/0 |
+| `docs/DRESDEN_SEGMENTS.md` | Segmentation report: hierarchy, four defect receipts (scan-frame vs leaf, rule detection by shape, one-threshold-per-zone, invisible red numerals), named limits, per-page table |
+| `data/dresden/segments/` | Per-page element JSON: category, box in scan coordinates, area, register, zone, id, hollow/pigment/provenance fields |
+| `data/dresden/derived/segments/` | Labelled 2x evidence overlays, one per scan, with per-page category legend |
+| `demo/dresden_segments_contact.jpg` | Codex-wide contact sheet of all 78 segmentation overlays |
 | `docs/DRESDEN_DOTS.md` | Dot morphology, unlabelled: 34,410 round marks measured, class separation figures, spacing regularity, recurrence ranking against the located p69 column |
 | `docs/regions/` | Per-region reports: full lens stack + cross-codex matches (`pNN_yN_xN.md`), radial decompositions (`radial_pNN.md`) |
 | `LICENSE` / `NOTICE.md` | MIT for code and skill; CC BY 4.0 for docs; CC BY 3.0 attribution for Archimedes data |
