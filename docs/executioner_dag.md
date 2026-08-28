@@ -565,3 +565,43 @@ glyph_block, 878 numeral_bar, 4,205 numeral_dot, 4 panel_ground, 273 rule_h,
 Still to do: re-run the ANALYSIS natively at high resolution (thresholds and
 size windows scale by 5.66), not merely the rendering. The measurements above
 are still 684-derived.
+
+## RECURRENCE — 2026-08-28 (researcher-selected glyph; the method fails its control)
+
+Researcher: "162 is on this page see it the face", and earlier "162 I've seen
+on other pages." Resolved a numbering mismatch first — their 162 is on PAGE 7,
+not p17 (p17's element 162 is a figure's foot). p7 element 162 is a 173x102
+block this repo's detector merged into one `figure` (the stroke_mass merging
+defect), and inside it cartouche c2 is a face in profile within a dotted oval:
+eye, snout, jaw, legible at high resolution only. At 684 the glyph is 63x31 px
+with no resolved interior, which is why it was invisible to both of us.
+
+analysis/dresden_recur.py searched all 78 pages at 1937 px working width from
+the SLUB scans, 8 dihedral poses, weighted orientation planes, midrank
+normalization, exact integer cosine.
+
+Control battery: positive control passes (self-match 747, rank 1 of 78). Best
+other page scan 19 / p19 at 721. Median 702, min 667, spread 80.
+BEST NEAR-BLANK PAGE 712 — and scans 29 and 31, which are bare plaster, rank
+6th and 7th of 78, above 71 pages carrying writing. The best genuine page sits
+just 9 points above blank plaster on an 80-point scale.
+
+METHOD-LIMITED. A pooled orientation-histogram cosine compares the texture
+statistics of a sliding window; on a codex where nearly every window is dense
+line-work of similar stroke density, those statistics are near-constant. This
+is the TEXTURE FLOOR already receipted in DRESDEN_MACHINE_STATUS.md for the
+localizer — used again here and failing the same way. Recorded as an agent
+error, not a property of the codex.
+
+NO CLAIM is made about whether the glyph recurs. The researcher's recurrence
+claim stays OPEN and is not contradicted by anything measured here.
+
+Surfaced as candidates for the researcher's eye only, carrying no score-based
+support: scan 8 / p8 (an oval cartouche with an internal profile head, closest
+by eye) and scan 19 / p19.
+
+Next instrument: cartouche-to-cartouche shape comparison against the 11,679
+glyph_block cells already segmented across 78 pages — ring/sector signature,
+dihedral-normalized, plus interior topology. Page texture cannot enter such a
+comparison because blank plaster yields no cartouche at all. Feasible only now
+that cartouche interiors are resolved.

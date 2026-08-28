@@ -52,6 +52,8 @@ Reproduce: `python3 run_all.py` (requires numpy, Pillow). Deterministic and seed
 | `docs/RULES_OF_EXPLORATION.md` | Researcher-set rules binding the Dresden track: no hypothesis closure while machinery is under construction; controls may not presuppose the hypothesis false; failed methods kept as receipts; evidence vs visualization; control battery; multi-path agreement; morphology before semantics |
 | `docs/DRESDEN_MACHINE_STATUS.md` | Per-stage VALIDATED / BUILT-UNVALIDATED / NOT-BUILT table, the failures kept as receipts, and the list of nulls that must exist before the trail hypothesis can be leaned on |
 | `docs/DRESDEN_WHITEFIELD.md` | White-field v2: evidence node records, three-path agreement per page, written-vs-bare comparison, cross-page trail continuity |
+| `analysis/dresden_recur.py` / `docs/DRESDEN_RECURRENCE.md` | Cross-page search for a researcher-selected glyph (p7 el.162 c2, the profile face) at high resolution, with a control battery that the method FAILS: two near-blank pages rank 6th and 7th of 78 |
+| `demo/dresden_recur_p7_162c2.jpg` | Ranked recurrence contact sheet at SLUB resolution, blank-plaster tiles included so the failure is visible |
 | `tools/fetch_slub.py` | Receipted fetch of Codex Dresdensis Mscr.Dresd.R.310 (SLUB Dresden, PD Mark 1.0) at 3874x7649 — 32x the pixels of the source PDF; verifies page identity by correlation against each PDF page |
 | `data/dresden/hires/RECEIPTS.json` / `SHA256SUMS.txt` | Per-page URL, byte length, SHA-256, dimensions and identity correlation for all 78 high-resolution pages (images gitignored, regenerable) |
 | `demo/dresden_p17_dotted_icons.jpg` | All 52 p17 icons carrying interior dots, cut from the SLUB original, legibly numbered |

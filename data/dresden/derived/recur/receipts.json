@@ -1,0 +1,26 @@
+{
+ "chain": "5563d180f28c720a0ecfd545758808f8207a8efdfcff2d14be7c160b098726d7",
+ "entries": [
+  {
+   "chain": "5563d180f28c720a0ecfd545758808f8207a8efdfcff2d14be7c160b098726d7",
+   "in": "search",
+   "op": "recurrence",
+   "out": "0c38d130a894626b96d152804cafa26421eed98bdb106b063ffebeab3a14d9b6",
+   "params": {
+    "best_other": 721,
+    "blank_best": 712,
+    "median": 702,
+    "query": {
+     "label": "p7 el.162 c2 \u2014 face in profile inside a dotted oval",
+     "page": 7,
+     "x0": 1337,
+     "x1": 1693,
+     "y0": 4960,
+     "y1": 5134
+    },
+    "self_milli": 747,
+    "work_w": 1937
+   }
+  }
+ ]
+}
