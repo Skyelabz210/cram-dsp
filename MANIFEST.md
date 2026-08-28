@@ -52,6 +52,11 @@ Reproduce: `python3 run_all.py` (requires numpy, Pillow). Deterministic and seed
 | `docs/RULES_OF_EXPLORATION.md` | Researcher-set rules binding the Dresden track: no hypothesis closure while machinery is under construction; controls may not presuppose the hypothesis false; failed methods kept as receipts; evidence vs visualization; control battery; multi-path agreement; morphology before semantics |
 | `docs/DRESDEN_MACHINE_STATUS.md` | Per-stage VALIDATED / BUILT-UNVALIDATED / NOT-BUILT table, the failures kept as receipts, and the list of nulls that must exist before the trail hypothesis can be leaned on |
 | `docs/DRESDEN_WHITEFIELD.md` | White-field v2: evidence node records, three-path agreement per page, written-vs-bare comparison, cross-page trail continuity |
+| `analysis/dresden_p17.py` / `analysis/dresden_p17_report.py` | p17 icon-to-character exact registration: 67 icons x 10 targets x 2 spaces, foreign-icon control from scan 5, natural-scale and ladder runs |
+| `docs/DRESDEN_P17.md` | p17 report: the local-dark-field primitive, four failed separations, the self-matching defect, the degenerate null receipt, real-vs-foreign icon distributions, visual verification, named method limit |
+| `data/dresden/derived/p17/` | Natural-scale run: registrations, foreign control, correspondence matrix, per-registration overlays, receipts |
+| `data/dresden/derived/p17_ladder/` | Same run on the permissive scale ladder, kept for the scale-shrinkage comparison |
+| `demo/dresden_p17_inventory.jpg` / `demo/dresden_p17_overlays.jpg` | p17 inventory overlay (icons vs targets) and the ranked registration contact sheet |
 | `analysis/dresden_segment.py` | Per-page segmentation: leaf -> registers -> zones -> rows -> cells, 78 pages, 17,552 numbered elements, 8 geometric categories; fixtures 18/0 |
 | `docs/DRESDEN_SEGMENTS.md` | Segmentation report: hierarchy, four defect receipts (scan-frame vs leaf, rule detection by shape, one-threshold-per-zone, invisible red numerals), named limits, per-page table |
 | `data/dresden/segments/` | Per-page element JSON: category, box in scan coordinates, area, register, zone, id, hollow/pigment/provenance fields |

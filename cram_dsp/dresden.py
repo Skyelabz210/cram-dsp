@@ -160,6 +160,57 @@ def label_components(mask, conn: int = 8):
     return remap[labels], nxt
 
 
+def local_dark_field(luma, block: int = 24, quart: int = 4):
+    """Per-pixel darkness below the LOCAL substrate level. Exact integers.
+
+    For each `block` x `block` cell, the substrate level is the lower-quartile
+    luma of the cell's NON-ink pixels (ink = below the page's integer Otsu),
+    so heavy ink cannot drag the local reference down. The returned array is
+    `substrate_level - luma`: positive where a pixel is darker than the
+    surface around it, and the caller thresholds it at a stated margin.
+
+    Why this exists (receipt): on Forstemann p17 (scan 17) the figures are
+    drawn in a much finer, lighter line than the glyph icons that surround
+    them. A single global Otsu threshold sees the icons and misses the
+    figures entirely, so the page's three characters were not detected at
+    all and blocks of writing were returned as "figures" instead. A second
+    global threshold does not fix it either — the band between the two Otsu
+    cuts is 323/1000 of the page, because it also selects shaded plaster.
+    Line and shading separate only against a LOCAL reference.
+
+    This is an EVIDENCE transform, not an enhancement
+    (docs/RULES_OF_EXPLORATION.md rule 4): every selected pixel is genuinely
+    darker than the measured substrate of its own block, by an amount the
+    caller states. No value is created, brightened, or interpolated.
+    """
+    y = np.asarray(luma).astype(np.int64)
+    H, W = y.shape
+    B = block
+    gh, gw = H // B, W // B
+    if gh == 0 or gw == 0:
+        return np.zeros((H, W), dtype=np.int64)
+    ink = y < otsu_threshold(y)
+    vals = y[:gh * B, :gw * B].reshape(gh, B, gw, B)
+    vals = vals.transpose(0, 2, 1, 3).reshape(gh, gw, B * B)
+    keep = (~ink)[:gh * B, :gw * B].reshape(gh, B, gw, B)
+    keep = keep.transpose(0, 2, 1, 3).reshape(gh, gw, B * B)
+    # non-substrate pixels are pushed past every real value before sorting,
+    # so they can never be selected as the quartile
+    ranked = np.sort(np.where(keep, vals, 256), axis=2)
+    level = ranked[:, :, (B * B) // quart]
+    full = np.repeat(np.repeat(level, B, axis=0), B, axis=1)
+    ref = np.full((H, W), 256, dtype=np.int64)
+    ref[:gh * B, :gw * B] = full
+    # edge strips inherit the nearest complete block's level
+    if gh * B < H:
+        ref[gh * B:, :gw * B] = full[-1:, :]
+    if gw * B < W:
+        ref[:gh * B, gw * B:] = full[:, -1:]
+    if gh * B < H and gw * B < W:
+        ref[gh * B:, gw * B:] = full[-1, -1]
+    return ref - y
+
+
 def open_line(mask, length: int, axis: int = 1):
     """Morphological opening of `mask` by a straight line of `length` pixels
     along `axis` (1 = horizontal, 0 = vertical). Exact; integer prefix sums

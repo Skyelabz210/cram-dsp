@@ -413,3 +413,68 @@ run_all 2,585,391 checks / 0 failures.
 Next: re-run the downstream machinery (correspondence experiment, the
 8-panel sheet) on this segmentation substrate rather than on ad-hoc
 per-stage detectors.
+
+## p17 CORRESPONDENCE — 2026-08-28 (researcher-selected page)
+
+Researcher: "Do page 17 of 78 — I definitely see this page." Scan 17 is the
+concept illustration's layout made literal: the oval icons float in the SAME
+OPEN FIELD as the figures, not in a text grid as on p47 and p69.
+
+New production primitive `cram_dsp.dresden.local_dark_field` — per-pixel
+darkness below the LOCAL substrate level (lower-quartile luma of each 24x24
+block's non-ink pixels). An evidence transform, not an enhancement. It exists
+because global Otsu misses this page's figures entirely: under the previous
+detector all five "figures" on p17 were blocks of WRITING and not one of the
+four real figures was found.
+
+Four separations tried, all receipted: second global Otsu (selects 323/1000
+of the page, shading included); removing heavy ink (destroys the figures —
+the line is not lighter than the cut); stroke-width opening (separates figure
+from writing but not figure from icon — the ovals are thin rings too); and
+cutting the segmentation cells out of the targets (shreds the figures, since
+the cell pass also boxes figure parts). What works is TOPOLOGY: an oval is a
+small CLOSED loop, the figure line is a large open structure. 67 icons
+(median 34x41, all carrying a hole) against 10 targets, disjoint by component
+identity.
+
+Two defects this run found in its own machinery:
+* SELF-MATCHING. With targets taken as thin-stroke components the ovals
+  joined the figure's component, so every target contained the icons around
+  it. That run's top result (icon 32 -> T5, IoU 547, boundary overlap
+  982/1000) is visibly the icon landing on a NEIGHBOURING OVAL outside the
+  figure. Caught by looking at the picture, not by a score.
+* DEGENERATE NULL. "608 of 608 clear their own matched null" is near
+  tautological — the argmax of a distribution beats its own p99. Replaced by
+  a FOREIGN-ICON control: icons from scan 5, same extraction rule, same
+  targets.
+
+MEASURED, natural scale (the researcher's specification — original size
+before resizing): p17's own icons median IoU 389 / p75 455 / p95 577 /
+max 684 (n=670); foreign icons from scan 5 median 391 / p75 473 / p95 574 /
+max 696 (n=400). 30 of 670 exceed their target's foreign p95 against ~34 by
+chance — at or below chance. 0 pass the topology gate. Icon preference tracks
+target AREA (the largest target, a writing block, takes 17 of 67).
+
+On the permissive scale ladder: 407 vs 412 median, 68 over foreign p95, 3
+pass topology — and every one of the top eight chose scale 2/3 or 3/4, the
+shrinkage bias already receipted on p47.
+
+Visual verification: the best natural-scale fit on a figure (icon 3 -> T3,
+IoU 684, boundary overlap 966/1000) is a contour arc lying along the
+figure's hem line. High score, no correspondence.
+
+METHOD-LIMITED: local window IoU on a sparse line drawing is dominated by
+local INK DENSITY, not shape, so any ~35 px form scores ~400/1000 wherever
+density is comparable. The objective has almost no shape selectivity at
+684x1350 and cannot yet address the correspondence question. This is a
+statement about the objective function, NOT about the researcher's
+hypothesis, and it closes nothing.
+
+Gap stated: three of four figures are targets; the top-left figure
+(scan y180-441 x71-245) did not clear the size floor.
+
+Next instrument (a scale, not a gate): an edge-orientation agreement score
+inside inked windows; density normalisation; higher-resolution capture.
+
+Gates: FIXTURES 18/0, a1_lint PASS, py_compile clean, run_all 2,585,391
+checks / 0 failures.

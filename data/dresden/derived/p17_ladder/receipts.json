@@ -1,0 +1,178 @@
+{
+ "chain": "66a0168eaf51bf2486e759d33c48ae039352f6ac60b1649b29519011171e746b",
+ "entries": [
+  {
+   "chain": "66a0168eaf51bf2486e759d33c48ae039352f6ac60b1649b29519011171e746b",
+   "in": "registration",
+   "op": "p17_correspondence",
+   "out": "031c1fe0cfa51954d043abf70a7812d711578e478ad61c8d47a49b13d028194e",
+   "params": {
+    "degenerate_own_null_clears": 670,
+    "foreign_iou": {
+     "max": 683,
+     "median": 412,
+     "n": 400,
+     "p75": 488,
+     "p95": 583
+    },
+    "icons": 67,
+    "ink_over_foreign_p95": 68,
+    "per_target": {
+     "0": {
+      "area": 17959,
+      "box_scan": [
+       869,
+       1103,
+       70,
+       331
+      ],
+      "clears": 6,
+      "median_iou": 438,
+      "median_margin": 122,
+      "n": 67
+     },
+     "1": {
+      "area": 10980,
+      "box_scan": [
+       166,
+       437,
+       292,
+       597
+      ],
+      "clears": 2,
+      "median_iou": 395,
+      "median_margin": 119,
+      "n": 67
+     },
+     "2": {
+      "area": 10417,
+      "box_scan": [
+       445,
+       674,
+       70,
+       229
+      ],
+      "clears": 6,
+      "median_iou": 418,
+      "median_margin": 100,
+      "n": 67
+     },
+     "3": {
+      "area": 7067,
+      "box_scan": [
+       576,
+       865,
+       280,
+       425
+      ],
+      "clears": 11,
+      "median_iou": 398,
+      "median_margin": 97,
+      "n": 67
+     },
+     "4": {
+      "area": 4505,
+      "box_scan": [
+       45,
+       216,
+       486,
+       612
+      ],
+      "clears": 6,
+      "median_iou": 386,
+      "median_margin": 73,
+      "n": 67
+     },
+     "5": {
+      "area": 4165,
+      "box_scan": [
+       439,
+       545,
+       284,
+       440
+      ],
+      "clears": 8,
+      "median_iou": 424,
+      "median_margin": 106,
+      "n": 67
+     },
+     "6": {
+      "area": 4076,
+      "box_scan": [
+       509,
+       654,
+       502,
+       600
+      ],
+      "clears": 7,
+      "median_iou": 406,
+      "median_margin": 106,
+      "n": 67
+     },
+     "7": {
+      "area": 3952,
+      "box_scan": [
+       1033,
+       1177,
+       370,
+       555
+      ],
+      "clears": 8,
+      "median_iou": 389,
+      "median_margin": 80,
+      "n": 67
+     },
+     "8": {
+      "area": 3218,
+      "box_scan": [
+       871,
+       976,
+       373,
+       478
+      ],
+      "clears": 9,
+      "median_iou": 400,
+      "median_margin": 94,
+      "n": 67
+     },
+     "9": {
+      "area": 2881,
+      "box_scan": [
+       871,
+       978,
+       501,
+       592
+      ],
+      "clears": 5,
+      "median_iou": 418,
+      "median_margin": 100,
+      "n": 67
+     }
+    },
+    "preference_tally": {
+     "0": 24,
+     "1": 4,
+     "2": 7,
+     "3": 6,
+     "4": 1,
+     "5": 9,
+     "6": 5,
+     "7": 7,
+     "8": 3,
+     "9": 1
+    },
+    "real_iou": {
+     "max": 712,
+     "median": 407,
+     "n": 670,
+     "p75": 485,
+     "p95": 625
+    },
+    "registrations": 1340,
+    "scan": 17,
+    "targets": 10,
+    "topology_gate_passes": 3
+   }
+  }
+ ]
+}
