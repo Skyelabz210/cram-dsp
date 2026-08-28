@@ -181,3 +181,175 @@ run_all 2,585,391/0 unchanged · dresden_run 636/0 · discover 9/0 · a1_lint PA
 
 ### Next step to resume
 Deep-dive the top D1 clusters and D3 pairs at their coordinates; DRE-02 (seams) / DRE-04 (KELD strata) remain PENDING; full-res SLUB captures would lift the code resolution bound.
+
+## CORRECTION — 2026-08-27 (C4 false negative reversed; localizer rebuilt)
+
+Researcher challenged the C4 NEGATIVE (photographed column "not in this scan
+set") and was right: the column is **scan 73 = Förstemann page 69**, right
+column, (64, 768)–(≈274, 1350). Root cause of the false negative: median-
+centred luma SAD is not discriminative across scan generations (blank pages
+win as low-contrast fits). Fix shipped: integer edge-orientation matching —
+`dresden.orientation_planes` (octant binning, no trig), `pool_planes`,
+`cooccurrence_map` (exact int64 einsum), `locate` (mirror-aware via exact
+bin permutation gx→−gx ⇒ k↔k^2). `analysis/dresden_locate.py`: 6/6 checks;
+winner margin 222 milli over best other-page placement; panels
+`demo/dresden_located_p69.png` / `_page.png`. DRESDEN_MACHINE.md §C4
+rewritten; Madrid hypothesis withdrawn. Machine-surfaced: p65 column is the
+structural twin of the p69 column (second-best placement, same in-page
+coordinates). Lesson folded into the module docstring: match structure, not
+brightness, across scan generations.
+
+## NODE (white machinery) — 2026-08-27
+
+White-gradient machinery built per researcher direction (the illustrated
+pipeline, previously absent): dresden.order_stat / highlight_freeze /
+white_nodes / white_path(min_sep) — all exact. analysis/dresden_white.py:
+7/7 checks; worked example on the located p69 column
+(demo/dresden_white_p69.png: original | frozen | numbered white path);
+freeze + white-path overlays for all 78 pages in data/dresden/derived/white/;
+catalog docs/DRESDEN_WHITE.md; receipts data/dresden/white_receipts.json.
+DRESDEN_MACHINE.md C3 reframed: white-node sequences are the exploration
+surface; glyph-median path test demoted to appendix; blank-substrate control
+retained as constraint on design claims.
+
+## NODE-DRE02 + NODE-DRE04 — 2026-08-27
+
+DRE02 PASS: analysis/dresden_seams.py (4/4 checks). P1 requantization
+fingerprint: NULL on all 78 continuous-tone scans (0 flagged blocks) —
+same null as the Archimedes sensor data, recorded. P2 block-median
+discontinuity: per-page candidates enumerated (990-milli threshold, floor
+24), panels for the six highest-candidate pages in derived/seams/.
+docs/DRESDEN_SEAMS.md.
+
+DRE04 PASS: analysis/dresden_strata.py (3/3 checks). KELD strata (STAR8,
+band = floor(L/36) from the residue pair) rendered for all 78 pages
+(derived/strata/); pale-field ranking puts scan24/p24 (Venus preface) as
+the palest INSCRIBED page, above two actual blanks; tonal windows over the
+six palest pages rendered — coherent bright-plaster zones are the
+latent-content candidates for multispectral follow-up. docs/DRESDEN_STRATA.md.
+
+## NODE (pigment lens + exhibit localization + exactness fix) — 2026-08-27
+
+Researcher exhibits (WDL screenshot with blue column/spear-bearer; manual
+SHADOWS adjustment) both localized mechanically to **scan 73 = p69** — the
+same page as their photographed column; margins +518/+587 milli. First
+attempt mis-localized exhibit A to p49 off a loose crop + short scale
+range; caught by the mandatory visual verification and corrected —
+verify-then-accept is now stated in the run. New machinery:
+dresden.pigment_classes (exact 4-way substrate/black/red/blue partition by
+stated integer margins) + shadow lens (freeze window 30..500 milli, the
+machine version of the researcher's shadows slider); renders for all 78
+pages (derived/pigment/), blue-region catalog (largest blue regions incl.
+the p69 blue column), docs/DRESDEN_PIGMENT.md, receipts.
+
+Exactness fix folded in: sector octants re-based to axis-centred bins and
+ring/sector codes moved to the EXACT rational centroid (offsets scaled by
+ink count — floor-divided centroids break mirror symmetry). Dihedral
+invariance now exact on asymmetric fixtures (mirror/rot90/rot180 = 0).
+dresden_run 636/0; discover 9/0 (21 ring-code clusters at threshold 205);
+pigment 6/6.
+
+## NODE (white-trail machinery + form vocabulary final) — 2026-08-27
+
+Researcher clarified the idea: continuous WHITE TRAILS (gradient-to-white
+filaments), not brightness-ranked blobs; and the machine should NAME the
+best pages for each experiment. Built:
+- dresden.local_bright_field (luma minus block SUBSTRATE median — plain
+  medians read ink-dense blocks wrong; caught and fixed),
+  filament_components (elongated locally-bright components with white
+  cores), trail_polyline, trail_glyph_sequence.
+- analysis/dresden_trails.py 10/10: trail overlays for all 78 pages
+  (derived/trails/); machine ranking of best trail pages = p70, p51, p37,
+  p52, **p73** (the page the researcher pointed at — independent
+  convergence), p36; per-page glyph sequences along the glyph-richest
+  ascending trail with numbered overlays + sequence strips (demo/);
+  dressing-experiment page ranking. Blank pages rank trail-rich —
+  shipped as measurement (trails are substrate phenomena).
+- Form vocabulary final (dresden_vocab 7/7): rule-chosen threshold 1410
+  (largest with max family <= 500); 15 families, dot family 496, full
+  contact sheets derived/clusters/.
+
+## RULES CHANGE — 2026-08-27 (researcher directive: exploration rules)
+
+docs/RULES_OF_EXPLORATION.md installed and made binding via CLAUDE.md:
+(1) no hypothesis closure while machinery is under construction — results
+are MEASURED / METHOD-LIMITED / OPEN only; no "closed avenues" anywhere;
+(2) controls must not presuppose the hypothesis false — the blank-page
+control's null model (blanks = no signal) is rejected by the researcher's
+hypothesis (continuous strip; flat white = base state), so its prior
+"no designed path" reading is WITHDRAWN as a verdict (measurements stand);
+(3) failed methods preserved as receipts (C4 chain is the template);
+(4) evidence vs visualization split — matchers run on evidence transforms
+only; (5) localization control battery required; (6) sequences require
+multi-path agreement; (7) morphology before semantics. Existing docs
+reframed accordingly (this record, per its append-only rule, is not
+rewritten — this entry IS the record of the change).
+
+## R1–R4 — 2026-08-28 (production spec implemented; fork material integrated)
+
+Researcher's production specification implemented in full, plus integration
+of the ARCHIMEDES suite the researcher supplied:
+
+* midrank_normalize — imported from BRANCH_SWEEP.md B2/B6, where independent
+  contrast stretches were shown to drive and even INVERT a metric. Both sides
+  of every cross-generation match are now marginal-equalized.
+* decide_with_abstention — archnet void rejection: thin margins decline to
+  name a winner. The no-closure rule enforced in code.
+* Branch-exhaustion posture: all controls run and are reported before any
+  statement, none used to close anything.
+
+R1 localizer (6/6): weighted orientation planes (edge confidence), anisotropic
+scale sweep, exact integer COSINE scoring, full control battery. TWO of my own
+failures were caught by the battery and are kept as receipts: (a) raw
+co-occurrence scores were not comparable across templates — texture floor
+2380 above the real query 826; (b) the first battery compared a different
+template's best score to the query's, which is meaningless — replaced by the
+per-query null (winner 826, median 685, min 648, best blank-page 709, rank
+percentile 1000/1000).
+
+R2 white-field v2 (7/7): node evidence records (contrast, gradient
+magnitude/direction, chroma spread, combined score — a warm bright mark can
+no longer outscore a neutral one); three independent orderings with exact
+pairwise agreement; written-zone vs bare-substrate comparison (written zones
+carry HIGHER node contrast on every page where both exist — 18/13, 16/12,
+29/12, 21/19); cross-page facing-edge trail continuity: 96 alignments, null
+not yet computed and flagged as such.
+
+R3 radial decomposition: character centre -> 4 rings x 8 sectors read
+outward, 31 pieces on the p69 character matched codex-wide with DIRECT /
+ROTATED / MIRRORED / ROT+MIR reported separately and the 1:3:1:3 chance
+baseline stated (observed 4/14/3/10 sits at baseline).
+
+R4 dot morphology (6/6): 34,410 round marks measured with no semantic
+labels; open marks are a larger/thicker population (median area 98 vs 39,
+thickness 1510 vs 1000, 325/1000 overlap with the filled IQR); spacing
+regularity per page and class; recurrence ranking against the located p69
+column (nearest: p58, p70, p69, p63, p62).
+
+docs/DRESDEN_MACHINE_STATUS.md added: per-stage VALIDATED /
+BUILT-UNVALIDATED / NOT-BUILT, and the four nulls that must exist before the
+trail hypothesis can be leaned on. Nothing is closed.
+
+## SCALES S1/S2 — 2026-08-28 (framing corrected by the researcher)
+
+Researcher correction: "We're in exploration there won't be any lean." The
+status document had framed the outstanding nulls as gates that would let
+exploration lean on a hypothesis. Wrong frame — exploration does not
+accumulate toward a ruling and there is no verdict horizon. Nulls reframed
+throughout as SCALES: instruments that attach a unit to a reading, gating
+nothing. Status vocabulary changed from BUILT/UNVALIDATED to BUILT, NO SCALE
+YET.
+
+analysis/dresden_scales.py (4/4):
+* S1 path-agreement scale — three orderings over the same nodes vs 15 seeded
+  shuffles that permute node POSITIONS while keeping every attribute exact.
+  70 of 78 pages sit inside the shuffled range; 8 sit above every shuffle
+  (p14, p19, p28*, p29, p51, p52, p59, p74).
+* S2 continuity scale — consecutive scan pairs: 96 alignments over 77 pairs
+  (1246 per 1000 pairs, 40/77 pairs align). Non-adjacent seeded sample:
+  162 over 200 pairs (810 per 1000, 75/200 align).
+
+Both readings ship with their unit and nothing is concluded from either.
+Remaining unbuilt instruments: trail-vs-materials discrimination (needs
+physical-object or multi-illumination evidence) and higher-resolution
+capture (the 684x1350 bound on every matching number).

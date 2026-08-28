@@ -80,7 +80,22 @@ retrievals are genuine same-form pairs (numeral dots retrieve numeral dots,
 L1 = 104, 138; see `demo/dresden_match_panel.png`). Complex glyph retrieval
 is not demonstrated at this resolution — reported as a limit, not claimed.
 
-### C3 — the "luminous path": the ordering exists, the *meaning* does not survive the control
+### C3 — the "luminous path": OPEN — machinery under construction (see `docs/DRESDEN_WHITE.md`, `docs/DRESDEN_TRAILS.md`)
+**Status per `docs/RULES_OF_EXPLORATION.md`.** The white-node and white-trail
+pipelines are the CURRENT operationalizations of the researcher's illustrated
+hypothesis — implementations of the hypothesis, not adjudications of it.
+Sequences, trails and their statistics are MEASURED; what they encode is the
+researcher's to interpret once the machinery is validated.
+
+On the blank-page control below: the researcher has identified its hidden
+assumption — under the hypothesis the codex is a continuous strip, trails may
+run THROUGH page boundaries, and flat white is the BASE STATE of the effect,
+so blank pages carrying bright structure is consistent with the hypothesis,
+not a null against it. The control's numbers stand as measurements; the
+"no designed path" reading previously drawn from them is WITHDRAWN as a
+verdict and the question is OPEN.
+
+#### Appendix (failed-control receipt): the original glyph-median path test
 On 60 of 78 pages the brightest-first tour is shorter than ≥95% of random
 tours — naively a strong "path" signal. The control kills the reading: the
 same test on the four **blank** pages (no glyphs; pseudo-cell grid on bare
@@ -88,26 +103,56 @@ plaster) returns rank 0/999 on all four — the *strongest possible* "path"
 signal with nothing written on the page. Substrate luminance varies smoothly
 across any page (illumination, plaster tone), so *any* brightness ordering of
 *any* spatial cells produces short tours. MEASURED, both halves.
-**Verdict: the luminance ordering is a real, reproducible measurement; it
-carries no evidence of a designed glyph path.** A designed-path claim would
-need the inscribed-page effect to *exceed* the blank-substrate effect; here
-it does not (blanks saturate the statistic).
+Recorded reading at the time: the ordering carries no evidence of a designed
+path. Per the exploration rules this verdict is WITHDRAWN — the control's
+null model (blanks = no signal) is rejected by the hypothesis itself
+(continuous strip; flat white as base state). The measurements stand; the
+question is OPEN pending validated machinery.
 
-### C4 — the photographed column: NEGATIVE (not in this scan set)
-Median-centred integer SAD over all 78 scans × 5 template scales: all top-4
-hits land on blank pages (mean-SAD 33–34), i.e. low-contrast fits, not
-structure. The column's layout (single full-height figure, no register rules)
-matches no Dresden section. NEGATIVE, shipped as such. A Madrid Codex origin
-is HYPOTHESIS_ACTIVE for the researcher to check against Tro-Cortesianus
-scans — it is not a finding of this run.
+### C4 — the photographed column: **FOUND — scan 73, Förstemann page 69, at (64, 768)**
 
-### C5 — light activation: NOT TESTABLE HERE
+Failed-method receipt (permanent, per `docs/RULES_OF_EXPLORATION.md` rule 3):
+
+```
+Previous method:    median-centred luma SAD, 1/8 scale
+Result:             FALSE NEGATIVE ("not in this scan set")
+Failure mechanism:  insufficient invariance to scan generation, colour
+                    grading, illumination, and contrast — blank pages win
+                    as low-contrast fits
+Replacement:        integer edge-orientation localizer (octant planes,
+                    pooled exact co-occurrence, mirror-aware)
+Confirmed:          scan 73 / Förstemann p69 / x 64–274 / y 772–1350
+Verification:       independent stroke-for-stroke visual comparison
+                    + numerical margin (222 milli over best other page)
+```
+
+**Correction.** The first run shipped a NEGATIVE here. The researcher
+challenged it, and the researcher was right: the column is on **page 69**
+(rainy-season/serpent section), right-hand column, full-res coordinates
+(64, 768)–(≈274, 1350). Verified two ways: stroke-for-stroke visual match
+(`demo/dresden_located_p69.png`) and the fixed matcher below
+(milli-score 9434 vs 7720 for the best other-page placement — a 222-milli
+margin; `analysis/dresden_locate.py`, 6/6 checks).
+
+Why the first matcher failed, on the record: median-centred luma SAD does
+not survive a change of scan generation — the photograph's colour grade
+differs from the WDL scan, brightness statistics decorrelate, and blank
+pages win as low-contrast fits. Ink **structure** survives re-photography;
+brightness does not. The production localizer now matches quantized
+gradient orientations (`orientation_planes` — integer octant binning, no
+trig; `locate` — pooled exact co-occurrence, mirror-aware with the exact
+bin permutation). The Madrid hypothesis from the first run is withdrawn.
+
+Machine-surfaced bonus: the second-best placement overall is **page 65** at
+nearly the same in-page coordinates — the p65 and p69 columns share their
+composition (same section, same layout), which the matcher sees
+structurally. MEASURED; interpretation open.
+
+### C5 — light activation: METHOD-LIMITED (OPEN)
 A fixed-illumination scan cannot confirm or refute an illumination-dependent
-claim. Falsification gate for the future: RTI or multispectral capture of the
-physical leaves; pass condition = a glyph-anchored reflectance sequence that
-survives the blank-substrate control above; fail condition = the sequence
-reproduces on bare plaster. Until such data exists the claim stays
-SPECULATIVE.
+claim — the limit is in the data, not the hypothesis. Future instrument: RTI
+or multispectral capture of the physical leaves, with controls whose null
+model the researcher agrees to in advance. Until then: OPEN.
 
 ## 5. Scope statement
 

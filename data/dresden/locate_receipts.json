@@ -1,0 +1,23 @@
+{
+ "chain": "58ed27995b7b0832187484d24eb9027f0d1d95c32fa234419a83a40d816cc8c6",
+ "entries": [
+  {
+   "chain": "58ed27995b7b0832187484d24eb9027f0d1d95c32fa234419a83a40d816cc8c6",
+   "in": "search",
+   "op": "locate_v2",
+   "out": "3c47865a8e312a042be29552c9a6445a4e6ce21cf77032ac227cdb7d370af220",
+   "params": {
+    "impostor_ceiling": 820,
+    "margin": 116,
+    "method": "weighted orientation co-occurrence, pool 8, aspect sweep 900/1000/1100 milli",
+    "milli": 826,
+    "query": "queries/query_column_photo_q4.png",
+    "rank_pct": 1000,
+    "texture_floor": 947,
+    "winner_scan": 73,
+    "x": 64,
+    "y": 768
+   }
+  }
+ ]
+}

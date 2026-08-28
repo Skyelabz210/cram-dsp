@@ -1,0 +1,941 @@
+{
+ "chain": "f25891cc04a7068d5328630e9be5b805dbb81550c5cd44f02542f5b1b83ca18b",
+ "entries": [
+  {
+   "chain": "afc892ad34a9b28b6d45a1c20cebb4a8c623c1b3ad92fe8877868e090ae09011",
+   "in": "cb4034ca3a8b093d9f982b7d5aa916e97832a44df288cefa518d2a178b64e504",
+   "op": "dot_morphology",
+   "out": "5e3046bd0f97f62cdd24b232745d1cd4de7da7010db00aeca32d38aca13d55a8",
+   "params": {
+    "marks": 105,
+    "open": 33,
+    "page": "1",
+    "scan": 1
+   }
+  },
+  {
+   "chain": "decbdae0f20fdff9a607811bcca1c6905de4d8ca93c47ceeecec5fcc277151d1",
+   "in": "6b6931ce21a24c68924f788b19b2885c12e8210ba6f4c467c0ea57f0e552b1e4",
+   "op": "dot_morphology",
+   "out": "f5c535f5dcfa930688e6b88ab300f1d93225316c4d9ad4c86bc77994a30b87c1",
+   "params": {
+    "marks": 687,
+    "open": 187,
+    "page": "2",
+    "scan": 2
+   }
+  },
+  {
+   "chain": "0987d4ff3d05b9f7d4f78e898cce4e6db8ff0e11d28f360c76418dfb448e709d",
+   "in": "d15d61b17efb78fa6ddd3741480d5a8fd4590fee6384126a2895c4659c630cd1",
+   "op": "dot_morphology",
+   "out": "c7e8fad70e06e83a8eb6d1ad0c8511e43c0f2e630a8bb19ba650bcfb944b4227",
+   "params": {
+    "marks": 226,
+    "open": 62,
+    "page": "3",
+    "scan": 3
+   }
+  },
+  {
+   "chain": "77c05e77167ddc2fff87f7cf15563a2c3a19c0974a9f768f545b152c6aa9654f",
+   "in": "82dddc7f2e172099b4714deff4adcf4df252e7409e3c344a815070f5d1de78e9",
+   "op": "dot_morphology",
+   "out": "3d770ccaff6ea96107c276aae69a13552cba60cb04c5fd19cc503f04130ffb6a",
+   "params": {
+    "marks": 414,
+    "open": 141,
+    "page": "4",
+    "scan": 4
+   }
+  },
+  {
+   "chain": "59369d170771a33e9f1bb5195631bd51973cc292953d1774bea43c85032b3a41",
+   "in": "04d763fbc72d454812a01741951b0246d3014f6f5b1456e2cadbe89f0cbb7412",
+   "op": "dot_morphology",
+   "out": "7fc62fb9526511e48fbb012f61efd548f2f323f8711024c0af9c7e70312c22e7",
+   "params": {
+    "marks": 405,
+    "open": 124,
+    "page": "5",
+    "scan": 5
+   }
+  },
+  {
+   "chain": "2d6116ec2dd3ebb329cd136f1eade63744e564e1bbb6eb4a45c356fc6d066eca",
+   "in": "abec96cc98958d1c31c57cf8af8b2cff6ad2fccba13cf72009b07481b00d6cc1",
+   "op": "dot_morphology",
+   "out": "245634549e2cfb71c7f59ef131c3c9af208d8e4d6872130617e28927d3243423",
+   "params": {
+    "marks": 440,
+    "open": 141,
+    "page": "6",
+    "scan": 6
+   }
+  },
+  {
+   "chain": "8c51b5bd9458a55c2f0b305d2200962ce705eb69354d517021ec746e74253035",
+   "in": "92f0908419435527f67990701d4dcc9d5aa358328ba5f2059e6cf4d688c12e9e",
+   "op": "dot_morphology",
+   "out": "6650ccb676849fa88c0e4742b99e745bcb3e6597b0a5d94ac3da844c264d1a87",
+   "params": {
+    "marks": 374,
+    "open": 102,
+    "page": "7",
+    "scan": 7
+   }
+  },
+  {
+   "chain": "1d2136c749146e71cad914cba7719745dfee0af2f11e3284af630ae4b6c1bd9b",
+   "in": "e26574f3c683347e79939f3f91dbcc3ee4eb0db6cbc4bb02d2363b22d7864811",
+   "op": "dot_morphology",
+   "out": "c97cd01b9cc209ad4bb69854836bc3981b8689a1f9ae0b895186e6b040dbc26f",
+   "params": {
+    "marks": 420,
+    "open": 138,
+    "page": "8",
+    "scan": 8
+   }
+  },
+  {
+   "chain": "2512c9ec7706b549ca169958df57407ed2b2144453b386b4d542cc47379b0fb1",
+   "in": "4473131f3a2c08eb17a1af76b081086f8b06c7d7ae3bb9f568de1ffe58ff72bc",
+   "op": "dot_morphology",
+   "out": "6165f2b39c051a665511d2b1a9f8a03049f842fd02bccc67a03a75b14ffbd298",
+   "params": {
+    "marks": 425,
+    "open": 126,
+    "page": "9",
+    "scan": 9
+   }
+  },
+  {
+   "chain": "1cebcc93893059cc85b51a8be31b12946ab70334aa4d393df0ecc8f106fb656b",
+   "in": "694c58acc050c6c6f82cd9c7fa0d4f95896ff630109b94997da218ae9f389a51",
+   "op": "dot_morphology",
+   "out": "de9946d837858ded0f61727575887329e48eeef872b00a96c08d303141f9347b",
+   "params": {
+    "marks": 429,
+    "open": 123,
+    "page": "10",
+    "scan": 10
+   }
+  },
+  {
+   "chain": "2db157f62901587c34136262419a5cf1871f7f0ce7c657661704b72090c7559f",
+   "in": "dbdedb1bd25199af031c19763a46e489d511aaeac0413c53229bc83997345542",
+   "op": "dot_morphology",
+   "out": "093265e7258b4deb41a10b77fc541c4f1b61f31b42e078e4953ebe790a33de0d",
+   "params": {
+    "marks": 444,
+    "open": 132,
+    "page": "11",
+    "scan": 11
+   }
+  },
+  {
+   "chain": "2684a5e208d0de6800afc7eb2ce5fc38e3d258940781931365a0253691456ea6",
+   "in": "8d77d678e5584b9b9b5fe23805aa70feccf0f74d00df1172d792768aa3a11670",
+   "op": "dot_morphology",
+   "out": "2a49294c2f6f5562f40a8917fb5836625d0ab5ba6c1f92d584bffee77cab8245",
+   "params": {
+    "marks": 426,
+    "open": 131,
+    "page": "12",
+    "scan": 12
+   }
+  },
+  {
+   "chain": "0bb11cc99cc01e9355a95e43af19145b48ec13b2bce1226705d646efca5cbcf3",
+   "in": "d746afb7d4c8469aa8e2523b62243104f827f7de71ead289d6904a80e8bb1588",
+   "op": "dot_morphology",
+   "out": "2e7712f6c3cef0f6f520afcfd6845f13e9105859cde9a2749235dedfd9d3d0d7",
+   "params": {
+    "marks": 432,
+    "open": 130,
+    "page": "13",
+    "scan": 13
+   }
+  },
+  {
+   "chain": "4eef33c826a6ed4f79a4fabdae92aa7fef0b53f5b669e3cbafa96639766e5b04",
+   "in": "5695f6072467a5b87851d8af7ba9be8df864fc2c09de23fb61b3b60d5480ae83",
+   "op": "dot_morphology",
+   "out": "4282ecc218a4628cffd09d4c90a5a5e04da90cba0d7fac9cd170f93bdc8528b8",
+   "params": {
+    "marks": 388,
+    "open": 116,
+    "page": "14",
+    "scan": 14
+   }
+  },
+  {
+   "chain": "858df14b1774048bfc4b63b3d899230291079c6cbe5f4a5bba4f06389abb7205",
+   "in": "368bdf10953daa820be5140bd414a73e2884012f8ffa44bad4c23e0958e803dc",
+   "op": "dot_morphology",
+   "out": "4b767e526c4bc328025b667ba0a2096ebb3a4cd06a392778feff071cab1e97f2",
+   "params": {
+    "marks": 381,
+    "open": 124,
+    "page": "15",
+    "scan": 15
+   }
+  },
+  {
+   "chain": "e615f7d062d17c7b57c0e3dbc1d19ccc68a0bac8c9fce146f35488991e53848f",
+   "in": "709bf1b3f6e1d263e6c3d6484b741d97930f39df307626c89e49695693788eaf",
+   "op": "dot_morphology",
+   "out": "754daea82865a1adc13bc59dd7cb5e6328c3d13b4c559be2a66f009f12fa0c07",
+   "params": {
+    "marks": 345,
+    "open": 112,
+    "page": "16",
+    "scan": 16
+   }
+  },
+  {
+   "chain": "6d311c3ffaa473ac2fd225742ac5777afafd24c46ddf544dc618271d7ec4db6b",
+   "in": "031c1fe0cfa51954d043abf70a7812d711578e478ad61c8d47a49b13d028194e",
+   "op": "dot_morphology",
+   "out": "52e5b5f9b01e2c50bd0bc33b36c49ed9d943acaf41b2f5c97b2b416d49daaf7f",
+   "params": {
+    "marks": 332,
+    "open": 129,
+    "page": "17",
+    "scan": 17
+   }
+  },
+  {
+   "chain": "5bab96dc463d3407e7e91c392e7acdee4a89148d3802d2f0a3d8243bf01f6514",
+   "in": "f4115fb1b62e611ba1ddd0f47d95a1402a15575669ecbc4e3d33f61a4022e62b",
+   "op": "dot_morphology",
+   "out": "a7c36ff25b4feb2f2d7ec82160f4bdd2636eee4bda2199dfb5c9c10eb5967343",
+   "params": {
+    "marks": 328,
+    "open": 101,
+    "page": "18",
+    "scan": 18
+   }
+  },
+  {
+   "chain": "46bf9e6747cbdca23a97c4832ac06154d0727b24063ece441d983f083a8311c4",
+   "in": "d55c1224c1b395578c21fe3c79a816af85ab735693459a12aceab50dd2264532",
+   "op": "dot_morphology",
+   "out": "6cd0fb17ecdc6237ea12d11599ac5da45994da94a71f4857fe626226ec17ce24",
+   "params": {
+    "marks": 441,
+    "open": 151,
+    "page": "19",
+    "scan": 19
+   }
+  },
+  {
+   "chain": "154ec1cfbd5617cc35d244cce3fb41704eb7ad043aecf1bbdb511466bd94a6b2",
+   "in": "650edddc5d6a0e266f9ffa5fad9043027e9ea5359488da4ecc5c50a17fe13b11",
+   "op": "dot_morphology",
+   "out": "dee574f901195bfe2c00bc003822fa021d0b00f1199c6a6fcc11ad7bc8795be5",
+   "params": {
+    "marks": 368,
+    "open": 116,
+    "page": "20",
+    "scan": 20
+   }
+  },
+  {
+   "chain": "a32d948eb2da19ace12b465f93477fe813eb3b5d63402e1357bc5fbcccbfd8a0",
+   "in": "87810718b4e3a407dbe8a8e8a77ef7ac5e72e6564f1a2c536b3f8a234c0241d0",
+   "op": "dot_morphology",
+   "out": "06354446561d44e637bd2e8cd48e3ac4a0d5c29886f49ce5ef39e4ccd81f076a",
+   "params": {
+    "marks": 463,
+    "open": 166,
+    "page": "21",
+    "scan": 21
+   }
+  },
+  {
+   "chain": "41c323b997214627d83631d5dc3ee0b751d4d49f07e20b02915d633e42d3f231",
+   "in": "dfd5bfd622de63a382916700a46bb77b0f4658de09aa2b2716c99ecda788a4d5",
+   "op": "dot_morphology",
+   "out": "4d900f4aabb558119f6b9ac80a3b002c292873358b6a2e28b0f71f1a0134d851",
+   "params": {
+    "marks": 457,
+    "open": 153,
+    "page": "22",
+    "scan": 22
+   }
+  },
+  {
+   "chain": "f6b9f17a558368e57777525574d5a077551c6024a32af1bb1e43a115febb339b",
+   "in": "baa4f2d933fbea9c17bb0599220fd6ca67eeaae4d7974a5c6b3af35566bc11d4",
+   "op": "dot_morphology",
+   "out": "1572516c047ba0803f06f58534929b052e72a5d84de0d8472d81de2f8769ced9",
+   "params": {
+    "marks": 448,
+    "open": 173,
+    "page": "23",
+    "scan": 23
+   }
+  },
+  {
+   "chain": "b1e9da1f4b30acea5bd0d2f58693a495a92aa57d17e39e4472359918e0befe07",
+   "in": "e91d6061d5fc8a0b51f97eabe9c18c11f2c630ce082491786645f76f890de479",
+   "op": "dot_morphology",
+   "out": "dd9bbc6bc53f371832cb8982dd21b661c826ef898cfdb8ab751057653f30dfc3",
+   "params": {
+    "marks": 446,
+    "open": 148,
+    "page": "24",
+    "scan": 24
+   }
+  },
+  {
+   "chain": "516a58adb43c5fab425ea66133532a65c20790b0b62b599326b7090dca996fbb",
+   "in": "1a6e983359da1d5de12dfc2f82b4a905f3b5e078ba83235fc36f9fe53bc565a2",
+   "op": "dot_morphology",
+   "out": "ccd64a01bbb41200fd1a20be829e78a147565b399099a0a5b8dc96f9980b100b",
+   "params": {
+    "marks": 435,
+    "open": 138,
+    "page": "25",
+    "scan": 25
+   }
+  },
+  {
+   "chain": "1e481aef76c1f6e2223d63f54c3a426beef5e41592952c86618d655169bae205",
+   "in": "f429084a6b90f2dc5b7740ea650a66b3cb8cf89aa08854bcf1a1265144f93bd9",
+   "op": "dot_morphology",
+   "out": "5995c99d523b7fcf18925026504b1085629fbf6d427b94ea22576bee92176b1b",
+   "params": {
+    "marks": 351,
+    "open": 120,
+    "page": "26",
+    "scan": 26
+   }
+  },
+  {
+   "chain": "70b2b6d18b4924d82b1692f422b7bb0e2219860f6153260794da4c619c4d51e1",
+   "in": "e39745c0a668418fba76dcb6b86231f3d89fd882406678f1ab8a39fc9ec3e305",
+   "op": "dot_morphology",
+   "out": "cf18ad8ce029793eb75c14b301d6310a2a0d2b2aea2f1d75e56741a40d2eeb99",
+   "params": {
+    "marks": 323,
+    "open": 111,
+    "page": "27",
+    "scan": 27
+   }
+  },
+  {
+   "chain": "a691644ee09818988355e2e1522b72119e5a062190c6760474ec0818aa70f43b",
+   "in": "ea580a41b5e152c4d0e1515ff8cb7c598720998cd4ff3edf5d8feb6f32a524f7",
+   "op": "dot_morphology",
+   "out": "204aaa02b188de67004edd0758bf4e2993ca9a0f306241eb8d1f3b4a4a85baaa",
+   "params": {
+    "marks": 425,
+    "open": 153,
+    "page": "28",
+    "scan": 28
+   }
+  },
+  {
+   "chain": "37855e7a7dd96d0cc3eba99f76176fbbe15d4d405972cff057defdb247571496",
+   "in": "3b2592202cf1280b950e64c31e879646702b44d93494aa21207fc5a9138d5cb1",
+   "op": "dot_morphology",
+   "out": "f87a6e2521826cce7351a0e43b9bb93ce62c96ab622fbd8f095aa9c2c2630bcf",
+   "params": {
+    "marks": 205,
+    "open": 81,
+    "page": "28*",
+    "scan": 29
+   }
+  },
+  {
+   "chain": "ae2a3c1e107c1e4172789ce137f368593f9e29565f8e2969ecbd6aad46d6d681",
+   "in": "2eb715ef620bc6f218b51cbc7609be0545592efc6416ee94201e3d09a4dcbc48",
+   "op": "dot_morphology",
+   "out": "c19a728e795409bec78dab444ccca98bc3130f0140d8b52859a83504531776be",
+   "params": {
+    "marks": 183,
+    "open": 63,
+    "page": "28**",
+    "scan": 30
+   }
+  },
+  {
+   "chain": "385652dd82e9f0a4ce550f886b021ef60f0342a840147f4d84af3e7d20f91a17",
+   "in": "1b3c462bf95887143f278a9fbcbaa413d374ebded1f6fd70dbe4e2c05ec2da12",
+   "op": "dot_morphology",
+   "out": "1f923fadd80e74e873131818390dad60a2de246409664e48327fe47ae4f81ffb",
+   "params": {
+    "marks": 82,
+    "open": 33,
+    "page": "28***",
+    "scan": 31
+   }
+  },
+  {
+   "chain": "cd93275d35fa681588329f4e0801b11d963539fbe660ce58f6f6378d77fe1296",
+   "in": "8618be918189d49449b0b19bdaa670296fcef916d9ea5bd5cd6b866c3b4148ed",
+   "op": "dot_morphology",
+   "out": "67ba544e3555d7b00b7a87bb7aeb83eb425d900fe04f9ace12c3f7b82de6894d",
+   "params": {
+    "marks": 440,
+    "open": 139,
+    "page": "29",
+    "scan": 32
+   }
+  },
+  {
+   "chain": "2c8b1877734baf62aaf0fe70cd60200e5865f4fa2d6565ce9b3cdf7d24afc80e",
+   "in": "7533e03667bd2111b727fa8f4104d91daeff6bba6ff25f8392c1c4fd4faa5857",
+   "op": "dot_morphology",
+   "out": "4bf3a7bb7d395064b07ef0e05ac67ddaf1e6f7afa925a250429491ee05084c17",
+   "params": {
+    "marks": 519,
+    "open": 166,
+    "page": "30",
+    "scan": 33
+   }
+  },
+  {
+   "chain": "d6b7af2256b9f4728750dede368c03c0d4b68e1ba00c5fbe285859f1e415d60f",
+   "in": "7cf8c54c123020cbadf95b6e49608f264c1d27adc77b32c2c751fdd169f5e6a2",
+   "op": "dot_morphology",
+   "out": "3f018cbb35d51e0ed5508a855a84f413b92241a64b9076f0e4a65d6aeca0492f",
+   "params": {
+    "marks": 608,
+    "open": 169,
+    "page": "31",
+    "scan": 34
+   }
+  },
+  {
+   "chain": "1b9639cf4e17c2afd32caf76305160f5e15f2cb446fbf86570cea2fbf8de3247",
+   "in": "b3cad69e40b195e6984a6df340cef22c57cdf6714052d48fc3484e8f77be0c17",
+   "op": "dot_morphology",
+   "out": "a9f41dc1f05bade538324d33ec7f3bde2422ba4fcc73b3182845ed6e43f6f29e",
+   "params": {
+    "marks": 560,
+    "open": 176,
+    "page": "32",
+    "scan": 35
+   }
+  },
+  {
+   "chain": "a4e5a21606403a6e371fcfc9758dcbb2d1adce1186d0e29167ca0efae065f74b",
+   "in": "f84b7d662b73a0efb62c99e632d5878bcd1fa06d266b1510956a2bf16ab5a720",
+   "op": "dot_morphology",
+   "out": "c2d42cac2bcc3bd3676d6207705a8db3890fecb3191572ba75f74ef0a0124f20",
+   "params": {
+    "marks": 521,
+    "open": 166,
+    "page": "33",
+    "scan": 36
+   }
+  },
+  {
+   "chain": "298c36c54d5a4db9030c52e2592c076baeaf0b41a73555f8b4fa533fc657971a",
+   "in": "9f55e5c0ae092cb07ebb850043c4e9aa68373e310b1ca64810c688257c60b521",
+   "op": "dot_morphology",
+   "out": "fd0b237374f9577958eaf36cb3dd9961e2d2d8ddc80f034aad4ae61b45818060",
+   "params": {
+    "marks": 524,
+    "open": 139,
+    "page": "34",
+    "scan": 37
+   }
+  },
+  {
+   "chain": "33fbbee84184de11174020462a4e5d8fc5dbffd59b677c143f4fa2abff406b05",
+   "in": "b70129115e8b3c37e82c487a8e8455805280e666861af488f1ef7deb2acf8b33",
+   "op": "dot_morphology",
+   "out": "f76a95b46f3b10ee6a18686caa1ccb4d50400887836f11c6cd514b77a4a2dce5",
+   "params": {
+    "marks": 375,
+    "open": 135,
+    "page": "35",
+    "scan": 38
+   }
+  },
+  {
+   "chain": "e2b3c241f917d418e9748c63fbd2ff09f1f4bd192865454f526d91dd1330c285",
+   "in": "fe233839687c19b615bdeac8cc225b70f6a63e73f937b1c1ba56ca76c6e924ff",
+   "op": "dot_morphology",
+   "out": "395b0e6451a086bf4dedc7d54b95324346e59975acf8ccc40d3051356c9eea92",
+   "params": {
+    "marks": 514,
+    "open": 158,
+    "page": "36",
+    "scan": 39
+   }
+  },
+  {
+   "chain": "f8f7be240d28e70b05437488e08ed5b8daaa256ee55b0bc01b12ad85ba6c798a",
+   "in": "e765cdf284a8af96c5371aae10e5c154a872d985c2efae5698214ab15199e5cb",
+   "op": "dot_morphology",
+   "out": "caf6db4252836bf037f6b4c7ccf2d1ad41ed6a1833b428aac06bd67ab81fa25a",
+   "params": {
+    "marks": 507,
+    "open": 146,
+    "page": "37",
+    "scan": 40
+   }
+  },
+  {
+   "chain": "bd431c3b1530f7c46dae0e9d058821111d10c0804f0223601efe1c7d59a451bc",
+   "in": "5fefdfe1bd8b25eb6660e88c3e82f85e944c43280912bea43956cc8bf6a474f4",
+   "op": "dot_morphology",
+   "out": "22fb8970ff5889045b000d059949d811bc4805088444e4a1d5c03c1057a6ffc1",
+   "params": {
+    "marks": 448,
+    "open": 158,
+    "page": "38",
+    "scan": 41
+   }
+  },
+  {
+   "chain": "cac823f2f6f317b2e3fba9473be0461875233ec1115231235e81705ce8e7bb4f",
+   "in": "14c658a684515a30678858b1113323eb854083783b20c53780cfd5eacf674531",
+   "op": "dot_morphology",
+   "out": "77be97e0a1d34fee8fe35f3ad2c4b551f2c336d3d210fbc1d2c4a2cbe5d0b8a3",
+   "params": {
+    "marks": 486,
+    "open": 125,
+    "page": "39",
+    "scan": 42
+   }
+  },
+  {
+   "chain": "b75921ceccae60a1cd3483f7e00f8526a83d6c793c8a99de2a911cc3a4be1571",
+   "in": "d1573fbd760a2f5babf1b8f40273fe3a6d8a0f267c3fe154b2cfb15a47988777",
+   "op": "dot_morphology",
+   "out": "807bf1055df61731c59361718b4c376cfe204a15d5da130383be08ef71bb1b0d",
+   "params": {
+    "marks": 481,
+    "open": 104,
+    "page": "40",
+    "scan": 43
+   }
+  },
+  {
+   "chain": "93322016ca10db2e9473695780edaf975544fc0938ca50fd86816978a2091233",
+   "in": "9329a1b66b2934d8db416a99221303d3f4f55f6f65ee1ed3390456ee26cc7f83",
+   "op": "dot_morphology",
+   "out": "70a5ada0a321535a9777d3cfa735e75074199667994156aa610009d1fbaba19e",
+   "params": {
+    "marks": 558,
+    "open": 191,
+    "page": "41",
+    "scan": 44
+   }
+  },
+  {
+   "chain": "5f2ad78ee50e6701fd2e127477738a2b34afe476c276aebd363d7790319a2893",
+   "in": "9e0a1c488ce24affdbe60c775c93a6baf39e62ba56175afd6151ebe980c4f54a",
+   "op": "dot_morphology",
+   "out": "1a0a3650f356d51a43644e74e10c50d7e5c65e4a718a88eff3205c3323b96cc8",
+   "params": {
+    "marks": 541,
+    "open": 173,
+    "page": "42",
+    "scan": 45
+   }
+  },
+  {
+   "chain": "5c5d174a7d890fbbe6d36267daac1256b18046fc720027f0a8b379423711da8d",
+   "in": "7253ff9c4d7182ed87083f9cbd9058b440a80ddef28b359ac19060b9e0dc1ec1",
+   "op": "dot_morphology",
+   "out": "67ff3a29694ff276631a8c72e105e6108a70c4059b32e6bc086b25fca3e55242",
+   "params": {
+    "marks": 561,
+    "open": 148,
+    "page": "43",
+    "scan": 46
+   }
+  },
+  {
+   "chain": "d6559621eae400114c6073ce76b6e8836089fe5009deec958180f08b43708243",
+   "in": "af65bae258b0242a4b0a1910fe0e36092549e76e9741de71c9d789f9e5f72731",
+   "op": "dot_morphology",
+   "out": "b1422a578b4f8e340d4e439168f3acac635d379b61174d255b44aa6e64f1ba81",
+   "params": {
+    "marks": 539,
+    "open": 139,
+    "page": "44",
+    "scan": 47
+   }
+  },
+  {
+   "chain": "7da91916dc7197f1a6104e86253c86c2b6a65a42325c0b819da28a79137f1903",
+   "in": "de5f8a2df99a67694afa2a9ebea6279662557cb54dc2603760acd65d32d460c9",
+   "op": "dot_morphology",
+   "out": "96bac898e544db9c0de3c502253c01b13c9f4018e04ffa0a711e9f971d34702a",
+   "params": {
+    "marks": 357,
+    "open": 121,
+    "page": "45",
+    "scan": 48
+   }
+  },
+  {
+   "chain": "09ca7d91eda6c9bdd3546982d3682d0249ae5bd9a3e7b458bd806273e55f4118",
+   "in": "228823fbba1908cd707de44709d828335483214d3069af11333ee65b25dcd33d",
+   "op": "dot_morphology",
+   "out": "9bc2b81d659e00c44ea0b8bbd4f824f1535734db8566cd604db6156d497e868c",
+   "params": {
+    "marks": 427,
+    "open": 117,
+    "page": "46",
+    "scan": 49
+   }
+  },
+  {
+   "chain": "15334ac05a063dc85f8a8115abf25360d9643e88c69fbdedd4dff45dd6371d9f",
+   "in": "c00a0ca0676dccb6e70c8cc369e5cfa2a1a7b8f2d8667ea66beb54caf15e5f7b",
+   "op": "dot_morphology",
+   "out": "193a54b58cf06b9c84b2e5f8569021f650384607e20a34608257a00d60e302eb",
+   "params": {
+    "marks": 624,
+    "open": 232,
+    "page": "47",
+    "scan": 50
+   }
+  },
+  {
+   "chain": "f4751a632d742a4b34e7f141cd7f66ffef6290c7573081230a3e9beedd52af1c",
+   "in": "3193ab2d1f15260e600876ba83fbd16e38554c8dfdfb6f02cfdba245b6a0ffe6",
+   "op": "dot_morphology",
+   "out": "3d1a69c73015f63b29c7276da576767eac8d13b98c5f3d296e419b060be55aa5",
+   "params": {
+    "marks": 560,
+    "open": 204,
+    "page": "48",
+    "scan": 51
+   }
+  },
+  {
+   "chain": "c60c0bc189a15604e0864a6b6554cb56c71b6b490cce9599f0d87636fa1399bf",
+   "in": "6fbed8d49d31d0f15b1a3654de5f2f37fd89f2c55132f99150e0c95a997bfbea",
+   "op": "dot_morphology",
+   "out": "4bd3cfda96a211431934aa68a5665b24a40c7ae2c3ef85c925cef67d5cfe7a5c",
+   "params": {
+    "marks": 536,
+    "open": 174,
+    "page": "49",
+    "scan": 52
+   }
+  },
+  {
+   "chain": "fbd1a3aca02a40a9e373ecc5f99197e5495f41703045f8b9758e57789a676b83",
+   "in": "63d055521937ac91da3f5848812ab0f9de89ad8005e12f99bd469d6c87638fa9",
+   "op": "dot_morphology",
+   "out": "02702394532e4e1f1fc3e064adecc7c0355a88c0cf386f4b10b9d1288076924e",
+   "params": {
+    "marks": 500,
+    "open": 188,
+    "page": "50",
+    "scan": 53
+   }
+  },
+  {
+   "chain": "ff08af9b1c33ba97575c097b796bb8e2a2be087daca44d0fe73fc90d3f7d9586",
+   "in": "04fc0ee4566ca22ae3c46a2ddc5e408ab33cbffd8a31cb2ed0a63affd2acefc2",
+   "op": "dot_morphology",
+   "out": "519891efe94af83cd495575c4d8a8040ea4a03d64fd218563e828f3f49f8e8b9",
+   "params": {
+    "marks": 386,
+    "open": 120,
+    "page": "51",
+    "scan": 54
+   }
+  },
+  {
+   "chain": "a6b0cb24b69d08a8e8076017fb382e354cb8c1d336bc40dc18704ff950fec67a",
+   "in": "f2309e306b9c83f3e247b6829f246286974fc26b64835eb00719e6acbbcafbd1",
+   "op": "dot_morphology",
+   "out": "f9ed717e2a30e8ce3ae3dc57b6a49da20cd76f6ffec318f9d8e6e7f8e095abb5",
+   "params": {
+    "marks": 482,
+    "open": 123,
+    "page": "52",
+    "scan": 55
+   }
+  },
+  {
+   "chain": "66d557cc53ba9267f5fa872ea14019ac59fcd6d1e46afb022f3a00f94bd59993",
+   "in": "35e5163bf116ec5b06158c19a139aeb97c7235eff9c0bcce46d60494a6a3c433",
+   "op": "dot_morphology",
+   "out": "24cd40e443668752569b400d48364812545852fc1c55c83ca5531d4ff01f87ec",
+   "params": {
+    "marks": 478,
+    "open": 137,
+    "page": "53",
+    "scan": 56
+   }
+  },
+  {
+   "chain": "76ba1b4aed88c2aad0ddad9221efc9d041a3be428497f167148caebf416467c4",
+   "in": "8f2235e87a147abf55020ad73ab0c166d3dadac57debb668d4f9da5cb9fa857e",
+   "op": "dot_morphology",
+   "out": "d4e12fc3e7c78282a6d6533c7dc80cbd18b36d49a9baa56ee87ee7787bd06fb5",
+   "params": {
+    "marks": 431,
+    "open": 119,
+    "page": "54",
+    "scan": 57
+   }
+  },
+  {
+   "chain": "818e8b64628320119771fdc15a9102438d44eb3001baf00f04f159ed22f6e10b",
+   "in": "0bd11878a3be85151ee9fe89ee135f380d4a2e94733d66e40e57fb15af0acc19",
+   "op": "dot_morphology",
+   "out": "06aa66ab9c73bbdec183c96c1be3b126beb9a13a2c7d47f43e867c20821e7efe",
+   "params": {
+    "marks": 482,
+    "open": 140,
+    "page": "55",
+    "scan": 58
+   }
+  },
+  {
+   "chain": "063160e76136dee7d1930ff2f7ad012e2aad760b1c11d9a6bf5b05e42a6743d9",
+   "in": "326e5a7fd028013925bcdd9796542880759f636606c6317e45938a17c0067b08",
+   "op": "dot_morphology",
+   "out": "91bb1bafaffb188985f8c8c2019a691663a188a5f4b4f66ce529bc28d10025cf",
+   "params": {
+    "marks": 345,
+    "open": 94,
+    "page": "56",
+    "scan": 59
+   }
+  },
+  {
+   "chain": "df5f29972e2a193555bbd109d26f3330e6c95b249ff39678129d4380a3e30331",
+   "in": "b1a40959be9eaa70d292897faee617279dfd0a6c21da86e3181d65d70edfa94b",
+   "op": "dot_morphology",
+   "out": "a65feec576be26f46fae55eaa80ee5193aaf8403e9d435a651dd4bed1b8dad6e",
+   "params": {
+    "marks": 427,
+    "open": 136,
+    "page": "57",
+    "scan": 60
+   }
+  },
+  {
+   "chain": "bba7454936a4d170ff9c37fd211a8ca5aeb7bb2809745b7f66c8c4cd403ab2a0",
+   "in": "94a0bc5a4f1b88b512a82fd5f6510384d8de888db672a95710a6c38cd3518f0d",
+   "op": "dot_morphology",
+   "out": "045ebf71a12d80a08249396151489c604709d0e62fb619497acf2296f978d030",
+   "params": {
+    "marks": 423,
+    "open": 152,
+    "page": "58",
+    "scan": 61
+   }
+  },
+  {
+   "chain": "a66c4c558bede83a12851a54ccec2e18d2e3741956cce3859d027f5805b4a910",
+   "in": "f0c7ed39a83ea6ad1e3f758053372692d0768622c45d3d5d63c5f1d5d15a85f0",
+   "op": "dot_morphology",
+   "out": "5a69d5581f4b24d91a8578575320a275228b7c831fc0d44a1b8f151d6f6f30bd",
+   "params": {
+    "marks": 518,
+    "open": 155,
+    "page": "59",
+    "scan": 62
+   }
+  },
+  {
+   "chain": "171fd70224360bb44c2b335d3809c852732520ec8bb2b5f6e023b3c27857e428",
+   "in": "91c0069abc806aac886df19abfc288856afd8631fe24f297b7fbdff59fdca374",
+   "op": "dot_morphology",
+   "out": "8934182362801a2d5b1fb16fee6a670301a9c6737c463f775b6bbb22ac4ba3d5",
+   "params": {
+    "marks": 408,
+    "open": 114,
+    "page": "60",
+    "scan": 63
+   }
+  },
+  {
+   "chain": "5de6c8988823c21ad0baf73de0232f8cf9c3fb57ca1415954461e875084cffab",
+   "in": "b485562fb87a3ac2ddb95f6a53f392ee25a650a1c6b3b69b0fede6b53d65e4f4",
+   "op": "dot_morphology",
+   "out": "e0750ff6d7a0bee62a31ab18d753fffc00ab2a2beee9f5ba48b7dd1ae3989e3c",
+   "params": {
+    "marks": 97,
+    "open": 27,
+    "page": "60*",
+    "scan": 64
+   }
+  },
+  {
+   "chain": "36bd2f0f678e48c75678808495b792d14a92b3c266980c5492cc3d3d0c753500",
+   "in": "dbae153526c0d89dedcf7b75954b99e683fad29cf025de503aca675fd57fc35e",
+   "op": "dot_morphology",
+   "out": "63a875c2dbfd2dfc5703513f3d795350c6920135c5c74e878aa95434adb15859",
+   "params": {
+    "marks": 510,
+    "open": 139,
+    "page": "61",
+    "scan": 65
+   }
+  },
+  {
+   "chain": "0d068a093dc4cafe73e09f306b3aa3bbec820e36804ee9d4b89cb77bf3e778f2",
+   "in": "01a566c6a60d3bb5586f318ab2eb8d6d9bf8cd8fe132d8cc5d957c068e8f0d66",
+   "op": "dot_morphology",
+   "out": "6cb9f93963179ec52c3922a5c57aa4de23c1e93a92197713aea03ff14cdd4cb7",
+   "params": {
+    "marks": 501,
+    "open": 131,
+    "page": "62",
+    "scan": 66
+   }
+  },
+  {
+   "chain": "088d2a46fc72fbf45bcfe0ba8f70330f4095ae96a67d609c4532a110989c30e7",
+   "in": "1f2c54486ac45d049b02419e2f8abc2c1b4c572624783c735cbfb794f8dd31e1",
+   "op": "dot_morphology",
+   "out": "ea7096c8ec49d82369e472b7190a5f687685b272463c75547e69b4f1dd4f8c3f",
+   "params": {
+    "marks": 569,
+    "open": 166,
+    "page": "63",
+    "scan": 67
+   }
+  },
+  {
+   "chain": "1e234fd9521e891560ff562be28ac7cf3c1cc570ed531bfc3c823d6c1d7bb71b",
+   "in": "f99a84aaadfb9d68de172c85c3fc478db965c28dcbb32b0bde3c7b3e9716c03a",
+   "op": "dot_morphology",
+   "out": "9c08c271003e7b5f84d54f99aef73a2b405022a12a673755972e2135522cd541",
+   "params": {
+    "marks": 538,
+    "open": 187,
+    "page": "64",
+    "scan": 68
+   }
+  },
+  {
+   "chain": "3795651b11ebe7606ac73c327c2614dcb078cad1ba956191754c7cb2f325553c",
+   "in": "c9ae6d5580d89820d8a147554de877ccd6852764d0013dac1ff102755dee553b",
+   "op": "dot_morphology",
+   "out": "600b34e375edf175e272a1154cb205bb59b2867c000b380208f44ec5b2d4ef36",
+   "params": {
+    "marks": 441,
+    "open": 121,
+    "page": "65",
+    "scan": 69
+   }
+  },
+  {
+   "chain": "ae5274547f6527bcdbc50c730cd967a3638bedc8421803d2c411aa0b897e4931",
+   "in": "2737bb88772a9e5776334096e353dd61b6c3987efbfa544525ec940644192721",
+   "op": "dot_morphology",
+   "out": "1726fae4466e2f4b18912c8f807b6ad6ca5c93e4046a35e723001e3646e47583",
+   "params": {
+    "marks": 540,
+    "open": 159,
+    "page": "66",
+    "scan": 70
+   }
+  },
+  {
+   "chain": "4baf70a21370abdf79ac7fa52941768853dc4da9b9e78fef0f5fb523d25bdb0e",
+   "in": "42285a7b3988fa4b308607f8a7f85acb80373d2ebc3d797fec9f4d62f1e56b33",
+   "op": "dot_morphology",
+   "out": "8e70f2232740a9f0450bc6f1ae63e2e9df7d71260e8b09d8d5137f7d997911b4",
+   "params": {
+    "marks": 523,
+    "open": 123,
+    "page": "67",
+    "scan": 71
+   }
+  },
+  {
+   "chain": "d3e46f86530941678466e673041686894eee9236504021599abfffc76e4ac2af",
+   "in": "e3e818b96c85c45905f7ffcd06e66562f0c7784c4c9cea42c7bec02ce779371d",
+   "op": "dot_morphology",
+   "out": "bace68b3a06fbead5114d08f26d10d2af32adcc6daf0c304470e4bc5523a3c8d",
+   "params": {
+    "marks": 499,
+    "open": 137,
+    "page": "68",
+    "scan": 72
+   }
+  },
+  {
+   "chain": "55d955395cb635d5d296dd55d2a480d1d120d07f60850dda1365d4188a1d33b7",
+   "in": "3c47865a8e312a042be29552c9a6445a4e6ce21cf77032ac227cdb7d370af220",
+   "op": "dot_morphology",
+   "out": "6d5cda2f8a81c6efc6d4930258aa81736ba9bd298a32306854d745ae9bfebac6",
+   "params": {
+    "marks": 425,
+    "open": 123,
+    "page": "69",
+    "scan": 73
+   }
+  },
+  {
+   "chain": "6a94e2839dbc372ed455f4a5bfe4aa78bee5088f6b48890b626bc76d1a78a6f3",
+   "in": "9d0624d5c4798edd2f2c1b06e87bb76e878fa426b394bf9360f6b7b42d2b2227",
+   "op": "dot_morphology",
+   "out": "b5d6a9343a15c351b13990e8a6d94f6c98400033e6a8c6768eb48e89299f61cb",
+   "params": {
+    "marks": 479,
+    "open": 122,
+    "page": "70",
+    "scan": 74
+   }
+  },
+  {
+   "chain": "cccf465e84e1d558f51f1b332d93379ae60aae711768a9b66b05bb5037d64f3a",
+   "in": "be5ece9360ccf7c1faa1509563f070ce29e214086a257c307ff12a0727dd37aa",
+   "op": "dot_morphology",
+   "out": "560294ec560900cca34aa3da73aa1f123a3ea2017a5d36852b3d1b12dae095f7",
+   "params": {
+    "marks": 632,
+    "open": 250,
+    "page": "71",
+    "scan": 75
+   }
+  },
+  {
+   "chain": "c68fa2e81983c12eed8d00558c31156bd11304221eab176ad8b992d4e6062a3a",
+   "in": "b5566fb84825ab2ab06d85cc96f8b8e55c6251f854a8a99be98226b32ba8ebf0",
+   "op": "dot_morphology",
+   "out": "3f52cb976400ab47dc2c1a7eec2e612635fa8be682932c25f8ab91ee6520564e",
+   "params": {
+    "marks": 757,
+    "open": 268,
+    "page": "72",
+    "scan": 76
+   }
+  },
+  {
+   "chain": "16d5dad18f5d6aa7c477abad8031aa3b070aecef29580d815962b2134f75d461",
+   "in": "8ceaf9134dbc55efc9913b9e2c196c54a2622b3b178c996ce0f480f1f93c5f35",
+   "op": "dot_morphology",
+   "out": "04e5acfb530ef2750cafc13341e082b1bc98ac0b0c3d9ea97e77f756ee9689c4",
+   "params": {
+    "marks": 483,
+    "open": 147,
+    "page": "73",
+    "scan": 77
+   }
+  },
+  {
+   "chain": "f25891cc04a7068d5328630e9be5b805dbb81550c5cd44f02542f5b1b83ca18b",
+   "in": "21d85f4695587bcf3e64f7e38bf0536c0857c81ebe287d848903b333bf5912c6",
+   "op": "dot_morphology",
+   "out": "fec7ff2b3265d637e21603e9aedfab39fd94237318c7d8810c4c0b9578ad41a6",
+   "params": {
+    "marks": 222,
+    "open": 69,
+    "page": "74",
+    "scan": 78
+   }
+  }
+ ]
+}

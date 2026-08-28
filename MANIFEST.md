@@ -18,7 +18,7 @@ checksummed), **RECORD** (session/administrative document).
 | `synth.py` | Deterministic seeded integer evidence generators: faint palimpsest page (Δ=1 ink, Δ=11/Δ=12 decoys, plateau steps), codex strata page, recto-verso bleed pair, off-grid splice, copy-move | VERIFIED | used by T3, T6, T8, T9 |
 | `baseline_float.py` | Classical foils: float PCA separation, best-fit MAE, Sobel, float Gaussian, `blur_round_int` | **QUARANTINED** | excluded from A1 lint by name |
 | `a1_lint.py` | AST compliance scanner — float literals, true division, float names/attributes; quarantine and self-exemption discipline | VERIFIED | run inside every harness pass |
-| `dresden.py` | The glyph machine: integer luma, integer Otsu (cross-multiplied), run-based 4/8-conn components, shift-OR dilation, glyph cells, circular-outward ring signatures (exact isqrt), L1 signature matching + all-pairs matrix, luminance ordering, seeded permutation path test, exact hole counting (hollow/solid dot topology), exact quantile tonal bands | VERIFIED | analysis/dresden_run.py 636/0 + analysis/dresden_discover.py 9/0 |
+| `dresden.py` | The glyph machine: integer luma, integer Otsu (cross-multiplied), run-based 4/8-conn components, shift-OR dilation, glyph cells, circular-outward ring signatures (exact isqrt), sector codes (sequential octants) with exact dihedral matching, L1 matching + all-pairs matrix, luminance ordering, seeded permutation path test, exact hole counting (hollow/solid dot topology), exact quantile tonal bands, edge-orientation localizer (orientation_planes/pool_planes/cooccurrence_map/locate, mirror-aware), white-gradient machinery (order_stat/highlight_freeze/white_nodes/white_path), pigment classes (exact 4-way chroma partition), white-trail machinery (local_bright_field substrate-median field, filament_components, trail_polyline, trail_glyph_sequence), midrank_normalize (cross-generation confound removal), cooccurrence_normalized (exact integer cosine), decide_with_abstention (void rejection), node_records + three orderings + exact agreement metric | VERIFIED | dresden_run 636/0 · discover 9/0 · locate 6/0 · white 7/0 · vocab · seams 4/0 · strata 3/0 |
 | `__init__.py` | Package surface | — | — |
 
 ## Harness
@@ -49,6 +49,11 @@ Reproduce: `python3 run_all.py` (requires numpy, Pillow). Deterministic and seed
 | `docs/CRAM_OPPORTUNITY_REPORT.md` | CRAM opportunity index over the classical forensic DIP surface (6 entries, FORCED/CANDIDATE, routing keys) |
 | `docs/ARCHIMEDES_RESULTS.md` | Measured results, Boards 1 and 2: 14-bit lattice confirmed, registration audit, lane sizing on real deltas, survivability head-to-head (incl. the axis the incumbent wins), forgery-window shipped negative |
 | `analysis/arc_run.py` | The Archimedes run: 75,564,310 exact checks, 0 failures |
+| `docs/RULES_OF_EXPLORATION.md` | Researcher-set rules binding the Dresden track: no hypothesis closure while machinery is under construction; controls may not presuppose the hypothesis false; failed methods kept as receipts; evidence vs visualization; control battery; multi-path agreement; morphology before semantics |
+| `docs/DRESDEN_MACHINE_STATUS.md` | Per-stage VALIDATED / BUILT-UNVALIDATED / NOT-BUILT table, the failures kept as receipts, and the list of nulls that must exist before the trail hypothesis can be leaned on |
+| `docs/DRESDEN_WHITEFIELD.md` | White-field v2: evidence node records, three-path agreement per page, written-vs-bare comparison, cross-page trail continuity |
+| `docs/DRESDEN_DOTS.md` | Dot morphology, unlabelled: 34,410 round marks measured, class separation figures, spacing regularity, recurrence ranking against the located p69 column |
+| `docs/regions/` | Per-region reports: full lens stack + cross-codex matches (`pNN_yN_xN.md`), radial decompositions (`radial_pNN.md`) |
 | `LICENSE` / `NOTICE.md` | MIT for code and skill; CC BY 4.0 for docs; CC BY 3.0 attribution for Archimedes data |
 | `cram_dsp/ingest.py` | Lattice detection + sealed, receipted, exactly reversible entry seam |
 | `cram_dsp/metrics.py` | Integer separation and survivability metrics (exact milli-units) |
@@ -67,7 +72,7 @@ Reproduce: `python3 run_all.py` (requires numpy, Pillow). Deterministic and seed
 | `dresden/characterization.json` | Exact integer per-page characterization (dims, luma stats, Otsu, ink coverage) | VERIFIED |
 | `dresden/receipts.json`, `dresden/machine_receipts.json`, `dresden/queries/receipts.json` | Hash-chained acquisition/decode/analysis receipts | RECORD |
 | `dresden/queries/` | Researcher's concept illustrations + photographed column, exact decimations, originals SHA-256-pinned | ACQUIRED |
-| `dresden/derived/` | Discovery galleries for every page: luminance-path overlays (`paths/`), hollow-vs-solid dot overlays (`dots/`), exact quantile tonal-band maps (`bands/`) — display-seam renders of receipted measurements | RECORD |
+| `dresden/derived/` | Galleries for every page: path overlays (`paths/`), dot overlays (`dots/`), tonal bands (`bands/`), white freeze/paths (`white/`), pigment + shadow (`pigment/`), KELD strata + tonal windows (`strata/`), seam candidates (`seams/`), white trails (`trails/`), form-family contact sheets (`clusters/`) — display-seam renders of receipted measurements | RECORD |
 | `dresden/discovery_receipts.json` | Hash-chained per-page discovery-sweep receipts | RECORD |
 
 **Not committed (regenerate with `tools/fetch_tiff.py`):**
